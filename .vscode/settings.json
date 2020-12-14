@@ -1,0 +1,14 @@
+{
+ "workbench.colorCustomizations": {
+     "titleBar.activeBackground": "#fd0459",
+     "titleBar.inactiveBackground": "#ff0000"
+ },   
+ 
+  
+ 
+  "editor.tokenColorCustomizations": {
+  "comments": "#FFC2C2"
+  },
+ 
+
+}
