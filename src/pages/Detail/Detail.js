@@ -1,8 +1,21 @@
 import React, { Component } from 'react';
+import DetailHeader from './DetailHeader/DetailHeader';
+import DetailMain from './DetailMain/DetailMain';
+import DetailAside from './DetailAside/DetailAside';
 
-class Detail extends Component {
+class Detail extends React.Component {
+  state = {
+    movies: [],
+  };
+
   render() {
-    return <div></div>;
+    return (
+      <div>
+        <DetailHeader />
+        <DetailMain />
+        <DetailAside />
+      </div>
+    );
   }
 }
 
