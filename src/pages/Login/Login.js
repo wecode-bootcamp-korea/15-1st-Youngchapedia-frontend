@@ -22,7 +22,6 @@ class Login extends React.Component {
         });
       });
   };
-  // eslint-disable-next-line prettier/prettier
   handleInputValueChange = e => {
     const { id, value } = e.target;
     this.setState({
