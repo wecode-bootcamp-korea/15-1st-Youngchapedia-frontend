@@ -23,7 +23,7 @@ class Search extends Component {
       <ul className="results">
         <li className="popularWordIndex">인기검색어</li>
         {searchList.map(item => (
-          <li>{item}</li>
+          <li className="result">{item}</li>
         ))}
       </ul>
     );
