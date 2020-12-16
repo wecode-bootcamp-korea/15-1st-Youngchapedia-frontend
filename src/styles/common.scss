@@ -29,6 +29,12 @@ $tablet: 715px;
 $laptop: 1020px;
 $desktop: 1400px;
 
+@mixin display-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 // Mixins Media Query
 @mixin tablet {
   @media (max-width: #{$tablet}) {
