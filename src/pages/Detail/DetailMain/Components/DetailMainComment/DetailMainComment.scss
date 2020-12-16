@@ -1,0 +1,28 @@
+.DetailMainComment {
+  border: 1px solid #d2d2d2;
+  width: 39.875em;
+  height: 3.938em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 6px;
+  margin-bottom: 1.438em;
+  div {
+    color: #4a4a4a;
+    width: 337px;
+    margin-right: 1.5em;
+    border-radius: 6px;
+  }
+
+  button {
+    width: 255px;
+    height: 40px;
+    font-size: 1em;
+    background-color: #ffffff;
+    border: 1px solid #d2d2d2;
+    border-radius: 6px;
+    cursor: pointer;
+    outline: none;
+  }
+}

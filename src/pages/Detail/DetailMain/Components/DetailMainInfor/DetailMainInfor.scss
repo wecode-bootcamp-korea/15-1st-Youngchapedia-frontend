@@ -1,0 +1,33 @@
+.DetailMainInfor {
+  .DetailMainInfoMore {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+    font-size: 1em;
+
+    h1 {
+      font-size: 1.188em;
+      font-weight: bold;
+    }
+
+    span {
+      font-size: 1em;
+      color: #ff0658;
+      cursor: pointer;
+    }
+  }
+
+  .DetailMainInfoPTag {
+    padding: 1em;
+    font-size: 1em;
+
+    p {
+      padding-bottom: 0.4em;
+    }
+  }
+
+  .DetailMainInfoDesc {
+    padding: 0 1em;
+    line-height: 1.5em;
+  }
+}
