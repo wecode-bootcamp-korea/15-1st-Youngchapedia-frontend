@@ -3,11 +3,7 @@ import Footer from '../../Components/Footer/Footer';
 
 class MainPage extends Component {
   render() {
-    return (
-      <>
-        <Footer />
-      </>
-    );
+    return <Footer />;
   }
 }
 
