@@ -13,17 +13,13 @@ class Nav extends Component {
             <li className="menu">TV 프로그램</li>
             <li className="menu">책</li>
           </div>
-
           <div className="navRight">
-            <div className="searchForm">
-              <Search inputRef={this.input} />
+            <div className="inputContainer">
+              <Search />
             </div>
             <li className="menu">평가하기</li>
             <li className="profile">
-              <img
-                alt="profile"
-                src="https://d3sz5r0rl9fxuc.cloudfront.net/assets/default/user/photo_file_name_small-bc8b334acec6a4e386249dedf9e763b5e6aff523fa85cc29211f22e6bed540df.jpg"
-              />
+              <img alt="profile" src="/images/profile.jpg" />
             </li>
           </div>
         </div>
