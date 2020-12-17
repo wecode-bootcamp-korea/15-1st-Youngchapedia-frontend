@@ -28,6 +28,11 @@ $color-yellow: #ffdd63;
 $slide-size: 70min;
 
 @mixin flex-center {
+$tablet: 715px;
+$laptop: 1020px;
+$desktop: 1400px;
+
+@mixin display-center {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -49,4 +54,21 @@ $slide-size: 70min;
   cursor: pointer;
   z-index: 1;
   color: #a4a4a8;
+// Mixins Media Query
+@mixin tablet {
+  @media (max-width: #{$tablet}) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media (min-width: #{$laptop}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop}) {
+    @content;
+  }
 }

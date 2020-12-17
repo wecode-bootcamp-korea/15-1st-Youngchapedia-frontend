@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import MovieContainer from './components/MovieContainer/MovieContainer';
 import MovieContainerBottom from './components/MovieContainerBottom/MovieContainerBottom';
 import './MainPage.scss';
+import Footer from '../../Components/Footer/Footer';
 
 class MainPage extends Component {
   state = {
@@ -61,6 +62,7 @@ class MainPage extends Component {
         </main>
       </>
     );
+    return <Footer />;
   }
 }
 
