@@ -17,7 +17,16 @@ class MainPage extends Component {
     console.log('clicked');
   };
   render() {
-    return <Footer />;
+    return (
+      <div>
+        <button className="MainPage" onClick={this.LoginClickChange}>
+          Login
+        </button>
+        <button onClick={this.SignUpClickChange}>Sign Up</button>
+        <Login />
+        <Footer />;
+      </div>
+    );
   }
 }
 
