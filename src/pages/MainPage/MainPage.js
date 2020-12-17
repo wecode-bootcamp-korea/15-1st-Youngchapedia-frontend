@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './MainPage.scss';
 import Login from '../Login/Login.js';
+import Footer from '../../Components/Footer/Footer';
 
 class MainPage extends Component {
   constructor() {
@@ -16,16 +17,7 @@ class MainPage extends Component {
     console.log('clicked');
   };
   render() {
-    return (
-      <div>
-        <button className="MainPage" onClick={this.LoginClickChange}>
-          Login
-        </button>
-
-        <button onClick={this.SignUpClickChange}>Sign Up</button>
-        <Login />
-      </div>
-    );
+    return <Footer />;
   }
 }
 
