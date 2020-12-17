@@ -22,8 +22,10 @@ class Search extends Component {
     return (
       <ul className="results">
         <li className="popularWordIndex">인기검색어</li>
-        {searchList.map(item => (
-          <li className="result">{item}</li>
+        {searchList.map((item, id) => (
+          <li className="result" id={id}>
+            {item}
+          </li>
         ))}
       </ul>
     );
@@ -33,7 +35,7 @@ class Search extends Component {
     const { searchValue } = this.state;
     return (
       <>
-        <label class="searchWrap">
+        <label className="searchWrap">
           <input
             value={searchValue}
             className="searchInput"

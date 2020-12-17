@@ -3,7 +3,11 @@ import Search from './Search/Search';
 import '../Nav/Nav.scss';
 
 class Nav extends Component {
+  state = {
+    logged: false,
+  };
   render() {
+    const { logged } = this.state;
     return (
       <nav className="Nav">
         <div className="container">
@@ -17,10 +21,19 @@ class Nav extends Component {
             <div className="inputContainer">
               <Search />
             </div>
-            <li className="menu">평가하기</li>
-            <li className="profile">
-              <img alt="profile" src="/images/profile.jpg" />
-            </li>
+            {!logged ? (
+              <>
+                <li className="menu signIn">로그인</li>
+                <button className="menu signUp">회원가입</button>
+              </>
+            ) : (
+              <>
+                <li className="menu">평가하기</li>
+                <li className="profile">
+                  <img alt="profile" src="/images/profile.jpg" />
+                </li>
+              </>
+            )}
           </div>
         </div>
       </nav>
