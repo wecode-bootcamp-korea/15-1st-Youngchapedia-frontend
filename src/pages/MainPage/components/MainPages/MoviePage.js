@@ -61,6 +61,20 @@ class MoviePage extends Component {
               <img alt="profile" src="/images/profile.jpeg" />
             </div>
             <div>
+              <p className="collectionTxt">한준희님의 추천</p>
+              <p>아카데미 작품상 수상작</p>
+            </div>
+          </div>
+          <div className="movieSlideContainer">
+            <MovieContainerBottom movies={movies} />
+          </div>
+        </section>
+        <section className="mainMovieList">
+          <div className="movieHeader movieHeaderCollection">
+            <div className="recoProfile">
+              <img alt="profile" src="/images/profile.jpeg" />
+            </div>
+            <div>
               <p className="collectionTxt">조아람님의 추천</p>
               <p>나를 다른 세계로 데려다 주는 영화</p>
             </div>
@@ -77,6 +91,20 @@ class MoviePage extends Component {
             <div>
               <p className="collectionTxt">이재혁님의 추천</p>
               <p>감독의 화면, 그 색채적 미술적 취향</p>
+            </div>
+          </div>
+          <div className="movieSlideContainer">
+            <MovieContainerBottom movies={movies} />
+          </div>
+        </section>
+        <section className="mainMovieList">
+          <div className="movieHeader movieHeaderCollection">
+            <div className="recoProfile">
+              <img alt="profile" src="/images/profile.jpeg" />
+            </div>
+            <div>
+              <p className="collectionTxt">김순태님의 추천</p>
+              <p>아카데미 여우주연상 수상작</p>
             </div>
           </div>
           <div className="movieSlideContainer">
