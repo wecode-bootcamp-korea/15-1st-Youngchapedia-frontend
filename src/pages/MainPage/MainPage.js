@@ -42,8 +42,9 @@ class MainPage extends Component {
             </div>
           </section>
           <section className="mainMovieList">
-            <div className="movieHeader">
-              <p>넷플릭스 영화 순위</p>
+            <div className="movieHeader movieHeaderCollection">
+              <p className="collectionTxt">김별이님의 추천</p>
+              <p>화제의 감독 김종관의 작품</p>
             </div>
             <div className="movieSlideContainer">
               <MovieContainerBottom movies={movies} />
@@ -51,7 +52,7 @@ class MainPage extends Component {
           </section>
           <section className="mainMovieList">
             <div className="movieHeader">
-              <p>예상 별점이 높은 작품</p>
+              <p>감독의 화면, 그 색채적 미술적 취향 모두 보기</p>
             </div>
             <div className="movieSlideContainer">
               <MovieContainerBottom movies={movies} />

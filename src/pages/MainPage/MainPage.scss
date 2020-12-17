@@ -20,6 +20,18 @@ main {
         font-weight: bold;
         font-size: 20px;
       }
+
+      &.movieHeaderCollection {
+        display: flex;
+        flex-direction: column;
+
+        .collectionTxt {
+          font-weight: normal;
+          font-size: 15px;
+          margin-bottom: 5px;
+          color: $color-noneclick-menu;
+        }
+      }
     }
   }
 }

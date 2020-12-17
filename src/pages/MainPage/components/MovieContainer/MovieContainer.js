@@ -10,9 +10,7 @@ function SampleNextArrow(props) {
       className={className}
       style={{ ...style, display: 'block' }}
       onClick={onClick}
-    >
-      <i class="fa fa-arrow-alt-circle-left" />
-    </div>
+    ></div>
   );
 }
 
