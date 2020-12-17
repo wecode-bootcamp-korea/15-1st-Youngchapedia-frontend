@@ -2,29 +2,23 @@ import React, { Component } from 'react';
 import './MainPage.scss';
 import Login from '../Login/Login.js';
 import Footer from '../../Components/Footer/Footer';
+import ButtonLoginSignUp from '../Login/ButtonLoginSignUp.js';
+// import ButtonSignup from '../Signup/ButtonSignup.js';
 
 class MainPage extends Component {
   constructor() {
     super();
-    this.state = {
-      LoginDisplay: false,
-    };
+    this.state = {};
   }
-  LoginClickChange = () => {
-    console.log('clicked');
-  };
-  SignUpClickChange = () => {
-    console.log('clicked');
-  };
+
   render() {
     return (
-      <div>
-        <button className="MainPage" onClick={this.LoginClickChange}>
-          Login
-        </button>
-        <button onClick={this.SignUpClickChange}>Sign Up</button>
-        <Login />
-        <Footer />;
+      <div className="MainTest">
+        <div className="navBar">
+          <ButtonLoginSignUp />
+        </div>
+        <div className="mainBody">this is body</div>
+        <Footer />
       </div>
     );
   }

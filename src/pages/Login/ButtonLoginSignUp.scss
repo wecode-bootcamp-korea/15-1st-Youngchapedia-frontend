@@ -1,0 +1,26 @@
+.Button {
+  display:flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  .buttonTest {
+    // display:flex;
+    // justify-content: center;
+    // align-items: center;
+    // height: 100vh;
+    .button1 {
+      height: 5vh;
+      width: 10vh;
+    }
+  }
+  // .loginModal{
+  //     display:flex;
+  //     justify-content: center;
+  //     align-items: center;
+  // }
+  .buttonTest2{
+      .button2{
+          height: 5vh;
+          width: 10vh;
+      }
+  }
+}
