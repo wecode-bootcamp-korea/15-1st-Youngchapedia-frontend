@@ -1,0 +1,52 @@
+{
+  "MOVIES" : [
+      {
+        "id": 1,
+        "moviePoster": "https://images.unsplash.com/photo-1590179068383-b9c69aacebd3?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80",
+        "title": "위플래쉬",
+        "year": "2020",
+        "rating": "2.5",
+        "country": "미국"
+      },
+      {
+        "id": 2,
+        "moviePoster": "https://www.washingtonpost.com/graphics/2019/entertainment/oscar-nominees-movie-poster-design/img/star-is-born-web.jpg",
+        "title": "조제",
+        "year": "2020",
+        "rating": "4.0",
+        "country": "미국"
+      },
+      {
+        "id": 3,
+        "moviePoster": "https://images.unsplash.com/photo-1590179068383-b9c69aacebd3?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80",
+        "title": "원더 우먼",
+        "year": "2020",
+        "rating": "3.5",
+        "country": "미국"
+      },
+      {
+        "id": 4,
+        "moviePoster": "https://images.unsplash.com/photo-1587142908254-87fadd00000d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2352&q=80",
+        "title": "가족의 탄생",
+        "year": "2020",
+        "rating": "2.5",
+        "country": "미국"
+      },
+      {
+        "id": 5,
+        "moviePoster": "https://images.unsplash.com/photo-1587142908254-87fadd00000d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2352&q=80",
+        "title": "멋진 하루",
+        "year": "2020",
+        "rating": "3.0",
+        "country": "미국"
+      },
+      {
+        "id": 6,
+        "moviePoster": "https://images.unsplash.com/photo-1587142908254-87fadd00000d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2352&q=80",
+        "title": "도라에몽",
+        "year": "2020",
+        "rating": "2.5",
+        "country": "미국"
+      }
+    ]
+}

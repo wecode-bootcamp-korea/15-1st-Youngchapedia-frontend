@@ -24,3 +24,11 @@ $color-cmt-background: #f2f2f2;
 $color-cmt-font: #202020;
 /* 상세페이지 별점색상 */
 $color-yellow: #ffdd63;
+
+$slide-size: 70min;
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

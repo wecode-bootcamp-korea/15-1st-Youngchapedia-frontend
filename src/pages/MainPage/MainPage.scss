@@ -1,0 +1,25 @@
+@import '../../styles/common.scss';
+
+main {
+  width: 100%;
+  height: 100%;
+  padding: 0 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  .mainMovieList {
+    margin: 15px;
+    max-width: 80%;
+
+    .movieHeader {
+      margin: 15px 5px;
+
+      p {
+        font-weight: bold;
+        font-size: 20px;
+      }
+    }
+  }
+}
