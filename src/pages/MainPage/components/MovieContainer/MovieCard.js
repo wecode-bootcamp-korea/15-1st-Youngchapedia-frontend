@@ -6,16 +6,18 @@ class MovieCard extends Component {
     const { movie } = this.props;
     return (
       <li key={movie.index} className="movieCard">
-        <div className="moviePoster">
-          <img alt="poster" src={movie.moviePoster} />
-        </div>
-        <div className="movieInfo">
-          <p className="movieTitle">{movie.title}</p>
-          <p className="yearAndCountry">
-            {movie.year} ・ {movie.country}
-          </p>
-          <p className="rating">예상 ★ {movie.rating}</p>
-        </div>
+        <a href="#">
+          <div className="moviePoster">
+            <img alt="poster" src={movie.moviePoster} />
+          </div>
+          <div className="movieInfo">
+            <p className="movieTitle">{movie.title}</p>
+            <p className="yearAndCountry">
+              {movie.year} ・ {movie.country}
+            </p>
+            <p className="rating">예상 ★ {movie.rating}</p>
+          </div>
+        </a>
       </li>
     );
   }

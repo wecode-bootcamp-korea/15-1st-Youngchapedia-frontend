@@ -1,0 +1,21 @@
+@import '../../../../styles/common.scss';
+
+.slick-list {
+  padding: 10px;
+}
+
+.slick-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.slick-prev:before {
+  content: '<';
+  @include slide-arrow;
+}
+
+.slick-next:before {
+  content: '>';
+  @include slide-arrow;
+}
