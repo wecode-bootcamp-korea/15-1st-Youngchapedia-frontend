@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import './Signup.scss';
 import { APISIGNUP } from '../../config.js';
 
-// const API = "http://192.168.219.185"
 const emailRule = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
 const pwRule = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
 
@@ -83,7 +82,6 @@ class Signup extends React.Component {
       passwordStatus: pwRuleSet ? true : false,
     });
 
-    // inputPass && this.handleClickSign();
     inputPass && this.testFunction();
   };
 

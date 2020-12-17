@@ -74,12 +74,10 @@ class Login extends React.Component {
     // inputPass && this.handleClickLogin();
     inputPass && this.testFunction();
   };
-  newPage = () => {};
 
   render() {
     const { email, pw, emailStatus, passwordStatus } = this.state;
     const { loginOpen, loginClose } = this.props;
-    console.log(this.state);
     return (
       <>
         {loginOpen ? (
@@ -116,7 +114,6 @@ class Login extends React.Component {
                 <button
                   className="loginBtn"
                   onClick={() => this.props.checkValidation}
-                  // onClick={this.handleClickLogin}
                 >
                   로그인
                 </button>
