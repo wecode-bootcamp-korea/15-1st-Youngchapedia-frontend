@@ -6,6 +6,8 @@ import { APILOGIN } from '../../config.js';
 //1@test.com 111111qqq
 //2@test.com 222222www
 // access_token: " “eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozfQ.VUCJcgl9ZEFdjr20lj0cLy7ngiMSkb9p-3bH4L3KBDU”"
+const pwRule = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+const idRule = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
 
 class Login extends React.Component {
   constructor() {
@@ -23,18 +25,22 @@ class Login extends React.Component {
     fetch(APILOGIN, {
       method: 'POST',
       body: JSON.stringify({
-        // name: this.state.name,
         email: this.state.id,
         password: this.state.pw,
       }),
     })
       .then(response => response.json())
-      .then(result => console.log(result));
+      .then(result =>
+        result.message === 'SUCCESS'
+          ? (alert('Welcome to YoungChaPedia'),
+            this.props.history.push('/mainpage'),
+            console.log(result))
+          : console.log('result was unsucessfull')
+      );
   };
 
   handleIdValueChange = e => {
     const id = e.target.value;
-    const idRule = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
     const idRuleSet = !id.match(idRule);
     this.setState({
       id,
@@ -44,7 +50,6 @@ class Login extends React.Component {
 
   handlePwValueChange = e => {
     const pw = e.target.value;
-    const pwRule = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
     const pwRuleSet = !pw.match(pwRule);
     this.setState({
       pw,
@@ -62,8 +67,6 @@ class Login extends React.Component {
   checkValidation = e => {
     e.preventDefault();
     const { id, pw } = this.state;
-    const idRule = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
-    const pwRule = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
 
     const idRuleSet = !id.match(idRule);
     const pwRuleSet = !pw.match(pwRule);
@@ -73,16 +76,13 @@ class Login extends React.Component {
       emailStatus: idRuleSet ? true : false,
       passwordStatus: pwRuleSet ? true : false,
     });
-    if (inputPass) {
-      alert('welcome to YoungChaPedia');
-      this.props.history.push('/mainpage');
-    }
+
+    inputPass && this.handleClick();
   };
 
   render() {
     const { id, pw, emailStatus, passwordStatus } = this.state;
-    // console.log(this.state.emailList.email);
-    // console.log(this.state.emailList.password);
+
     return (
       <>
         <div className="Login">

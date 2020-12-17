@@ -85,22 +85,7 @@ class Signup extends React.Component {
       emailStatus: idRuleSet ? true : false,
       passwordStatus: pwRuleSet ? true : false,
     });
-    // if (inputPass) {
-    //   fetch(APISIGNUP, {
-    //     method: 'POST',
-    //     body: JSON.stringify({
-    //       name: this.state.name,
-    //       email: this.state.id,
-    //       password: this.state.pw,
-    //     }),
-    //   })
-    //     .then(response => response.json())
-    //     .then(result => console.log(result));
-    //   if (inputPass) {
-    // alert('welcome to YoungChaPedia');
-    // this.props.history.push('/mainpage');
-    //   }
-    // }
+
     inputPass && this.handleClick();
   };
 
@@ -113,7 +98,6 @@ class Signup extends React.Component {
       emailStatus,
       passwordStatus,
     } = this.state;
-    // console.log(this.state);
 
     return (
       <>
@@ -124,7 +108,6 @@ class Signup extends React.Component {
               <div className="sigUpPageLogoLow">PEDIA</div>
             </div>
             <div className="signUpText">회원가입</div>
-            {/* <div className="inputContainer"> */}
             <input
               id="name"
               value={name}
@@ -157,13 +140,8 @@ class Signup extends React.Component {
             <div className={passwordStatus ? 'inputStatus' : 'displayNone'}>
               정확하지 않은 비밀번호입니다
             </div>
-            {/* </div> */}
 
-            <button
-              className="signUpBtn"
-              onClick={this.checkValidation}
-              // onClick={this.handleClick}
-            >
+            <button className="signUpBtn" onClick={this.checkValidation}>
               회원가입
             </button>
             <div className="signUpCheckTxt">
