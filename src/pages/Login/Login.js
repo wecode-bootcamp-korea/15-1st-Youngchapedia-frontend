@@ -1,6 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Login.scss';
+import { APILOGIN } from '../../config.js';
+
+//1@test.com 111111qqq
+//2@test.com 222222www
+// access_token: " “eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozfQ.VUCJcgl9ZEFdjr20lj0cLy7ngiMSkb9p-3bH4L3KBDU”"
 
 class Login extends React.Component {
   constructor() {
@@ -9,42 +14,78 @@ class Login extends React.Component {
       id: '',
       pw: '',
       emailList: [],
+      emailStatus: false,
+      passwordStatus: false,
     };
   }
-  componentDidMount = () => {
-    fetch('http://localhost:3000/data/data.json', {
-      method: 'GET',
+
+  handleClick = () => {
+    fetch(APILOGIN, {
+      method: 'POST',
+      body: JSON.stringify({
+        // name: this.state.name,
+        email: this.state.id,
+        password: this.state.pw,
+      }),
     })
-      .then(res => res.json())
-      .then(res => {
-        this.setState({
-          emailList: res.users,
-        });
-      });
+      .then(response => response.json())
+      .then(result => console.log(result));
   };
+
+  handleIdValueChange = e => {
+    const id = e.target.value;
+    const idRule = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
+    const idRuleSet = !id.match(idRule);
+    this.setState({
+      id,
+      emailStatus: idRuleSet ? true : false,
+    });
+  };
+
+  handlePwValueChange = e => {
+    const pw = e.target.value;
+    const pwRule = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+    const pwRuleSet = !pw.match(pwRule);
+    this.setState({
+      pw,
+      passwordStatus: pwRuleSet ? true : false,
+    });
+  };
+
   handleInputValueChange = e => {
     const { id, value } = e.target;
     this.setState({
       [id]: value,
     });
   };
+
   checkValidation = e => {
     e.preventDefault();
-    const { id, pw, emailList } = this.state;
-    if (id == emailList.email && pw == emailList.password) {
-      alert('success');
-    } else {
-      alert('Fail');
+    const { id, pw } = this.state;
+    const idRule = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
+    const pwRule = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+
+    const idRuleSet = !id.match(idRule);
+    const pwRuleSet = !pw.match(pwRule);
+    const inputPass = !idRuleSet && !pwRuleSet;
+
+    this.setState({
+      emailStatus: idRuleSet ? true : false,
+      passwordStatus: pwRuleSet ? true : false,
+    });
+    if (inputPass) {
+      alert('welcome to YoungChaPedia');
+      this.props.history.push('/mainpage');
     }
   };
 
   render() {
-    const { id, pw } = this.state;
-    console.log(this.state.emailList.email);
-    console.log(this.state.emailList.password);
+    const { id, pw, emailStatus, passwordStatus } = this.state;
+    // console.log(this.state.emailList.email);
+    // console.log(this.state.emailList.password);
     return (
       <>
-        <body className="Login">
+        <div className="Login">
           <div className="loginBox">
             <div className="loginLogo">
               <div className="loginPageLogoHigh">YOUNGCHA</div>
@@ -57,17 +98,27 @@ class Login extends React.Component {
               className="emailInput"
               placeholder="이메일"
               type="text"
-              onChange={this.handleInputValueChange}
+              onChange={this.handleIdValueChange}
             ></input>
+            <div className={emailStatus ? 'inputStatus' : 'displayNone'}>
+              정확하지 않은 이메일입니다
+            </div>
             <input
               id="pw"
               value={pw}
               className="passwordInput"
               placeholder="비밀번호"
               type="password"
-              onChange={this.handleInputValueChange}
+              onChange={this.handlePwValueChange}
             ></input>
-            <button className="loginBtn" onClick={this.checkValidation}>
+            <div className={passwordStatus ? 'inputStatus' : 'displayNone'}>
+              정확하지 않은 비밀번호입니다
+            </div>
+            <button
+              className="loginBtn"
+              //onClick={this.checkValidation}
+              onClick={this.handleClick}
+            >
               로그인
             </button>
             <Link className="forgotPwTxt" to="/forgotpassword">
@@ -80,7 +131,7 @@ class Login extends React.Component {
               </Link>
             </div>
           </div>
-        </body>
+        </div>
       </>
     );
   }
