@@ -6,16 +6,22 @@
 
 .slick-arrow {
   position: absolute;
+  margin-left: 10px;
   top: 50%;
   transform: translateY(-50%);
+  z-index: 1;
 }
 
 .slick-prev:before {
-  content: '<';
   @include slide-arrow;
+  content: '<';
 }
 
 .slick-next:before {
   content: '>';
   @include slide-arrow;
+}
+
+.slick-next {
+  margin-right: 10px;
 }

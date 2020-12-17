@@ -12,9 +12,13 @@ class MovieCard extends Component {
           </div>
           <div className="movieInfo">
             <p className="movieTitle">{movie.title}</p>
-            <p className="yearAndCountry">
-              {movie.year} ・ {movie.country}
-            </p>
+            {movie.year && movie.country ? (
+              <p className="yearAndCountry">
+                {movie.year} ・ {movie.country}
+              </p>
+            ) : (
+              <></>
+            )}
             <p className="rating">예상 ★ {movie.rating}</p>
           </div>
         </a>

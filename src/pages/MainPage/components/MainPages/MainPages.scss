@@ -1,20 +1,36 @@
-@import '../../styles/common.scss';
+@import '../../../../styles/common.scss';
 
 main {
   width: 100%;
   height: 100%;
   padding: 0 10px;
+  margin-bottom: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-
   .mainMovieList {
     margin: 15px;
     max-width: 80%;
 
     .movieHeader {
       margin: 15px 5px;
+
+      .recoProfile {
+        width: 40px;
+        height: 40px;
+        border-radius: 100%;
+        border: 1px solid #eeeeee;
+        overflow: hidden;
+        cursor: pointer;
+        margin-right: 10px;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
 
       p {
         font-weight: bold;
@@ -23,7 +39,6 @@ main {
 
       &.movieHeaderCollection {
         display: flex;
-        flex-direction: column;
 
         .collectionTxt {
           font-weight: normal;
