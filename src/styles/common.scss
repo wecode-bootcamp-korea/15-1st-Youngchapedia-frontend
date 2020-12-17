@@ -24,3 +24,32 @@ $color-cmt-background: #f2f2f2;
 $color-cmt-font: #202020;
 /* 상세페이지 별점색상 */
 $color-yellow: #ffdd63;
+
+$tablet: 715px;
+$laptop: 1020px;
+$desktop: 1400px;
+
+@mixin display-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Mixins Media Query
+@mixin tablet {
+  @media (max-width: #{$tablet}) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media (min-width: #{$laptop}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop}) {
+    @content;
+  }
+}
