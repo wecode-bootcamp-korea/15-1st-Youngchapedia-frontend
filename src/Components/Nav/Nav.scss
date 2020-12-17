@@ -48,15 +48,14 @@
       }
 
       .signUp {
-        cursor: pointer;
-        border-radius: 6px;
-        font-weight: 500;
-        height: 30px;
-        background: $color-white;
-        color: rgb(53, 53, 53);
-        font-size: 14px;
-        padding: 5px 14px 6px;
         border: 1px solid rgba(116, 116, 123, 0.5);
+        height: 30px;
+        border-radius: 6px;
+        background: $color-white;
+        cursor: pointer;
+        color: rgb(53, 53, 53);
+        font-weight: 500;
+        font-size: 14px;
 
         &:focus {
           outline: none;
@@ -67,7 +66,7 @@
         width: 28px;
         height: 28px;
         border-radius: 100%;
-        border: 1px solid #eeeeee;
+        border: 1px solid $color-white;
         overflow: hidden;
         cursor: pointer;
 
