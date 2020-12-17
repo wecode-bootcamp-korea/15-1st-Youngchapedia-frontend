@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import MovieContainer from './components/MovieContainer/MovieContainer';
+import MovieContainerBottom from './components/MovieContainerBottom/MovieContainerBottom';
 import './MainPage.scss';
 
 class MainPage extends Component {
@@ -45,7 +46,7 @@ class MainPage extends Component {
               <p>넷플릭스 영화 순위</p>
             </div>
             <div className="movieSlideContainer">
-              <MovieContainer movies={movies} />
+              <MovieContainerBottom movies={movies} />
             </div>
           </section>
           <section className="mainMovieList">
@@ -53,7 +54,7 @@ class MainPage extends Component {
               <p>예상 별점이 높은 작품</p>
             </div>
             <div className="movieSlideContainer">
-              <MovieContainer movies={movies} />
+              <MovieContainerBottom movies={movies} />
             </div>
           </section>
         </main>
