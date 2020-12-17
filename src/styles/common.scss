@@ -31,12 +31,6 @@ $tablet: 715px;
 $laptop: 1020px;
 $desktop: 1400px;
 
-@mixin flex-center {
-  $tablet: 715px;
-  $laptop: 1020px;
-  $desktop: 1400px;
-}
-
 @mixin display-center {
   display: flex;
   justify-content: center;

@@ -59,8 +59,14 @@ class BookPage extends Component {
           </div>
         </section>
         <section className="mainMovieList">
-          <div className="movieHeader">
-            <p>크리스마스에는 이 책과 함께! 🎄</p>
+          <div className="movieHeader movieHeaderCollection">
+            <div className="recoProfile">
+              <img alt="profile" src="/images/profile.jpeg" />
+            </div>
+            <div>
+              <p className="collectionTxt">한준희님의 컬렉션</p>
+              <p>크리스마스에는 이 책과 함께! 🎄</p>
+            </div>
           </div>
           <div className="movieSlideContainer">
             <MovieContainerBottom movies={books} />

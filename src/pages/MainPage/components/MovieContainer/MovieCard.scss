@@ -10,8 +10,6 @@ li {
     margin-bottom: 10px;
     max-width: 300px;
     overflow: hidden;
-    // width: 90%;
-    // overflow: hidden;
 
     img {
       max-width: 100%;
@@ -23,9 +21,9 @@ li {
 
   .movieInfo {
     .movieTitle {
+      margin-bottom: 5px;
       font-weight: bold;
       font-size: 16px;
-      margin-bottom: 5px;
     }
 
     .yearAndCountry {

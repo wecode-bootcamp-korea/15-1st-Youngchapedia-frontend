@@ -11,11 +11,10 @@ class MoviePage extends Component {
 
   componentDidMount = () => {
     this.loadMainMovieData();
-    this.loadMainCollectionMovieData();
   };
 
-  loadMainMovieData = () => {
-    fetch('/data/movieList.json')
+  loadMainMovieData = async () => {
+    await fetch('/data/movieList.json')
       .then(response => response.json())
       .then(res => {
         this.setState({
@@ -37,7 +36,7 @@ class MoviePage extends Component {
   };
 
   render() {
-    const { movies, collections } = this.state;
+    const { movies } = this.state;
     return (
       <main className="MainPage">
         <section className="mainMovieList">
@@ -62,8 +61,8 @@ class MoviePage extends Component {
               <img alt="profile" src="/images/profile.jpeg" />
             </div>
             <div>
-              <p className="collectionTxt">김별이님의 추천</p>
-              <p>화제의 감독 김종관의 작품</p>
+              <p className="collectionTxt">조아람님의 추천</p>
+              <p>나를 다른 세계로 데려다 주는 영화</p>
             </div>
           </div>
           <div className="movieSlideContainer">
@@ -71,8 +70,14 @@ class MoviePage extends Component {
           </div>
         </section>
         <section className="mainMovieList">
-          <div className="movieHeader">
-            <p>감독의 화면, 그 색채적 미술적 취향 모두 보기</p>
+          <div className="movieHeader movieHeaderCollection">
+            <div className="recoProfile">
+              <img alt="profile" src="/images/profile.jpeg" />
+            </div>
+            <div>
+              <p className="collectionTxt">이재혁님의 추천</p>
+              <p>감독의 화면, 그 색채적 미술적 취향</p>
+            </div>
           </div>
           <div className="movieSlideContainer">
             <MovieContainerBottom movies={movies} />

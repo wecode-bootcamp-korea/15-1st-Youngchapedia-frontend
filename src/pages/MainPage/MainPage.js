@@ -8,7 +8,7 @@ class MainPage extends Component {
   render() {
     return (
       <>
-        <BookPage />
+        <MoviePage />
         <Footer />
       </>
     );

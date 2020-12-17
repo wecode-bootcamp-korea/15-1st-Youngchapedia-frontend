@@ -50,7 +50,7 @@ class TvProgramPage extends Component {
               <img alt="profile" src="/images/profile.jpeg" />
             </div>
             <div>
-              <p className="collectionTxt">김별이님의 컬렉션</p>
+              <p className="collectionTxt">김순태님의 컬렉션</p>
               <p>자연과 환경에 관한 다큐멘터리</p>
             </div>
           </div>
@@ -59,8 +59,14 @@ class TvProgramPage extends Component {
           </div>
         </section>
         <section className="mainMovieList">
-          <div className="movieHeader">
-            <p>한주한주 내 삶의 낙이었던 드라마</p>
+          <div className="movieHeader movieHeaderCollection">
+            <div className="recoProfile">
+              <img alt="profile" src="/images/profile.jpeg" />
+            </div>
+            <div>
+              <p className="collectionTxt">김순태님의 컬렉션</p>
+              <p>자연과 환경에 관한 다큐멘터리</p>
+            </div>
           </div>
           <div className="movieSlideContainer">
             <MovieContainerBottom movies={programs} />

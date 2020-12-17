@@ -26,12 +26,15 @@ function PrevArrow(props) {
 }
 
 class MovieContainer extends Component {
+  state = {
+    image: '',
+  };
   render() {
     console.log(this.props);
     const { movies } = this.props;
     const settings = {
       dots: false,
-      infinite: true,
+      infinite: false,
       speed: 500,
       slidesToShow: 4,
       slidesToScroll: 4,
