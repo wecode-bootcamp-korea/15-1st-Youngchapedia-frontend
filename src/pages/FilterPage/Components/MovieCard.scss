@@ -1,0 +1,39 @@
+@import '../../../styles/common.scss';
+
+li {
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  margin-right: 10px;
+
+  .moviePoster {
+    margin-bottom: 10px;
+    max-width: 300px;
+    overflow: hidden;
+
+    img {
+      max-width: 100%;
+      max-height: 100%;
+      height: auto;
+      border-radius: 5px;
+    }
+  }
+
+  .movieInfo {
+    .movieTitle {
+      margin-bottom: 5px;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .yearAndCountry {
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+
+    .rating {
+      font-size: 14px;
+      color: $color-youngcha;
+    }
+  }
+}

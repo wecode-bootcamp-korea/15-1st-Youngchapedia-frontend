@@ -53,3 +53,12 @@ $desktop: 1400px;
     @content;
   }
 }
+
+a {
+  text-decoration: none;
+  color: $color-black;
+
+  &:link {
+    color: $color-black;
+  }
+}
