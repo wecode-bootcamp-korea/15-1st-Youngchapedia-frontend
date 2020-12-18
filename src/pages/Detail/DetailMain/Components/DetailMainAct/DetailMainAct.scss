@@ -5,23 +5,26 @@
     font-weight: bold;
     margin: 1em 0;
   }
-  li {
-    display: flex;
-    align-items: center;
+  div {
+    overflow-x: scroll;
+    li {
+      display: flex;
+      align-items: center;
 
-    div {
-      margin-left: 1em;
+      div {
+        margin-left: 1em;
+      }
+
+      h2 {
+        font-size: 1.25em;
+        margin-bottom: 0.563em;
+      }
     }
 
-    h2 {
-      font-size: 1.25em;
-      margin-bottom: 0.563em;
+    img {
+      width: 3.563em;
+      height: 3.563em;
+      border-radius: 6px;
     }
-  }
-
-  img {
-    width: 3.563em;
-    height: 3.563em;
-    border-radius: 6px;
   }
 }

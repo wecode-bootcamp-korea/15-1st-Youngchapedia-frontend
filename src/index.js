@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import '../src/styles/reset.scss';
 import '../src/styles/common.scss';
-import '../node_modules/font-awesome/css/font-awesome.min.css';
+import '@fortawesome/fontawesome-free/js/all.js';
 
 import Routes from './Routes';
 

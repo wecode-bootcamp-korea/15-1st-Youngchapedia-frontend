@@ -9,6 +9,8 @@ class Detail extends React.Component {
     movies: [],
   };
 
+  handleLeaveComment = () => {};
+
   render() {
     return (
       <div className="Detail">

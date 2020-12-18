@@ -28,7 +28,7 @@ class DetailHeader extends React.Component {
                       <button className="pulsAndwannaWatchButton">
                         <div className="wannaWatch">
                           <span>
-                            <i class="fas fa-plus"></i>
+                            <i className="fas fa-plus"></i>
                           </span>
                           <div>보고싶어요</div>
                         </div>

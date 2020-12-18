@@ -1,3 +1,5 @@
+@import '../../../../../styles/common.scss';
+
 .DetailMainInfor {
   .DetailMainInfoMore {
     display: flex;
@@ -12,7 +14,7 @@
 
     span {
       font-size: 1em;
-      color: #ff0658;
+      $color-youngcha: #ff0658;
       cursor: pointer;
     }
   }

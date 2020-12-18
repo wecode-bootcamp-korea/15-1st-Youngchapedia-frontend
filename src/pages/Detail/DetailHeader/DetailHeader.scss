@@ -1,3 +1,5 @@
+@import '../../../styles/common.scss';
+
 .DetailHeader {
   .DivControl {
     position: relative;
@@ -17,7 +19,7 @@
   }
 
   .flexPosterAndDetails {
-    padding: 14px 16px 22px;
+    padding: 0.875em 1em 1.375em;
   }
 
   .posterConroler {
@@ -43,15 +45,17 @@
 
       .score {
         margin-top: 1em;
-        padding: 10px 0;
+        padding: 0.625em 0;
         border-top: 1px solid #ededed;
         border-bottom: 1px solid #ededed;
       }
     }
 
     img {
-      width: 154px;
-      height: 218px;
+      width: 9.625em;
+      height: 13.625em;
+      border: 2px solid $color-white;
+      border-radius: 6px;
     }
   }
 
@@ -71,23 +75,21 @@
 
       .sortDownButton {
         border-radius: 0 6px 6px 0;
-        width: 51px;
-        height: 43px;
+        width: 3.188em;
+        height: 2.67em;
         border-left: 1px solid #e71152;
       }
 
       button {
-        background-color: #ff0658;
+        background-color: $color-youngcha;
         font-size: 1.3em;
         border-style: none;
-        color: #ffffff;
+        color: $color-white;
 
         .wannaWatch {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          width: 163px;
-          height: 41px;
+          @include display-center;
+          width: 10.188em;
+          height: 2.563em;
 
           span {
             margin-right: 1em;
@@ -100,13 +102,13 @@
     margin-top: 1em;
 
     .evaluating {
-      font-size: 12px;
+      font-size: 0.75em;
       color: #808080;
       margin-bottom: 0.3em;
     }
 
     span {
-      font-size: 40px;
+      font-size: 2.5em;
     }
   }
 }

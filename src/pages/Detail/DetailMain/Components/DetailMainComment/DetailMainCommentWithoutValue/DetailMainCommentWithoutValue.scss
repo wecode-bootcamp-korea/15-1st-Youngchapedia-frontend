@@ -1,0 +1,30 @@
+@import '../../../../../../styles/common.scss';
+
+.DetailMainCommentWithoutValue {
+  @include detailBorder;
+  width: 39.875em;
+  height: 6.25em;
+
+  background-color: $color-white;
+  border-radius: 6px;
+  margin-bottom: 1.438em;
+  @include display-center;
+
+  div {
+    color: $color-info-font-color;
+    width: 21.063em;
+    margin-right: 1.5em;
+    border-radius: 6px;
+  }
+
+  button {
+    width: 255px;
+    height: 40px;
+    font-size: 1em;
+    background-color: $color-white;
+    @include detailBorder;
+    border-radius: 6px;
+    cursor: pointer;
+    outline: none;
+  }
+}
