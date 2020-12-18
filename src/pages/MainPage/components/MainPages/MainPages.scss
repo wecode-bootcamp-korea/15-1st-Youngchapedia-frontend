@@ -12,6 +12,10 @@ main {
     margin: 15px;
     max-width: 80%;
 
+    .personList {
+      cursor: pointer;
+    }
+
     .movieHeader {
       margin: 15px 5px;
 

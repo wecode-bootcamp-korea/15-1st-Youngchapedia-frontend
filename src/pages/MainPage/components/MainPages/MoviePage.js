@@ -6,7 +6,6 @@ import './MainPages.scss';
 class MoviePage extends Component {
   state = {
     movies: [],
-    collections: [],
   };
 
   componentDidMount = () => {
@@ -19,17 +18,6 @@ class MoviePage extends Component {
       .then(res => {
         this.setState({
           movies: res.MOVIES,
-        });
-      })
-      .catch(error => console.log(error));
-  };
-
-  loadMainCollectionMovieData = () => {
-    fetch('/data/movieCollectionList.json')
-      .then(response => response.json())
-      .then(res => {
-        this.setState({
-          collections: res.COLLECTION,
         });
       })
       .catch(error => console.log(error));
@@ -56,7 +44,7 @@ class MoviePage extends Component {
           </div>
         </section>
         <section className="mainMovieList">
-          <div className="movieHeader movieHeaderCollection">
+          <div className="movieHeader movieHeaderCollection personList">
             <div className="recoProfile">
               <img alt="profile" src="/images/profile.jpeg" />
             </div>
@@ -70,7 +58,7 @@ class MoviePage extends Component {
           </div>
         </section>
         <section className="mainMovieList">
-          <div className="movieHeader movieHeaderCollection">
+          <div className="movieHeader movieHeaderCollection personList">
             <div className="recoProfile">
               <img alt="profile" src="/images/profile.jpeg" />
             </div>
@@ -84,7 +72,7 @@ class MoviePage extends Component {
           </div>
         </section>
         <section className="mainMovieList">
-          <div className="movieHeader movieHeaderCollection">
+          <div className="movieHeader movieHeaderCollection personList">
             <div className="recoProfile">
               <img alt="profile" src="/images/profile.jpeg" />
             </div>
@@ -98,7 +86,7 @@ class MoviePage extends Component {
           </div>
         </section>
         <section className="mainMovieList">
-          <div className="movieHeader movieHeaderCollection">
+          <div className="movieHeader movieHeaderCollection personList">
             <div className="recoProfile">
               <img alt="profile" src="/images/profile.jpeg" />
             </div>
