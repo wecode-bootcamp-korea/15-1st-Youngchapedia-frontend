@@ -8,7 +8,7 @@ class DetailMainCommentEditModal extends React.Component {
   };
 
   onRemoveEditComment = () => {
-    this.props.handleRemoveEditComment();
+    this.props.handleCommentEditToggle();
   };
 
   receiveValue = e => {

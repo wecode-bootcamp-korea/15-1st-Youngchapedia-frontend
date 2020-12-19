@@ -4,7 +4,7 @@ import './DetailMainCommentWithoutValue.scss';
 class DetailMainCommentWithoutValue extends React.Component {
   onAddLeaveComment = e => {
     e.preventDefault();
-    this.props.handleLeaveComment();
+    this.props.handleLeaveCommentToggle();
   };
 
   render() {

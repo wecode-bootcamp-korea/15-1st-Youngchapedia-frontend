@@ -4,11 +4,11 @@ import './DetailMainCommentWithValue.scss';
 
 class DetailMainCommentWithValue extends React.Component {
   onCommentDelete = () => {
-    this.props.handleDeleteValue();
+    this.props.handleDeleteValueToggle();
   };
 
   onCommentEdit = () => {
-    this.props.handleCommentEdit();
+    this.props.handleCommentEditToggle();
   };
 
   render() {

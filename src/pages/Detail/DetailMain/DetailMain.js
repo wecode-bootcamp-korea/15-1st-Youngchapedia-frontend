@@ -17,12 +17,16 @@ class DetailMain extends React.Component {
     isCommentEdited: false,
   };
 
-  handleLeaveComment = () => {
-    this.setState({ isCommentClicked: true });
+  handleLeaveCommentToggle = () => {
+    this.setState({ isCommentClicked: !this.state.isCommentClicked });
   };
 
-  handleCloseComment = () => {
-    this.setState({ isCommentClicked: false });
+  handleDeleteValueToggle = () => {
+    this.setState({ isCheckCommentDelete: !this.state.isCheckCommentDelete });
+  };
+
+  handleCommentEditToggle = () => {
+    this.setState({ isCommentEdited: !this.state.isCommentEdited });
   };
 
   handleCommentValue = comment => {
@@ -33,24 +37,8 @@ class DetailMain extends React.Component {
     this.setState({ comment, isCommentValue: true, isCommentEdited: false });
   };
 
-  handleDeleteValue = () => {
-    this.setState({ isCheckCommentDelete: true });
-  };
-
-  handleCancelDelete = () => {
-    this.setState({ isCheckCommentDelete: false });
-  };
-
   handleCommentDelete = () => {
     this.setState({ isCommentValue: false, isCheckCommentDelete: false });
-  };
-
-  handleCommentEdit = () => {
-    this.setState({ isCommentEdited: true });
-  };
-
-  handleRemoveEditComment = () => {
-    this.setState({ isCommentEdited: false });
   };
 
   render() {
@@ -65,7 +53,7 @@ class DetailMain extends React.Component {
       <main className="DetailMain">
         {isCommentClicked && (
           <DetailMainCommentModal
-            handleCloseComment={this.handleCloseComment}
+            handleLeaveCommentToggle={this.handleLeaveCommentToggle}
             handleCommentValue={this.handleCommentValue}
           />
         )}
@@ -73,7 +61,6 @@ class DetailMain extends React.Component {
         {isCheckCommentDelete && (
           <DeleteCommentCheckModal
             isCheckCommentDelete={this.isCheckCommentDelete}
-            handleCancelDelete={this.handleCancelDelete}
             handleCommentDelete={this.handleCommentDelete}
           />
         )}
@@ -81,7 +68,7 @@ class DetailMain extends React.Component {
         {isCommentEdited && (
           <DetailMainCommentEditModal
             comment={comment}
-            handleRemoveEditComment={this.handleRemoveEditComment}
+            handleCommentEditToggle={this.handleCommentEditToggle}
             handleCommentValue={this.handleCommentValue}
             handleEditCommentValue={this.handleEditCommentValue}
           />
@@ -90,16 +77,15 @@ class DetailMain extends React.Component {
         {isCommentValue ? (
           <DetailMainCommentWithValue
             comment={comment}
-            handleDeleteValue={this.handleDeleteValue}
-            handleCommentEdit={this.handleCommentEdit}
+            handleDeleteValueToggle={this.handleDeleteValueToggle}
+            handleCommentEditToggle={this.handleCommentEditToggle}
             handleEditValueComponentWithValue={
               this.handleEditValueComponentWithValue
             }
           />
         ) : (
           <DetailMainCommentWithoutValue
-            handleLeaveComment={this.handleLeaveComment}
-            handleCloseComment={this.handleCloseComment}
+            handleLeaveCommentToggle={this.handleLeaveCommentToggle}
           />
         )}
 

@@ -9,7 +9,7 @@ class DetailMainCommentModal extends React.Component {
   };
 
   onCloseComment = () => {
-    this.props.handleCloseComment();
+    this.props.handleLeaveCommentToggle();
   };
 
   receiveValue = e => {

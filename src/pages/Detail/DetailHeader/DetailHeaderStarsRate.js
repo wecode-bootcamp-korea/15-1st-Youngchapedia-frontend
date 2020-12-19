@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReactStars from 'react-rating-stars-component';
+import './DetailHeaderStarsRate.scss';
 
 class DetailHeaderStarsRate extends React.Component {
   state = {
@@ -41,6 +42,7 @@ class DetailHeaderStarsRate extends React.Component {
       isHalf: true,
       char: '★',
       value: 0,
+
       onChange: newValue => {
         this.forRatingSetState(newValue);
         // this.CheckcancelMessage(newValue);
@@ -63,7 +65,7 @@ class DetailHeaderStarsRate extends React.Component {
             <div className="starsRoom">
               <ReactStars
                 {...DetailStars}
-                onclick={this.activeStarRateFunction}
+                onClick={this.activeStarRateFunction}
               />
             </div>
           </div>

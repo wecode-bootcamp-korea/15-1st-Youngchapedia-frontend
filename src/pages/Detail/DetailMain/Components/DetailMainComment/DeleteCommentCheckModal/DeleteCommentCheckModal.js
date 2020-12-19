@@ -3,7 +3,7 @@ import './DeleteCommentCheckModal.scss';
 
 class DeleteCommentCheckModal extends Component {
   onCancelDelete = () => {
-    this.props.handleCancelDelete();
+    this.props.handleLeaveCommentToggle();
   };
 
   onCommentDelete = () => {
