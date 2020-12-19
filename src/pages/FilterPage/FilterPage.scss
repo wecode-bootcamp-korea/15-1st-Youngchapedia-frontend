@@ -8,10 +8,8 @@
   margin-bottom: 50px;
 
   .filterHeader {
-    max-width: 1250px;
     width: 90%;
-    margin-top: 30px;
-    padding: 10px 10px;
+    margin: 30px 0px 10px 0px;
     display: flex;
     flex-wrap: wrap;
 
@@ -48,47 +46,19 @@
   }
 
   .resultList {
-    width: 1250px;
+    width: 90%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     flex-wrap: wrap;
-    overflow-x: scroll;
 
-    .movieCard {
-      display: flex;
-      flex-direction: column;
-      width: 10em;
-      height: 10em;
-      margin-bottom: 15px;
-      margin: 0 5px 15px 0px;
-      overflow: hidden;
-      background-color: red;
+    .moviePoster {
+      width: 150px;
+      height: 200px;
 
-      .moviePoster {
-        width: 10em;
-        height: 10em;
-        img {
-          width: 100%;
-          height: 100%;
-          border-radius: 5px;
-        }
-      }
-
-      .movieInfo {
-        width: 10em;
-        height: 10em;
-        .movieTitle {
-          font-weight: bold;
-          margin: 5px 0px;
-        }
-
-        .yearAndCountry,
-        .rating {
-          color: $color-noneclick-menu;
-          font-size: 13px;
-          margin-bottom: 5px;
-        }
+      img {
+        width: 100%;
+        height: 100%;
       }
     }
   }

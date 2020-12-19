@@ -1,14 +1,13 @@
 @import '../../../styles/common.scss';
 
-li {
+.movieCard {
   display: inline-block;
   position: relative;
   z-index: 1;
-  margin-right: 10px;
+  margin-right: 2px;
 
   .moviePoster {
     margin-bottom: 10px;
-    max-width: 300px;
     overflow: hidden;
 
     img {
@@ -29,11 +28,12 @@ li {
     .yearAndCountry {
       font-size: 14px;
       margin-bottom: 5px;
+      color: $color-noneclick-menu;
     }
 
     .rating {
       font-size: 14px;
-      color: $color-youngcha;
+      color: $color-noneclick-menu;
     }
   }
 }
