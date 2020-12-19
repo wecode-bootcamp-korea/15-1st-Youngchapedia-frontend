@@ -24,11 +24,11 @@ class DetailMainCommentWithValue extends React.Component {
         <div className="commentValue">{comment}</div>
         <div className="commentIcons">
           <div className="iconTrash" onClick={this.onCommentDelete}>
-            <i class="far fa-trash-alt"></i>
+            <i class="far fa-trash-alt" />
             <span>삭제</span>
           </div>
           <div className="pencil" onClick={this.onCommentEdit}>
-            <i class="fas fa-pencil-alt"></i>
+            <i class="fas fa-pencil-alt" />
             <span>수정</span>
           </div>
         </div>

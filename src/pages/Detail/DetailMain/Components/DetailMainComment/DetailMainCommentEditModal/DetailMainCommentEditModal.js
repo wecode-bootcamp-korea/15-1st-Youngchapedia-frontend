@@ -4,7 +4,6 @@ import './DetailMainCommentEditModal.scss';
 class DetailMainCommentEditModal extends React.Component {
   state = {
     comment: this.props.comment,
-    commentBtnColor: true,
     commentBtnStatus: true,
   };
 
@@ -21,7 +20,6 @@ class DetailMainCommentEditModal extends React.Component {
     const { comment } = this.state;
     const check = comment.length > 1;
     this.setState({
-      commentBtnColor: check ? false : true,
       commentBtnStatus: check ? false : true,
     });
   };
@@ -33,7 +31,7 @@ class DetailMainCommentEditModal extends React.Component {
   };
 
   render() {
-    const { comment, commentBtnStatus, commentBtnColor } = this.state;
+    const { comment, commentBtnStatus } = this.state;
 
     return (
       <section className="DetailMainCommentEditModal">
@@ -41,12 +39,12 @@ class DetailMainCommentEditModal extends React.Component {
           <form onSubmit={this.onReceiveCommentValue}>
             <div className="firstLine">
               <div className="icon" onClick={this.onRemoveEditComment}>
-                <i className="fas fa-times"></i>
+                <i className="fas fa-times" />
               </div>
               <p>원더우먼</p>
               <button
                 className={
-                  commentBtnColor
+                  commentBtnStatus
                     ? 'enabledcommentSummit'
                     : 'abledcommentSummit'
                 }
@@ -64,7 +62,7 @@ class DetailMainCommentEditModal extends React.Component {
               />
             </div>
 
-            <textarea onChange={this.receiveValue} value={comment}></textarea>
+            <textarea onChange={this.receiveValue} value={comment} />
           </form>
         </div>
       </section>

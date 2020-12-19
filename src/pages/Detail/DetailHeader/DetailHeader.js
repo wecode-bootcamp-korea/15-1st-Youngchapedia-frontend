@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './DetailHeader.scss';
 
+import DetailHeaderStarsRate from './DetailHeaderStarsRate';
+
 class DetailHeader extends React.Component {
   render() {
     return (
@@ -41,28 +43,7 @@ class DetailHeader extends React.Component {
                     </div>
                   </div>
                   <div className="evaluation">
-                    <div>
-                      <div className="evaluating">평가하기</div>
-                    </div>
-                    <div className="starsRoomControl">
-                      <div className="starsRoom">
-                        <span className="star1">
-                          <i className="far fa-star"></i>
-                        </span>
-                        <span className="star2">
-                          <i className="far fa-star"></i>
-                        </span>
-                        <span className="star3">
-                          <i className="far fa-star"></i>
-                        </span>
-                        <span className="star4">
-                          <i className="far fa-star"></i>
-                        </span>
-                        <span className="star5">
-                          <i className="far fa-star"></i>
-                        </span>
-                      </div>
-                    </div>
+                    <DetailHeaderStarsRate />
                   </div>
                 </div>
               </div>

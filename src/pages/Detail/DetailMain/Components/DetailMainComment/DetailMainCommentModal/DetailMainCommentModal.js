@@ -4,7 +4,7 @@ import './DetailMainCommentModal.scss';
 class DetailMainCommentModal extends React.Component {
   state = {
     comment: '',
-    commentBtnColor: true,
+
     commentBtnStatus: true,
   };
 
@@ -21,7 +21,6 @@ class DetailMainCommentModal extends React.Component {
     const { comment } = this.state;
     const check = comment.length > 1;
     this.setState({
-      commentBtnColor: check ? false : true,
       commentBtnStatus: check ? false : true,
     });
   };
@@ -33,7 +32,7 @@ class DetailMainCommentModal extends React.Component {
   };
 
   render() {
-    const { comment, commentBtnStatus, commentBtnColor } = this.state;
+    const { comment, commentBtnStatus } = this.state;
 
     return (
       <section className="DetailMainCommentModal">
@@ -41,12 +40,12 @@ class DetailMainCommentModal extends React.Component {
           <form onSubmit={this.onReceiveCommentValue}>
             <div className="firstLine">
               <div className="icon" onClick={this.onCloseComment}>
-                <i className="fas fa-times"></i>
+                <i className="fas fa-times" />
               </div>
               <p>원더우먼</p>
               <button
                 className={
-                  commentBtnColor
+                  commentBtnStatus
                     ? 'enabledcommentSummit'
                     : 'abledcommentSummit'
                 }
