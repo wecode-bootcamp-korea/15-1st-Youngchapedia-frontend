@@ -122,6 +122,7 @@
         margin: 1em 0em;
         background-color: #ff0658;
         @include inputAndBtn;
+        cursor: pointer;
       }
 
       .signUpBtn:focus {
@@ -139,6 +140,7 @@
           padding-left: 0.3em;
           color: #ff0658;
           text-decoration: none;
+          cursor: pointer;
         }
       }
     }

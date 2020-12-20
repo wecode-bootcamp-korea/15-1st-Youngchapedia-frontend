@@ -1,8 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import './Login.scss';
 import { APILOGIN } from '../../config.js';
-
+import { withRouter } from 'react-router-dom';
+import Swal from 'sweetalert2';
+//id:test123@test.com pw:123123qweqwe mrtest123
 //1@test.com 111111qqq
 //2@test.com 222222www
 // access_token: " “eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozfQ.VUCJcgl9ZEFdjr20lj0cLy7ngiMSkb9p-3bH4L3KBDU”"
@@ -15,7 +16,6 @@ class Login extends React.Component {
     this.state = {
       email: '',
       pw: '',
-      emailList: [],
       emailStatus: false,
       passwordStatus: false,
     };
@@ -30,17 +30,26 @@ class Login extends React.Component {
       }),
     })
       .then(response => response.json())
-      .then(result =>
-        result.message === 'SUCCESS'
-          ? (alert('Welcome Back!'),
-            this.props.history.push('/mainpage'),
-            console.log(result))
-          : console.log('result was unsucessfull')
-      );
+      .then(result => {
+        if (result.message === 'SUCCESS') {
+          sessionStorage.setItem('access_token', result.access_token);
+          Swal.fire({
+            icon: 'success',
+            text: 'welcome to YoungchaPedia!',
+          });
+          this.props.loginClose();
+          this.resetInputStatus();
+          this.props.history.push('/mainpage');
+          // this.props.history.push('/');
+        } else {
+          Swal.fire({
+            icon: 'error',
+            text: 'invalid email or password!',
+          });
+        }
+      });
   };
-  testFunction = () => {
-    console.log('passsed');
-  };
+
   handleEmailValueChange = e => {
     const email = e.target.value;
     const idRuleSet = !email.match(emailRule);
@@ -59,8 +68,17 @@ class Login extends React.Component {
     });
   };
 
-  checkValidation = e => {
-    e.preventDefault();
+  resetInputStatus = () => {
+    this.setState({
+      email: '',
+      pw: '',
+      emailStatus: false,
+      passwordStatus: false,
+    });
+    console.log('login inputs are emptied');
+  };
+
+  checkValidation = () => {
     const { email, pw } = this.state;
     const emailRuleSet = !email.match(emailRule);
     const pwRuleSet = !pw.match(pwRule);
@@ -70,67 +88,81 @@ class Login extends React.Component {
       emailStatus: emailRuleSet ? true : false,
       passwordStatus: pwRuleSet ? true : false,
     });
-
-    // inputPass && this.handleClickLogin();
-    inputPass && this.testFunction();
+    inputPass && this.handleClickLogin();
   };
 
   render() {
     const { email, pw, emailStatus, passwordStatus } = this.state;
-    const { loginOpen, loginClose } = this.props;
+    const { loginModalStatus, loginOpen, loginClose, toSignUp } = this.props;
+
     return (
       <>
-        {loginOpen ? (
-          <div className="Login">
-            <div className="underLogin" onClick={loginClose}>
-              <div className="loginBox" onClick={loginOpen}>
-                <div className="loginLogo">
-                  <div className="loginPageLogoHigh">YOUNGCHA</div>
-                  <div className="loginPageLogoLow">PEDIA</div>
-                </div>
-                <div className="loginText">로그인</div>
-                <input
-                  id="email"
-                  value={email}
-                  className="emailInput"
-                  placeholder="이메일"
-                  type="text"
-                  onChange={this.handleEmailValueChange}
-                ></input>
-                <div className={emailStatus ? 'inputStatus' : 'displayNone'}>
-                  정확하지 않은 이메일입니다
-                </div>
-                <input
-                  id="pw"
-                  value={pw}
-                  className="passwordInput"
-                  placeholder="비밀번호"
-                  type="password"
-                  onChange={this.handlePwValueChange}
-                ></input>
-                <div className={passwordStatus ? 'inputStatus' : 'displayNone'}>
-                  정확하지 않은 비밀번호입니다
-                </div>
-                <button
-                  className="loginBtn"
-                  onClick={() => this.props.checkValidation}
+        <div onClick={this.resetInputStatus}>
+          {loginModalStatus ? (
+            <div className="Login">
+              <div className="underLogin" onClick={loginClose}>
+                <div
+                  className="loginBox"
+                  onClick={e => {
+                    e.stopPropagation();
+                    loginOpen();
+                  }}
                 >
-                  로그인
-                </button>
-                <Link className="forgotPwTxt" to="/forgotpassword">
-                  비밀번호를 잊어버리셨나요?
-                </Link>
-                <div className="noAccountTxt">
-                  계정이 없으신가요?
-                  <div className="signUpNowBtn">회원가입</div>
+                  <div className="loginLogo">
+                    <div className="loginPageLogoHigh">YOUNGCHA</div>
+                    <div className="loginPageLogoLow">PEDIA</div>
+                  </div>
+                  <div className="loginText">로그인</div>
+                  <input
+                    id="email"
+                    value={email}
+                    className="emailInput"
+                    placeholder="이메일"
+                    type="text"
+                    onChange={this.handleEmailValueChange}
+                  ></input>
+                  <div className={emailStatus ? 'inputStatus' : 'displayNone'}>
+                    정확하지 않은 이메일입니다
+                  </div>
+                  <input
+                    id="pw"
+                    value={pw}
+                    className="passwordInput"
+                    placeholder="비밀번호"
+                    type="password"
+                    onChange={this.handlePwValueChange}
+                  ></input>
+                  <div
+                    className={passwordStatus ? 'inputStatus' : 'displayNone'}
+                  >
+                    정확하지 않은 비밀번호입니다
+                  </div>
+                  <button className="loginBtn" onClick={this.checkValidation}>
+                    로그인
+                  </button>
+                  <div className="noAccountTxt">
+                    계정이 없으신가요?
+                    <div className="signUpNow">
+                      <div
+                        className="signUpNowBtn"
+                        onClick={e => {
+                          e.stopPropagation();
+                          toSignUp();
+                          this.resetInputStatus();
+                        }}
+                      >
+                        회원가입
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        ) : null}
+          ) : null}
+        </div>
       </>
     );
   }
 }
 
-export default Login;
+export default withRouter(Login);
