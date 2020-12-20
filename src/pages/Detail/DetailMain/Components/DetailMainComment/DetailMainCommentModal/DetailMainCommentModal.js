@@ -30,6 +30,20 @@ class DetailMainCommentModal extends React.Component {
     this.props.handleCommentValue(comment);
   };
 
+  writingComment = () => {
+    const { comment } = this.state;
+    fetch('http://192.168.219.156:8000/review/content/1', {
+      method: 'POST',
+      headers: {
+        Authorization:
+          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo5fQ.T66un2Tsk42sMvfJjqY1YO9Kh4gyuCBKJib6bizw_fE',
+      },
+      body: JSON.stringify({
+        review: comment,
+      }),
+    }).then(response => response.json());
+  };
+
   render() {
     const { comment, commentBtnStatus } = this.state;
 
@@ -49,6 +63,7 @@ class DetailMainCommentModal extends React.Component {
                     : 'abledcommentSummit'
                 }
                 disabled={commentBtnStatus}
+                onClick={this.writingComment}
               >
                 코멘트 작성
               </button>

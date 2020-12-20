@@ -47,12 +47,21 @@ class DetailHeader extends React.Component {
     });
   };
 
+  handleActiveWannaWatchingBTN = () => {
+    this.setState({
+      isActiveWannaWatchingModal: false,
+      isDefaultButton: false,
+      isActiveBTN: true,
+      isclickedWannaWatchingBTN: true,
+      isclickedBeingWatchingBTN: false,
+    });
+  };
+
   onClickedWhenClickedBeingWatchingButton = () => {
     this.setState({
       isActiveWannaWatchingModal: true,
       isDefaultButton: false,
       isActiveBTN: false,
-
       isclickedWannaWatchingBTN: false,
       isclickedBeingWatchingBTN: true,
     });
@@ -66,24 +75,26 @@ class DetailHeader extends React.Component {
       isclickedWannaWatchingBTN,
       isclickedBeingWatchingBTN,
     } = this.state;
+
+    const {
+      posterImgURL,
+      movieTitle,
+      movieReleaseYear,
+      movieGenre,
+      makeCountry,
+    } = this.props;
     return (
       <header className="DetailHeader">
         <div className="DivControl">
           <div className="fixBackgournd">
-            <img
-              src="https://img.yts.mx/assets/images/movies/gabriels_rapture_2020/medium-cover.jpg"
-              alt="background"
-            />
+            <img src={posterImgURL} alt={movieTitle} />
           </div>
           <div className="flexPosterAndDetails">
             <div className="posterConroler">
-              <img
-                src="https://img.yts.mx/assets/images/movies/gabriels_rapture_2020/medium-cover.jpg"
-                alt="poster"
-              />
+              <img src={posterImgURL} alt="poster" />
               <div className="movieNameAndsores">
-                <h1>아람피터와 진실의방</h1>
-                <div className="yearGenreNation">2020∙액션∙한국∙미국</div>
+                <h1>{movieTitle}</h1>
+                <div className="yearGenreNation">{`${movieReleaseYear}∙${movieGenre}∙${makeCountry}`}</div>
                 <div className="score">평균 ★5.0 (41명)</div>
                 <div className="buttonsAndEvaluation">
                   <DetailHeaderButtons
@@ -105,6 +116,8 @@ class DetailHeader extends React.Component {
                   </div>
                   {isActiveWannaWatchingModal && (
                     <DetailHeaderWannaWatchingModal
+                      isDefaultButton={isDefaultButton}
+                      isActiveBTN={isActiveBTN}
                       isclickedWannaWatchingBTN={isclickedWannaWatchingBTN}
                       isclickedBeingWatchingBTN={isclickedBeingWatchingBTN}
                       onWannaWatchingModalToggle={
@@ -113,6 +126,9 @@ class DetailHeader extends React.Component {
                       handleResetButtonStatus={this.handleResetButtonStatus}
                       handleActiveBeingWatchingBTN={
                         this.handleActiveBeingWatchingBTN
+                      }
+                      handleActiveWannaWatchingBTN={
+                        this.handleActiveWannaWatchingBTN
                       }
                     />
                   )}

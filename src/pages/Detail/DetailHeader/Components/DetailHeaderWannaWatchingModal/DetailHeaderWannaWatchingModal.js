@@ -9,11 +9,14 @@ import './DetailHeaderWannaWatchingModal.scss';
 class DetailHeaderWannaWatchingModal extends React.Component {
   render() {
     const {
-      onWannaWatchingModalToggle,
+      isDefaultButton,
+      isActiveBTN,
       isclickedWannaWatchingBTN,
       isclickedBeingWatchingBTN,
       handleResetButtonStatus,
       handleActiveBeingWatchingBTN,
+      handleActiveWannaWatchingBTN,
+      onWannaWatchingModalToggle,
     } = this.props;
     return (
       <section className="DetailHeaderWannaWatchingModal">
@@ -21,12 +24,20 @@ class DetailHeaderWannaWatchingModal extends React.Component {
           <WannaWatchingModalMovieDetail />
           <div className="DetailHeaderWannaWatchingModalBTNs">
             <WannaWatchingBTN
+              isDefaultButton={isDefaultButton}
+              isActiveBTN={isActiveBTN}
               isclickedWannaWatchingBTN={isclickedWannaWatchingBTN}
+              isclickedBeingWatchingBTN={isclickedBeingWatchingBTN}
               handleResetButtonStatus={handleResetButtonStatus}
+              handleActiveWannaWatchingBTN={handleActiveWannaWatchingBTN}
             />
             <BeingWatchingBTN
+              isDefaultButton={isDefaultButton}
+              isActiveBTN={isActiveBTN}
+              isclickedWannaWatchingBTN={isclickedWannaWatchingBTN}
               isclickedBeingWatchingBTN={isclickedBeingWatchingBTN}
               handleActiveBeingWatchingBTN={handleActiveBeingWatchingBTN}
+              handleResetButtonStatus={handleResetButtonStatus}
             />
           </div>
           <WritingCommentBTN />

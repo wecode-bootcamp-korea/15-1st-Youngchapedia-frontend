@@ -10,12 +10,27 @@ import './DetailMain.scss';
 
 class DetailMain extends React.Component {
   state = {
-    comment: '',
     isCommentValue: false,
     isCommentClicked: false,
     isCheckCommentDelete: false,
     isCommentEdited: false,
   };
+
+  componentDidMount() {
+    fetch('http://192.168.219.156:8000/review/content/1', {
+      headers: {
+        Authorization:
+          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo5fQ.T66un2Tsk42sMvfJjqY1YO9Kh4gyuCBKJib6bizw_fE',
+      },
+    })
+      .then(response => response.json())
+      .then(response => {
+        this.setState({
+          comment: response.my_result.review,
+          isCommentValue: true,
+        });
+      });
+  }
 
   handleLeaveCommentToggle = () => {
     this.setState({ isCommentClicked: !this.state.isCommentClicked });
@@ -49,6 +64,14 @@ class DetailMain extends React.Component {
       isCheckCommentDelete,
       isCommentEdited,
     } = this.state;
+
+    const {
+      movieTitle,
+      movieReleaseYear,
+      makeCountry,
+      movieGenre,
+      descriptionValue,
+    } = this.props;
     return (
       <main className="DetailMain">
         {isCommentClicked && (
@@ -90,7 +113,13 @@ class DetailMain extends React.Component {
         )}
 
         <div className="detailMainInforAndAct">
-          <DetailMainInfor />
+          <DetailMainInfor
+            movieTitle={movieTitle}
+            movieReleaseYear={movieReleaseYear}
+            makeCountry={makeCountry}
+            movieGenre={movieGenre}
+            descriptionValue={descriptionValue}
+          />
           <DetailMainAct />
         </div>
       </main>

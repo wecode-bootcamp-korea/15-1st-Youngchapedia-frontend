@@ -12,6 +12,7 @@ class DetailMainCommentEditModal extends React.Component {
   };
 
   receiveValue = e => {
+    const { comment } = this.state;
     this.setState({ comment: e.target.value });
     this.buttonChange();
   };
@@ -30,6 +31,19 @@ class DetailMainCommentEditModal extends React.Component {
     this.props.handleEditCommentValue(comment);
   };
 
+  EditComment = () => {
+    const { comment } = this.state;
+    fetch('http://192.168.219.156:8000/review/content/1', {
+      method: 'PATCH',
+      headers: {
+        Authorization:
+          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo5fQ.T66un2Tsk42sMvfJjqY1YO9Kh4gyuCBKJib6bizw_fE',
+      },
+      body: JSON.stringify({
+        review: comment,
+      }),
+    }).then(response => response.json());
+  };
   render() {
     const { comment, commentBtnStatus } = this.state;
 
@@ -49,6 +63,7 @@ class DetailMainCommentEditModal extends React.Component {
                     : 'abledcommentSummit'
                 }
                 disabled={commentBtnStatus}
+                onClick={this.EditComment}
               >
                 코멘트 수정
               </button>

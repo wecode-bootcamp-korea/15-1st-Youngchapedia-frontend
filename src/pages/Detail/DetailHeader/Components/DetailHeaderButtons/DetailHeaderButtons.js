@@ -48,6 +48,10 @@ class DetailHeaderButtons extends React.Component {
     }
   };
 
+  onDetailHeaderWannaWatchingModal = () => {
+    this.props.onWannaWatchingModalToggle();
+  };
+
   render() {
     const { isDefaultButton, isActiveBTN } = this.props;
 
@@ -78,13 +82,13 @@ class DetailHeaderButtons extends React.Component {
               <div>보고싶어요</div>
             </div>
           </button>
-
           <button
             className={
               isDefaultButton
                 ? 'activebutton sortDownButton'
                 : 'inactivebutton sortDownButton'
             }
+            onClick={this.onDetailHeaderWannaWatchingModal}
           >
             <span>
               <i className="fas fa-sort-down"></i>

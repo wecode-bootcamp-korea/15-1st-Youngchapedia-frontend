@@ -2,6 +2,26 @@ import React, { Component } from 'react';
 import './WannaWatchingBTN.scss';
 
 class WannaWatchingBTN extends Component {
+  onActiveWannaWatchingBTN = () => {
+    const {
+      isDefaultButton,
+      isActiveBTN,
+      isclickedWannaWatchingBTN,
+      isclickedBeingWatchingBTN,
+    } = this.props;
+
+    this.props.handleActiveWannaWatchingBTN();
+
+    if (
+      isDefaultButton === false &&
+      isActiveBTN === true &&
+      isclickedWannaWatchingBTN === true &&
+      isclickedBeingWatchingBTN === false
+    ) {
+      this.props.handleResetButtonStatus();
+    }
+  };
+
   render() {
     const { isclickedWannaWatchingBTN } = this.props;
     return (
@@ -12,7 +32,7 @@ class WannaWatchingBTN extends Component {
               ? 'activeannaWatching'
               : 'inactiveWannaWatching'
           }
-          onClick={this.props.handleResetButtonStatus}
+          onClick={this.onActiveWannaWatchingBTN}
         >
           <i className="far fa-bookmark" />
 

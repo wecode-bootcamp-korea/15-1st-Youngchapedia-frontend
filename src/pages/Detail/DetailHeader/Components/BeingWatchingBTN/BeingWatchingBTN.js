@@ -3,7 +3,21 @@ import './BeingWatchingBTN.scss';
 
 class BeingWatchingBTN extends Component {
   onActiveBeingWatchingBTN = () => {
+    const {
+      isDefaultButton,
+      isActiveBTN,
+      isclickedWannaWatchingBTN,
+      isclickedBeingWatchingBTN,
+    } = this.props;
     this.props.handleActiveBeingWatchingBTN();
+    if (
+      isDefaultButton === false &&
+      isActiveBTN === false &&
+      isclickedWannaWatchingBTN === false &&
+      isclickedBeingWatchingBTN === true
+    ) {
+      this.props.handleResetButtonStatus();
+    }
   };
   render() {
     const { isclickedBeingWatchingBTN } = this.props;
