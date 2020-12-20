@@ -1,0 +1,14 @@
+@import '../../../../../styles/common.scss';
+
+.DontCareBTN {
+  height: 57px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid $color-detail-border;
+
+  .fa-ban {
+    font-size: 1.5em;
+    color: #787878;
+  }
+}

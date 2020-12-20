@@ -1,0 +1,58 @@
+@import '../../../../../styles/common.scss';
+
+.bottonsDivControl {
+  margin: 2em 2em 0 0;
+
+  .pulsAndwannaWatchButton {
+    border-radius: 6px 0 0 6px;
+  }
+
+  .sortDownButton {
+    border-radius: 0 6px 6px 0;
+    width: 3.188em;
+    height: 2.67em;
+    border-left: 1px solid #e71152;
+  }
+
+  .activebutton {
+    background-color: $color-youngcha;
+    font-size: 1.3em;
+    border-style: none;
+    color: $color-white;
+
+    .wannaWatch {
+      @include display-center;
+      width: 10.188em;
+      height: 2.563em;
+
+      span {
+        margin-right: 1em;
+      }
+    }
+  }
+
+  .inactivebutton {
+    background-color: #f6f6f6;
+    font-size: 1.3em;
+    border-style: none;
+    color: #111;
+
+    .wannaWatch {
+      @include display-center;
+      width: 10.188em;
+      height: 2.563em;
+
+      .fa-bookmark {
+        color: $color-youngcha;
+      }
+
+      .fa-eye {
+        color: #03a0ff;
+      }
+
+      span {
+        margin-right: 1em;
+      }
+    }
+  }
+}

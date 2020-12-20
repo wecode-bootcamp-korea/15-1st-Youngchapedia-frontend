@@ -4,7 +4,6 @@ import './DetailMainCommentModal.scss';
 class DetailMainCommentModal extends React.Component {
   state = {
     comment: '',
-
     commentBtnStatus: true,
   };
 

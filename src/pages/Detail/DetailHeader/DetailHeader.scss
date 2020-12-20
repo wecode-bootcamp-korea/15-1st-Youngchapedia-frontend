@@ -65,38 +65,6 @@
 
   .buttonsAndEvaluation {
     display: flex;
-
-    .bottonsDivControl {
-      margin: 2em 2em 0 0;
-
-      .pulsAndwannaWatchButton {
-        border-radius: 6px 0 0 6px;
-      }
-
-      .sortDownButton {
-        border-radius: 0 6px 6px 0;
-        width: 3.188em;
-        height: 2.67em;
-        border-left: 1px solid #e71152;
-      }
-
-      button {
-        background-color: $color-youngcha;
-        font-size: 1.3em;
-        border-style: none;
-        color: $color-white;
-
-        .wannaWatch {
-          @include display-center;
-          width: 10.188em;
-          height: 2.563em;
-
-          span {
-            margin-right: 1em;
-          }
-        }
-      }
-    }
   }
   .evaluation {
     margin-top: 0.5em;

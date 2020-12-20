@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import ReactStars from 'react-rating-stars-component';
-import './DetailHeaderStarsRate.scss';
 
 class DetailHeaderStarsRate extends React.Component {
   state = {
@@ -52,7 +51,7 @@ class DetailHeaderStarsRate extends React.Component {
     const { ratedStar, starsValue } = this.state;
 
     return (
-      <section lassName="DetailHeaderStarsRate">
+      <section className="DetailHeaderStarsRate">
         <div className="evaluation">
           <div>
             {ratedStar ? (

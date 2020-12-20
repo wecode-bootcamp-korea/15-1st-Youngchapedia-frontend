@@ -1,0 +1,36 @@
+@import '../../../../../styles/common.scss';
+
+.WannaWatchingBTN {
+  @include display-center;
+  flex-direction: column;
+  width: 50%;
+  border-right: 1px solid $color-detail-border;
+
+  .inactiveWannaWatching {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 2.7em;
+    color: #787878;
+
+    span {
+      margin-top: 0.6em;
+      font-size: 0.38em;
+      color: #111;
+    }
+  }
+
+  .activeannaWatching {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 2.7em;
+
+    color: $color-youngcha;
+
+    span {
+      margin-top: 0.6em;
+      font-size: 0.38em;
+    }
+  }
+}
