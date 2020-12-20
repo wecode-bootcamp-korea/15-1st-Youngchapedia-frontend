@@ -8,10 +8,12 @@ class MovieCard extends Component {
       <li key={movie.index} className="movieCard">
         <a href="#">
           <div className="moviePoster">
-            <img alt="poster" src={movie.moviePoster} />
+            <div className="imgWrap">
+              <img alt="poster" src={movie.main_image_url} />
+            </div>
           </div>
           <div className="movieInfo">
-            <p className="movieTitle">{movie.title}</p>
+            <p className="movieTitle">{movie.title_korean}</p>
             {movie.year && movie.country ? (
               <p className="yearAndCountry">
                 {movie.year} ・ {movie.country}
@@ -19,7 +21,7 @@ class MovieCard extends Component {
             ) : (
               <></>
             )}
-            <p className="rating">예상 ★ {movie.rating}</p>
+            <p className="rating">{movie.category}</p>
           </div>
         </a>
       </li>

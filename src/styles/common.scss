@@ -31,6 +31,9 @@ $tablet: 715px;
 $laptop: 1020px;
 $desktop: 1400px;
 
+// media query
+$slide-test: 1200px;
+
 @mixin display-center {
   display: flex;
   justify-content: center;
@@ -70,6 +73,12 @@ $desktop: 1400px;
 
 @mixin desktop {
   @media (min-width: #{$desktop}) {
+    @content;
+  }
+}
+
+@mixin slide-test {
+  @media (min-width: #{$slide-test}) {
     @content;
   }
 }

@@ -1,45 +1,16 @@
 import React, { Component } from 'react';
 import MovieCard from './MovieCard';
 import Slider from 'react-slick';
-import './MovieContainer.scss';
-
-function NextArrow(props) {
-  const { className, style, onClick } = props;
-  return (
-    <div
-      className={className}
-      style={{ ...style, display: 'block' }}
-      onClick={onClick}
-    ></div>
-  );
-}
-
-function PrevArrow(props) {
-  const { className, style, onClick } = props;
-  return (
-    <div
-      className={className}
-      style={{ ...style, display: 'block' }}
-      onClick={onClick}
-    />
-  );
-}
 
 class MovieContainer extends Component {
-  state = {
-    image: '',
-  };
   render() {
-    console.log(this.props);
     const { movies } = this.props;
     const settings = {
       dots: false,
-      infinite: false,
+      infinite: true,
       speed: 500,
       slidesToShow: 4,
       slidesToScroll: 4,
-      nextArrow: <NextArrow />,
-      prevArrow: <PrevArrow />,
       responsive: [
         {
           breakpoint: 1024,
