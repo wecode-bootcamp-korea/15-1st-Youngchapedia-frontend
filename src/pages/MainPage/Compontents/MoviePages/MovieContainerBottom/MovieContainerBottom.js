@@ -4,7 +4,6 @@ import Slider from 'react-slick';
 
 class MovieContainerBottom extends Component {
   render() {
-    const { movies } = this.props;
     const settings = {
       dots: false,
       infinite: true,
@@ -15,25 +14,17 @@ class MovieContainerBottom extends Component {
         {
           breakpoint: 1024,
           settings: {
-            slidesToShow: 4,
-            slidesToScroll: 4,
-            infinite: true,
-          },
-        },
-        {
-          breakpoint: 800,
-          settings: {
             slidesToShow: 3,
             slidesToScroll: 3,
-            initialSlide: 3,
+            infinite: true,
           },
         },
         {
           breakpoint: 600,
           settings: {
-            slidesToShow: 3,
-            slidesToScroll: 3,
-            initialSlide: 3,
+            slidesToShow: 2,
+            slidesToScroll: 2,
+            initialSlide: 2,
           },
         },
         {
@@ -45,11 +36,12 @@ class MovieContainerBottom extends Component {
         },
       ],
     };
+    const { movies } = this.props;
     return (
       <>
         <ul className="movies">
           <Slider {...settings}>
-            {movies.map((movie, id) => (
+            {movies.slice(0, 10).map((movie, id) => (
               <MovieCard movie={movie} key={id} />
             ))}
           </Slider>

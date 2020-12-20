@@ -4,7 +4,6 @@ import Slider from 'react-slick';
 
 class MovieContainer extends Component {
   render() {
-    const { movies } = this.props;
     const settings = {
       dots: false,
       infinite: true,
@@ -37,11 +36,12 @@ class MovieContainer extends Component {
         },
       ],
     };
+    const { movies } = this.props;
     return (
       <>
         <ul className="movies">
           <Slider {...settings}>
-            {movies.map((movie, id) => (
+            {movies.slice(0, 10).map((movie, id) => (
               <MovieCard movie={movie} key={id} />
             ))}
           </Slider>
