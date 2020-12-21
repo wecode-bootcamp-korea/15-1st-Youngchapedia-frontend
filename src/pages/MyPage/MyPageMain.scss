@@ -1,0 +1,54 @@
+.MyPageMain {
+  .myPageMainWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    .myPageComponent {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    //   border: 1px solid #cacaca;
+      width: 40em;
+      height: 39em;
+      border-radius:1%;
+      .myPageUpper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 34%;
+        width: 100%;
+        // background-color: #e86e91;
+        img{
+          border-radius: 5px 5px 0 0;
+          width: 100%;
+          height: 100%;
+        }
+        
+      }
+      .mPageProfile {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-left: 1px solid #cacaca;
+        border-right: 1px solid #cacaca;
+        height: 33%;
+        width: 100%;
+      }
+      .myPageFooter {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 33%;
+        width: 100%;
+        .myPageMovieBtn {
+          display: flex;
+        }
+        .myPageTVBtn {
+          display: flex;
+        }
+      }
+    }
+  }
+}
