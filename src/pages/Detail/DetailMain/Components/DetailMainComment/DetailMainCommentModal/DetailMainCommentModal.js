@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { MOVIE_REVIEW } from '../../../../../../config';
 import './DetailMainCommentModal.scss';
 
 class DetailMainCommentModal extends React.Component {
@@ -32,7 +33,7 @@ class DetailMainCommentModal extends React.Component {
 
   writingComment = () => {
     const { comment } = this.state;
-    fetch('http://192.168.219.156:8000/review/content/1', {
+    fetch(MOVIE_REVIEW, {
       method: 'POST',
       headers: {
         Authorization:

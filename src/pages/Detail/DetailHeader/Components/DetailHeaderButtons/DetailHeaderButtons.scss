@@ -11,11 +11,11 @@
     border-radius: 0 6px 6px 0;
     width: 3.188em;
     height: 2.67em;
-    border-left: 1px solid #e71152;
+    border-left: 2px solid #ff1000;
   }
 
   .activebutton {
-    background-color: $color-youngcha;
+    background-color: #fd306f;
     font-size: 1.3em;
     border-style: none;
     color: $color-white;
@@ -25,9 +25,43 @@
       width: 10.188em;
       height: 2.563em;
 
-      span {
-        margin-right: 1em;
+      .plus {
+        width: 1.3em;
+        height: 1.3em;
+        margin-top: 0.2em;
       }
+
+      .plus path,
+      .plus polygon,
+      .plus rect {
+        fill: $color-white;
+      }
+
+      .plus circle {
+        stroke: $color-white;
+        stroke-width: 1;
+      }
+
+      span {
+        margin-right: 0.5em;
+      }
+    }
+
+    .sort {
+      width: 1.3em;
+      height: 1.5em;
+      padding-top: 0.2em;
+    }
+
+    .sort path,
+    .sort polygon,
+    .sort rect {
+      fill: #ffffff;
+    }
+
+    .sort circle {
+      stroke: #ffffff;
+      stroke-width: 1;
     }
   }
 
@@ -39,20 +73,48 @@
 
     .wannaWatch {
       @include display-center;
-      width: 10.188em;
+      width: 10em;
       height: 2.563em;
 
-      .fa-bookmark {
-        color: $color-youngcha;
+      .bookmark {
+        width: 1.3em;
+        height: 1.3em;
+        margin-top: 0.2em;
       }
 
-      .fa-eye {
-        color: #03a0ff;
+      .bookmark path {
+        fill: $color-youngcha;
+      }
+
+      .eye {
+        width: 1.3em;
+        height: 1.3em;
+        margin-top: 0.2em;
+      }
+
+      .eye path {
+        fill: #03a0ff;
       }
 
       span {
-        margin-right: 1em;
+        margin-right: 0.5em;
       }
+    }
+    .sort {
+      width: 1.3em;
+      height: 1.5em;
+      padding-top: 0.2em;
+    }
+
+    .sort path,
+    .sort polygon,
+    .sort rect {
+      fill: #d9d9d9;
+    }
+
+    .sort circle {
+      stroke: #d9d9d9;
+      stroke-width: 1;
     }
   }
 }

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import WannaWatchingModalMovieDetail from '../WannaWatchingModalMovieDetail/WannaWatchingModalMovieDetail';
 import WannaWatchingBTN from '../WannaWatchingBTN/WannaWatchingBTN';
 import BeingWatchingBTN from '../BeingWatchingBTN/BeingWatchingBTN';
-import WritingCommentBTN from '../WritingCommentBTN/WritingCommentBTN';
+
 import DontCareBTN from '../DontCareBTN/DontCareBTN';
 import './DetailHeaderWannaWatchingModal.scss';
 
@@ -17,12 +17,14 @@ class DetailHeaderWannaWatchingModal extends React.Component {
       handleActiveBeingWatchingBTN,
       handleActiveWannaWatchingBTN,
       onWannaWatchingModalToggle,
+      dontCareMovie,
+      handleControlDontCareButton,
     } = this.props;
     return (
-      <section className="DetailHeaderWannaWatchingModal">
-        <div className="DetailHeaderWannaWatchingModalBackGround">
+      <section className="DetailHeaderModal">
+        <div className="DetailHeaderModalBackGround">
           <WannaWatchingModalMovieDetail />
-          <div className="DetailHeaderWannaWatchingModalBTNs">
+          <div className="DetailHeaderModalBTNs">
             <WannaWatchingBTN
               isDefaultButton={isDefaultButton}
               isActiveBTN={isActiveBTN}
@@ -38,12 +40,21 @@ class DetailHeaderWannaWatchingModal extends React.Component {
               isclickedBeingWatchingBTN={isclickedBeingWatchingBTN}
               handleActiveBeingWatchingBTN={handleActiveBeingWatchingBTN}
               handleResetButtonStatus={handleResetButtonStatus}
+              handleControlDontCareButton={handleControlDontCareButton}
             />
           </div>
-          <WritingCommentBTN />
-          <DontCareBTN />
+
+          <DontCareBTN
+            isDefaultButton={isDefaultButton}
+            isActiveBTN={isActiveBTN}
+            isclickedWannaWatchingBTN={isclickedWannaWatchingBTN}
+            isclickedBeingWatchingBTN={isclickedBeingWatchingBTN}
+            dontCareMovie={dontCareMovie}
+            handleResetButtonStatus={handleResetButtonStatus}
+            handleControlDontCareButton={handleControlDontCareButton}
+          />
           <div
-            className="DetailHeaderWannaWatchingModalCancel"
+            className="DetailHeaderModalCancel"
             onClick={onWannaWatchingModalToggle}
           >
             <p>취소</p>

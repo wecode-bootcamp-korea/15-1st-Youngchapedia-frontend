@@ -1,5 +1,5 @@
 @import '../../../../../styles/common.scss';
-.DetailHeaderWannaWatchingModal {
+.DetailHeaderModal {
   position: fixed;
   top: 0;
   right: 0;
@@ -8,9 +8,9 @@
   background: rgba(0, 0, 0, 0.6);
   z-index: 2;
 
-  .DetailHeaderWannaWatchingModalBackGround {
+  .DetailHeaderModalBackGround {
     width: 375px;
-    height: 375px;
+    height: 320px;
     background-color: white;
     position: relative;
     box-sizing: border-box;
@@ -21,7 +21,7 @@
     z-index: 3;
   }
 
-  .DetailHeaderWannaWatchingModalBTNs {
+  .DetailHeaderModalBTNs {
     display: flex;
     justify-content: center;
     border-top: 1px solid $color-detail-border;
@@ -29,7 +29,7 @@
     margin-top: 1em;
     height: 96px;
   }
-  .DetailHeaderWannaWatchingModalCancel {
+  .DetailHeaderModalCancel {
     height: 50px;
     @include display-center;
     color: $color-youngcha;

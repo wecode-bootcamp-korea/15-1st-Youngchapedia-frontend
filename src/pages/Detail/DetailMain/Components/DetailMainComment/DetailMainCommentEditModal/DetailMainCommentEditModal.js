@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { MOVIE_REVIEW } from '../../../../../../config';
 import './DetailMainCommentEditModal.scss';
 
 class DetailMainCommentEditModal extends React.Component {
@@ -12,7 +13,6 @@ class DetailMainCommentEditModal extends React.Component {
   };
 
   receiveValue = e => {
-    const { comment } = this.state;
     this.setState({ comment: e.target.value });
     this.buttonChange();
   };
@@ -33,7 +33,7 @@ class DetailMainCommentEditModal extends React.Component {
 
   EditComment = () => {
     const { comment } = this.state;
-    fetch('http://192.168.219.156:8000/review/content/1', {
+    fetch(MOVIE_REVIEW, {
       method: 'PATCH',
       headers: {
         Authorization:

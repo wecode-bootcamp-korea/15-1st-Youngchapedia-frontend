@@ -6,6 +6,8 @@ import DeleteCommentCheckModal from './Components/DetailMainComment/DeleteCommen
 import DetailMainCommentEditModal from './Components/DetailMainComment/DetailMainCommentEditModal/DetailMainCommentEditModal';
 import DetailMainAct from './Components/DetailMainAct/DetailMainAct';
 import DetailMainInfor from './Components/DetailMainInfor/DetailMainInfor';
+import { MOVIE_REVIEW } from '../../../config';
+import { USER1_TOKEN } from '../../../config';
 import './DetailMain.scss';
 
 class DetailMain extends React.Component {
@@ -17,10 +19,9 @@ class DetailMain extends React.Component {
   };
 
   componentDidMount() {
-    fetch('http://192.168.219.156:8000/review/content/1', {
+    fetch(MOVIE_REVIEW, {
       headers: {
-        Authorization:
-          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo5fQ.T66un2Tsk42sMvfJjqY1YO9Kh4gyuCBKJib6bizw_fE',
+        Authorization: { USER1_TOKEN },
       },
     })
       .then(response => response.json())

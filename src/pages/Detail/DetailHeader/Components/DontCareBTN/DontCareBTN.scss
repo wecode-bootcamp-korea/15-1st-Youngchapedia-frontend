@@ -6,9 +6,27 @@
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid $color-detail-border;
+  padding: 0 10px;
 
-  .fa-ban {
-    font-size: 1.5em;
-    color: #787878;
+  .inactiveDontCareBTN {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    i {
+      font-size: 1.5em;
+      color: #787878;
+    }
+  }
+
+  .activeDontCareBTN {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    color: $color-youngcha;
+    i {
+      font-size: 1.5em;
+    }
   }
 }

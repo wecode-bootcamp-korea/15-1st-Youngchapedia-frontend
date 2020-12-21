@@ -11,6 +11,7 @@ class DetailHeader extends React.Component {
     isActiveBTN: false,
     isclickedWannaWatchingBTN: false,
     isclickedBeingWatchingBTN: false,
+    dontCareMovie: false,
   };
 
   onWannaWatchingModalToggle = () => {
@@ -24,6 +25,7 @@ class DetailHeader extends React.Component {
       isDefaultButton: false,
       isActiveBTN: true,
       isclickedWannaWatchingBTN: true,
+      dontCareMovie: false,
     });
   };
 
@@ -34,6 +36,7 @@ class DetailHeader extends React.Component {
       isActiveBTN: false,
       isclickedWannaWatchingBTN: false,
       isclickedBeingWatchingBTN: false,
+      dontCareMovie: false,
     });
   };
 
@@ -44,6 +47,7 @@ class DetailHeader extends React.Component {
       isActiveBTN: false,
       isclickedWannaWatchingBTN: false,
       isclickedBeingWatchingBTN: true,
+      dontCareMovie: false,
     });
   };
 
@@ -54,6 +58,7 @@ class DetailHeader extends React.Component {
       isActiveBTN: true,
       isclickedWannaWatchingBTN: true,
       isclickedBeingWatchingBTN: false,
+      dontCareMovie: false,
     });
   };
 
@@ -64,6 +69,14 @@ class DetailHeader extends React.Component {
       isActiveBTN: false,
       isclickedWannaWatchingBTN: false,
       isclickedBeingWatchingBTN: true,
+      dontCareMovie: false,
+    });
+  };
+
+  handleControlDontCareButton = () => {
+    this.handleResetButtonStatus();
+    this.setState({
+      dontCareMovie: true,
     });
   };
 
@@ -74,6 +87,7 @@ class DetailHeader extends React.Component {
       isActiveBTN,
       isclickedWannaWatchingBTN,
       isclickedBeingWatchingBTN,
+      dontCareMovie,
     } = this.state;
 
     const {
@@ -120,6 +134,7 @@ class DetailHeader extends React.Component {
                       isActiveBTN={isActiveBTN}
                       isclickedWannaWatchingBTN={isclickedWannaWatchingBTN}
                       isclickedBeingWatchingBTN={isclickedBeingWatchingBTN}
+                      dontCareMovie={dontCareMovie}
                       onWannaWatchingModalToggle={
                         this.onWannaWatchingModalToggle
                       }
@@ -129,6 +144,9 @@ class DetailHeader extends React.Component {
                       }
                       handleActiveWannaWatchingBTN={
                         this.handleActiveWannaWatchingBTN
+                      }
+                      handleControlDontCareButton={
+                        this.handleControlDontCareButton
                       }
                     />
                   )}

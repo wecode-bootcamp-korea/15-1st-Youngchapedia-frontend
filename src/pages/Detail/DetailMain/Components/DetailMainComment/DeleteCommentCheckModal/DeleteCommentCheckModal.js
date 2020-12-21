@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { MOVIE_REVIEW } from '../../../../../../config';
 import './DeleteCommentCheckModal.scss';
 
 class DeleteCommentCheckModal extends Component {
@@ -8,7 +9,7 @@ class DeleteCommentCheckModal extends Component {
 
   onCommentDelete = () => {
     this.props.handleCommentDelete();
-    fetch('http://192.168.219.156:8000/review/content/1', {
+    fetch(MOVIE_REVIEW, {
       method: 'DELETE',
       headers: {
         Authorization:
