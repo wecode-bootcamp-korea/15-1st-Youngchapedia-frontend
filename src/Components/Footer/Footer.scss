@@ -6,7 +6,7 @@ footer {
   bottom: 0;
 
   .top {
-    @include display-center;
+    @include flex-center;
     flex-wrap: wrap;
     height: 62px;
     font-size: 20px;
@@ -22,7 +22,7 @@ footer {
   }
 
   .bottom {
-    @include display-center;
+    @include flex-center;
     padding: 30px 15px;
     width: 100%;
     background-color: #1c1d20;
@@ -68,7 +68,7 @@ footer {
       opacity: 40%;
 
       i {
-        @include display-center;
+        @include flex-center;
         width: 24px;
         height: 25px;
         margin-right: 10px;
