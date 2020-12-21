@@ -1,13 +1,13 @@
 import React from 'react';
-import './Signup.scss';
-import { APISIGNUP } from '../../config.js';
+import './SignUpControl.scss';
+import { APISIGNUP } from '../../../../config.js';
 import { withRouter } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 const emailRule = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
 const pwRule = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
 
-class Signup extends React.Component {
+class SignUpControl extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -88,7 +88,6 @@ class Signup extends React.Component {
       emailStatus: false,
       passwordStatus: false,
     });
-    console.log('signUp inputs are reseted');
   };
 
   checkValidationInput = e => {
@@ -118,84 +117,80 @@ class Signup extends React.Component {
     const { signUpModalStatus, signUpOpen, signUpClose, toLogin } = this.props;
 
     return (
-      <>
-        <div onClick={this.resetInputStatus}>
-          {signUpModalStatus ? (
-            <div className="Signup">
-              <div className="underSignup" onClick={signUpClose}>
-                <div
-                  className="signUpBox"
-                  onClick={e => {
-                    e.stopPropagation();
-                    signUpOpen();
-                  }}
+      <div className="SignUpControl" onClick={this.resetInputStatus}>
+        {signUpModalStatus ? (
+          <div className="Signup">
+            <div className="underSignup" onClick={signUpClose}>
+              <div
+                className="signUpBox"
+                onClick={e => {
+                  e.stopPropagation();
+                  signUpOpen();
+                }}
+              >
+                <div className="signUpLogo">
+                  <div className="sigUpPageLogoHigh">YOUNGCHA</div>
+                  <div className="sigUpPageLogoLow">PEDIA</div>
+                </div>
+                <div className="signUpText">회원가입</div>
+                <input
+                  id="name"
+                  value={name}
+                  className="nameInput"
+                  placeholder="이름"
+                  onChange={this.handleNameValueChange}
+                />
+                <div className={nameStatus ? 'inputStatus' : 'displayNone'}>
+                  정확하지 않은 이름입니다
+                </div>
+                <input
+                  id="email"
+                  value={email}
+                  className="emailInput"
+                  placeholder="이메일"
+                  onChange={this.handleEmailValueChange}
+                />
+                <div className={emailStatus ? 'inputStatus' : 'displayNone'}>
+                  정확하지 않은 이메일입니다
+                </div>
+                <input
+                  id="pw"
+                  value={pw}
+                  className="passwordInput"
+                  placeholder="비밀번호"
+                  type="password"
+                  onChange={this.handlePwValueChange}
+                />
+                <div className={passwordStatus ? 'inputStatus' : 'displayNone'}>
+                  정확하지 않은 비밀번호입니다
+                </div>
+                <button
+                  type="button"
+                  className="signUpBtn"
+                  onClick={this.checkValidationInput}
                 >
-                  <div className="signUpLogo">
-                    <div className="sigUpPageLogoHigh">YOUNGCHA</div>
-                    <div className="sigUpPageLogoLow">PEDIA</div>
-                  </div>
-                  <div className="signUpText">회원가입</div>
-                  <input
-                    id="name"
-                    value={name}
-                    className="nameInput"
-                    placeholder="이름"
-                    onChange={this.handleNameValueChange}
-                  ></input>
-                  <div className={nameStatus ? 'inputStatus' : 'displayNone'}>
-                    정확하지 않은 이름입니다
-                  </div>
-                  <input
-                    id="email"
-                    value={email}
-                    className="emailInput"
-                    placeholder="이메일"
-                    onChange={this.handleEmailValueChange}
-                  ></input>
-                  <div className={emailStatus ? 'inputStatus' : 'displayNone'}>
-                    정확하지 않은 이메일입니다
-                  </div>
-                  <input
-                    id="pw"
-                    value={pw}
-                    className="passwordInput"
-                    placeholder="비밀번호"
-                    type="password"
-                    onChange={this.handlePwValueChange}
-                  ></input>
+                  회원가입
+                </button>
+                <div className="signUpCheckTxt">
+                  이미 가입하셨나요?
                   <div
-                    className={passwordStatus ? 'inputStatus' : 'displayNone'}
+                    className="loginNowBtn"
+                    onClick={e => {
+                      e.stopPropagation();
+                      toLogin();
+                      this.resetInputStatus();
+                    }}
                   >
-                    정확하지 않은 비밀번호입니다
-                  </div>
-                  <button
-                    type="button"
-                    className="signUpBtn"
-                    onClick={this.checkValidationInput}
-                  >
-                    회원가입
-                  </button>
-                  <div className="signUpCheckTxt">
-                    이미 가입하셨나요?
-                    <div
-                      className="loginNowBtn"
-                      onClick={e => {
-                        e.stopPropagation();
-                        toLogin();
-                        this.resetInputStatus();
-                      }}
-                    >
-                      로그인
-                    </div>
+                    로그인
                   </div>
                 </div>
               </div>
             </div>
-          ) : null}
-        </div>
-      </>
+          </div>
+        ) : null}
+      </div>
     );
   }
 }
 
-export default withRouter(Signup);
+export default withRouter(SignUpControl);

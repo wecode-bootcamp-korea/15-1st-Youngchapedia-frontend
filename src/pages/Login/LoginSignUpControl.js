@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import './ButtonLoginSignUp.scss';
-import Login from './Login.js';
-import Signup from './Signup.js';
+import './LoginSignUpControl.scss';
+import LoginControl from './Components/LoginControl/LoginControl.js';
+import SignUpControl from './Components/SignUpControl/SignUpControl.js';
 
-class ButtonLoginSignUp extends Component {
+class LoginSignUpControl extends Component {
   constructor() {
     super();
     this.state = {
@@ -40,26 +40,25 @@ class ButtonLoginSignUp extends Component {
   render() {
     // console.log(this.state);
     return (
-      <div className="Button">
-        <div className="buttonTest">
-          <button className="button1" onClick={this.loginOpen}>
+      <div className="LoginSignUpControl">
+        <div className="loginBtnControl">
+          <button className="loginBtn" onClick={this.loginOpen}>
             Login
           </button>
-          <Login
+          <LoginControl
             className="loginModal"
             loginModalStatus={this.state.loginModalStatus}
             loginOpen={this.loginOpen}
             loginClose={this.loginClose}
             toSignUp={this.toSignUp}
-            // stateStatus={this.state}
           />
         </div>
-        <div className="buttonTest2">
-          <button className="button2" onClick={this.signUpOpen}>
+        <div className="signOutBtnControl">
+          <button className="signOutBtn" onClick={this.signUpOpen}>
             SignUp
           </button>
-          <Signup
-            className="loginModal2"
+          <SignUpControl
+            className="signUpModal"
             signUpModalStatus={this.state.signUpModalStatus}
             signUpOpen={this.signUpOpen}
             signUpClose={this.signUpClose}
@@ -71,4 +70,4 @@ class ButtonLoginSignUp extends Component {
   }
 }
 
-export default ButtonLoginSignUp;
+export default LoginSignUpControl;

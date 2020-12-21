@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import './MainPage.scss';
-import Login from '../Login/Login.js';
 import Footer from '../../Components/Footer/Footer';
-import ButtonLoginSignUp from '../Login/ButtonLoginSignUp.js';
-// import ButtonSignup from '../Signup/ButtonSignup.js';
+import LoginSignUpControl from '../Login/LoginSignUpControl.js';
 
 class MainPage extends Component {
   constructor() {
@@ -15,7 +13,7 @@ class MainPage extends Component {
     return (
       <div className="MainTest">
         <div className="navBar">
-          <ButtonLoginSignUp />
+          <LoginSignUpControl />
         </div>
         <div className="mainBody">this is body</div>
         <Footer />

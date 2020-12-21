@@ -1,19 +1,19 @@
-.Button {
+.LoginSignUpControl {
   display:flex;
   justify-content: flex-end;
   align-items: flex-end;
   
-  .buttonTest {
+  .loginBtnControl {
 
-    .button1 {
+    .loginBtn {
       height: 5vh;
       width: 10vh;
     }
   }
 
-  .buttonTest2{
+  .signOutBtnControl{
 
-      .button2{
+      .signOutBtn{
           height: 5vh;
           width: 10vh;
       }

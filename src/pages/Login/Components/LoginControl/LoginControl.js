@@ -1,6 +1,6 @@
 import React from 'react';
-import './Login.scss';
-import { APILOGIN } from '../../config.js';
+import './LoginControl.scss';
+import { APILOGIN } from '../../../../config.js';
 import { withRouter } from 'react-router-dom';
 import Swal from 'sweetalert2';
 //id:test123@test.com pw:123123qweqwe mrtest123
@@ -10,7 +10,7 @@ import Swal from 'sweetalert2';
 const pwRule = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
 const emailRule = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
 
-class Login extends React.Component {
+class LoginControl extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -40,7 +40,6 @@ class Login extends React.Component {
           this.props.loginClose();
           this.resetInputStatus();
           this.props.history.push('/mainpage');
-          // this.props.history.push('/');
         } else {
           Swal.fire({
             icon: 'error',
@@ -75,7 +74,6 @@ class Login extends React.Component {
       emailStatus: false,
       passwordStatus: false,
     });
-    console.log('login inputs are emptied');
   };
 
   checkValidation = () => {
@@ -96,73 +94,69 @@ class Login extends React.Component {
     const { loginModalStatus, loginOpen, loginClose, toSignUp } = this.props;
 
     return (
-      <>
-        <div onClick={this.resetInputStatus}>
-          {loginModalStatus ? (
-            <div className="Login">
-              <div className="underLogin" onClick={loginClose}>
-                <div
-                  className="loginBox"
-                  onClick={e => {
-                    e.stopPropagation();
-                    loginOpen();
-                  }}
-                >
-                  <div className="loginLogo">
-                    <div className="loginPageLogoHigh">YOUNGCHA</div>
-                    <div className="loginPageLogoLow">PEDIA</div>
-                  </div>
-                  <div className="loginText">로그인</div>
-                  <input
-                    id="email"
-                    value={email}
-                    className="emailInput"
-                    placeholder="이메일"
-                    type="text"
-                    onChange={this.handleEmailValueChange}
-                  ></input>
-                  <div className={emailStatus ? 'inputStatus' : 'displayNone'}>
-                    정확하지 않은 이메일입니다
-                  </div>
-                  <input
-                    id="pw"
-                    value={pw}
-                    className="passwordInput"
-                    placeholder="비밀번호"
-                    type="password"
-                    onChange={this.handlePwValueChange}
-                  ></input>
-                  <div
-                    className={passwordStatus ? 'inputStatus' : 'displayNone'}
-                  >
-                    정확하지 않은 비밀번호입니다
-                  </div>
-                  <button className="loginBtn" onClick={this.checkValidation}>
-                    로그인
-                  </button>
-                  <div className="noAccountTxt">
-                    계정이 없으신가요?
-                    <div className="signUpNow">
-                      <div
-                        className="signUpNowBtn"
-                        onClick={e => {
-                          e.stopPropagation();
-                          toSignUp();
-                          this.resetInputStatus();
-                        }}
-                      >
-                        회원가입
-                      </div>
+      <div className="LoginControl" onClick={this.resetInputStatus}>
+        {loginModalStatus ? (
+          <div className="Login">
+            <div className="underLogin" onClick={loginClose}>
+              <div
+                className="loginBox"
+                onClick={e => {
+                  e.stopPropagation();
+                  loginOpen();
+                }}
+              >
+                <div className="loginLogo">
+                  <div className="loginPageLogoHigh">YOUNGCHA</div>
+                  <div className="loginPageLogoLow">PEDIA</div>
+                </div>
+                <div className="loginText">로그인</div>
+                <input
+                  id="email"
+                  value={email}
+                  className="emailInput"
+                  placeholder="이메일"
+                  type="text"
+                  onChange={this.handleEmailValueChange}
+                />
+                <div className={emailStatus ? 'inputStatus' : 'displayNone'}>
+                  정확하지 않은 이메일입니다
+                </div>
+                <input
+                  id="pw"
+                  value={pw}
+                  className="passwordInput"
+                  placeholder="비밀번호"
+                  type="password"
+                  onChange={this.handlePwValueChange}
+                />
+                <div className={passwordStatus ? 'inputStatus' : 'displayNone'}>
+                  정확하지 않은 비밀번호입니다
+                </div>
+                <button className="loginBtn" onClick={this.checkValidation}>
+                  로그인
+                </button>
+                <div className="noAccountTxt">
+                  계정이 없으신가요?
+                  <div className="signUpNow">
+                    <div
+                      className="signUpNowBtn"
+                      onClick={e => {
+                        e.stopPropagation();
+                        toSignUp();
+                        this.resetInputStatus();
+                      }}
+                    >
+                      회원가입
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          ) : null}
-        </div>
-      </>
+          </div>
+        ) : null}
+      </div>
     );
   }
 }
 
-export default withRouter(Login);
+export default withRouter(LoginControl);

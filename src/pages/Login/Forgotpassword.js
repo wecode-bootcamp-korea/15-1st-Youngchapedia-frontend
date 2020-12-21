@@ -19,11 +19,7 @@ class Forgotpassword extends React.Component {
   checkValidation = e => {
     e.preventDefault();
     const { id } = this.state;
-    if (id) {
-      alert('success');
-    } else {
-      alert('Fail');
-    }
+    id ? alert('success') : alert('fail');
   };
 
   render() {
