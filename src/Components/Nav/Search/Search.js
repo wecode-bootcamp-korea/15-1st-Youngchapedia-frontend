@@ -16,14 +16,14 @@ class Search extends Component {
 
   renderSuggestions() {
     const { searchValue, searchList } = this.state;
-    if (searchValue.length === 0) {
+    if (!searchValue.length) {
       return null;
     }
     return (
       <ul className="results">
         <li className="popularWordIndex">인기검색어</li>
         {searchList.map((item, id) => (
-          <li className="result" id={id}>
+          <li className="result" key={id}>
             {item}
           </li>
         ))}
