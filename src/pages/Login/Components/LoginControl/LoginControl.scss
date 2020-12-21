@@ -3,7 +3,16 @@
   justify-content: center;
   align-items: center;
 }
-@mixin inputAndBtn {
+@mixin inputAndBtn{
+  background-color: #f5f5f7;
+  caret-color: #ff0658;
+  width: 90%;
+  border: 0px;
+  border-radius: 0.3em;
+  height: 3em;
+}
+
+@mixin btnDetail {
   width: 90%;
   height: 7%;
   border: 0px;
@@ -19,7 +28,8 @@
 .underLogin {
   @include flexCenter;
   height: 100%;
-  width: 100%;}
+  width: 100%;
+}
 .Login {
   position: fixed;
   top: 0;
@@ -28,43 +38,58 @@
   left: 0;
   background: rgba(0, 0, 0, 0.6);
 
+  .loginBox {
+    @include flexCenter;
+    flex-direction: column;
+    background-color: #fafafa;
+    border-radius: 2%;
+    width: 21em;
+    height: 35em;
 
-
-    .loginBox {
-      @include flexCenter;
+    .loginLogo {
+      display: flex;
       flex-direction: column;
-      background-color: #fafafa;
-      border-radius: 2%;
-      width: 21em;
-      height: 35em;
+      align-items: flex-end;
+      padding-right: 1px;
+      border-right: 2px solid #ff0658;
 
-      .loginLogo {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+      .loginPageLogoHigh {
+        @include logoDetail;
 
-        .loginPageLogoHigh {
-          @include logoDetail;
-        }
-
-        .loginPageLogoLow {
-          @include logoDetail;
-        }
       }
 
-      .loginText {
-        margin: 0.8em 0em;
-        padding: 0.8em 0em;
-        font-weight: bold;
-      }
+      .loginPageLogoLow {
+        @include logoDetail;
 
+      }
+    }
+
+    .loginText {
+      margin: 0.8em 0em;
+      padding: 0.8em 0em;
+      font-weight: bold;
+    }
+
+    .inputStatus {
+      padding-top: 0;
+      padding-bottom: 0;
+      font-size: 0.4em;
+      width: 88%;
+      display: flex;
+      color: #ff0658;
+    }
+
+    .displayNone {
+      display: none;
+    }
+
+    .emailSection {
+      @include flexCenter;
+      width: 100%;
       .emailInput {
-        margin: 0.2em 0em;
-        background-color: #f5f5f7;
-        caret-color: #ff0658;
+        margin: 0.3em 0em;
         @include inputAndBtn;
       }
-
       .emailInput::placeholder {
         color: #cacaca;
         padding-left: 0.5em;
@@ -73,24 +98,15 @@
       .emailInput:focus {
         outline: none;
       }
-      .displayNone {
-        display: none;
-      }
+    }
 
-      .inputStatus {
-        padding-top: 0.2ex;
-        font-size: 0.4em;
-        width: 88%;
-        display: flex;
-        color: #ff0658;
-      }
+    .passWordSection {
+      @include flexCenter;
+      width: 100%;
       .passwordInput {
-        margin: 0.5em 0em;
-        background-color: #f5f5f7;
-        caret-color: #ff0658;
+        margin: 0.3em 0em;
         @include inputAndBtn;
       }
-
       .passwordInput::placeholder {
         color: #cacaca;
         padding-left: 0.5em;
@@ -98,47 +114,52 @@
       .passwordInput:focus {
         outline: none;
       }
+    }
+    .loginBtn {
+      color: white;
+      font-size: 0.8em;
+      margin: 1em 0em;
+      background-color: #ff0658;
+      @include btnDetail;
+      cursor: pointer;
+    }
 
-      .loginBtn {
-        color: white;
-        font-size: 0.8em;
-        margin: 1em 0em;
-        background-color: #ff0658;
-        @include inputAndBtn;
-        cursor: pointer;
-      }
+    .loginBtn:focus {
+      outline: 0;
+    }
 
-      .loginBtn:focus {
-        outline: 0;
-      }
+    .forgotPwTxt {
+      margin: 0.4em 0em;
+      color: #ff0658;
+      font-weight: 350;
+      font-size: 0.9em;
+      text-decoration: none;
+    }
 
-      .forgotPwTxt {
-        margin: 0.4em 0em;
+    .noAccountTxt {
+      display: flex;
+      color: grey;
+      margin: 0.7em 0em;
+      font-weight: 350;
+      font-size: 0.9em;
+
+      .signUpNow {
+        padding-left: 0.3em;
         color: #ff0658;
-        font-weight: 350;
-        font-size: 0.9em;
         text-decoration: none;
-      }
-
-      .noAccountTxt {
-        display: flex;
-        color: grey;
-        margin: 0.7em 0em;
-        font-weight: 350;
-        font-size: 0.9em;
-
-        .signUpNow {
-          padding-left: 0.3em;
-          color: #ff0658;
-          text-decoration: none;
-          .signUpNowBtn {
+        .signUpNowBtn {
           padding-left: 0.3em;
           color: #ff0658;
           text-decoration: none;
           cursor: pointer;
-          }
         }
       }
     }
-
+  }
 }
+
+
+
+
+
+

@@ -1,6 +1,6 @@
 import React from 'react';
 import './LoginControl.scss';
-import { APILOGIN } from '../../../../config.js';
+import { APILOGIN } from '../../../../config';
 import { withRouter } from 'react-router-dom';
 import Swal from 'sweetalert2';
 //id:test123@test.com pw:123123qweqwe mrtest123
@@ -49,31 +49,22 @@ class LoginControl extends React.Component {
       });
   };
 
-  handleEmailValueChange = e => {
-    const email = e.target.value;
-    const idRuleSet = !email.match(emailRule);
-    this.setState({
-      email,
-      emailStatus: idRuleSet ? true : false,
-    });
-  };
-
-  handlePwValueChange = e => {
-    const pw = e.target.value;
-    const pwRuleSet = !pw.match(pwRule);
-    this.setState({
-      pw,
-      passwordStatus: pwRuleSet ? true : false,
-    });
-  };
-
-  resetInputStatus = () => {
-    this.setState({
-      email: '',
-      pw: '',
-      emailStatus: false,
-      passwordStatus: false,
-    });
+  handleInputValueChange = e => {
+    const { id, value } = e.target;
+    if (id === 'email') {
+      const idRuleSet = !value.match(emailRule);
+      this.setState({
+        [id]: value,
+        emailStatus: idRuleSet ? true : false,
+      });
+    }
+    if (id === 'pw') {
+      const pwRuleSet = !value.match(pwRule);
+      this.setState({
+        [id]: value,
+        passwordStatus: pwRuleSet ? true : false,
+      });
+    }
   };
 
   checkValidation = () => {
@@ -89,10 +80,18 @@ class LoginControl extends React.Component {
     inputPass && this.handleClickLogin();
   };
 
+  resetInputStatus = () => {
+    this.setState({
+      email: '',
+      pw: '',
+      emailStatus: false,
+      passwordStatus: false,
+    });
+  };
+
   render() {
     const { email, pw, emailStatus, passwordStatus } = this.state;
     const { loginModalStatus, loginOpen, loginClose, toSignUp } = this.props;
-
     return (
       <div className="LoginControl" onClick={this.resetInputStatus}>
         {loginModalStatus ? (
@@ -109,26 +108,30 @@ class LoginControl extends React.Component {
                   <div className="loginPageLogoHigh">YOUNGCHA</div>
                   <div className="loginPageLogoLow">PEDIA</div>
                 </div>
-                <div className="loginText">로그인</div>
-                <input
-                  id="email"
-                  value={email}
-                  className="emailInput"
-                  placeholder="이메일"
-                  type="text"
-                  onChange={this.handleEmailValueChange}
-                />
+                <div className="loginText"></div>
+                <div className="emailSection">
+                  <input
+                    id="email"
+                    value={email}
+                    className="emailInput"
+                    placeholder="이메일"
+                    type="text"
+                    onChange={this.handleInputValueChange}
+                  />
+                </div>
                 <div className={emailStatus ? 'inputStatus' : 'displayNone'}>
                   정확하지 않은 이메일입니다
                 </div>
-                <input
-                  id="pw"
-                  value={pw}
-                  className="passwordInput"
-                  placeholder="비밀번호"
-                  type="password"
-                  onChange={this.handlePwValueChange}
-                />
+                <div className="passWordSection">
+                  <input
+                    id="pw"
+                    value={pw}
+                    className="passwordInput"
+                    placeholder="비밀번호"
+                    type="password"
+                    onChange={this.handleInputValueChange}
+                  />
+                </div>
                 <div className={passwordStatus ? 'inputStatus' : 'displayNone'}>
                   정확하지 않은 비밀번호입니다
                 </div>

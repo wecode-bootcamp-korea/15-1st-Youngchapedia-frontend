@@ -1,6 +1,6 @@
 import React from 'react';
 import './SignUpControl.scss';
-import { APISIGNUP } from '../../../../config.js';
+import { APISIGNUP } from '../../../../config';
 import { withRouter } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
@@ -54,40 +54,32 @@ class SignUpControl extends React.Component {
       });
   };
 
-  handleNameValueChange = e => {
-    const name = e.target.value;
-    const nameRule = name.length <= 0;
-    this.setState({
-      name,
-      nameStatus: nameRule ? true : false,
-    });
-  };
-  handleEmailValueChange = e => {
-    const email = e.target.value;
-    const emailRuleSet = !email.match(emailRule);
-    this.setState({
-      email,
-      emailStatus: emailRuleSet ? true : false,
-    });
-  };
-  handlePwValueChange = e => {
-    const pw = e.target.value;
-    const pwRuleSet = !pw.match(pwRule);
-    this.setState({
-      pw,
-      passwordStatus: pwRuleSet ? true : false,
-    });
-  };
-
-  resetInputStatus = () => {
-    this.setState({
-      email: '',
-      pw: '',
-      name: '',
-      nameStatus: false,
-      emailStatus: false,
-      passwordStatus: false,
-    });
+  handleInputValueChange = e => {
+    const { id, value } = e.target;
+    if (id === 'name') {
+      const nameRule = value.length <= 0;
+      this.setState({
+        [id]: value,
+        nameStatus: nameRule ? true : false,
+      });
+    } else if (id === 'email') {
+      const idRuleSet = !value.match(emailRule);
+      this.setState({
+        [id]: value,
+        emailStatus: idRuleSet ? true : false,
+      });
+    } else if (id === 'pw') {
+      const pwRuleSet = !value.match(pwRule);
+      this.setState({
+        [id]: value,
+        passwordStatus: pwRuleSet ? true : false,
+      });
+    } else {
+      Swal.fire({
+        icon: 'error',
+        text: 'something went wrong',
+      });
+    }
   };
 
   checkValidationInput = e => {
@@ -103,6 +95,17 @@ class SignUpControl extends React.Component {
       passwordStatus: pwRuleSet ? true : false,
     });
     inputPass && this.handleClickSignUp();
+  };
+
+  resetInputStatus = () => {
+    this.setState({
+      email: '',
+      pw: '',
+      name: '',
+      nameStatus: false,
+      emailStatus: false,
+      passwordStatus: false,
+    });
   };
 
   render() {
@@ -132,13 +135,13 @@ class SignUpControl extends React.Component {
                   <div className="sigUpPageLogoHigh">YOUNGCHA</div>
                   <div className="sigUpPageLogoLow">PEDIA</div>
                 </div>
-                <div className="signUpText">회원가입</div>
+                <div className="signUpText"></div>
                 <input
                   id="name"
                   value={name}
                   className="nameInput"
                   placeholder="이름"
-                  onChange={this.handleNameValueChange}
+                  onChange={this.handleInputValueChange}
                 />
                 <div className={nameStatus ? 'inputStatus' : 'displayNone'}>
                   정확하지 않은 이름입니다
@@ -148,7 +151,7 @@ class SignUpControl extends React.Component {
                   value={email}
                   className="emailInput"
                   placeholder="이메일"
-                  onChange={this.handleEmailValueChange}
+                  onChange={this.handleInputValueChange}
                 />
                 <div className={emailStatus ? 'inputStatus' : 'displayNone'}>
                   정확하지 않은 이메일입니다
@@ -159,7 +162,7 @@ class SignUpControl extends React.Component {
                   className="passwordInput"
                   placeholder="비밀번호"
                   type="password"
-                  onChange={this.handlePwValueChange}
+                  onChange={this.handleInputValueChange}
                 />
                 <div className={passwordStatus ? 'inputStatus' : 'displayNone'}>
                   정확하지 않은 비밀번호입니다

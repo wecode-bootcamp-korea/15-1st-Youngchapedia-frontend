@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './LoginSignUpControl.scss';
-import LoginControl from './Components/LoginControl/LoginControl.js';
-import SignUpControl from './Components/SignUpControl/SignUpControl.js';
+import LoginControl from './Components/LoginControl/LoginControl';
+import SignUpControl from './Components/SignUpControl/SignUpControl';
 
 class LoginSignUpControl extends Component {
   constructor() {
@@ -38,12 +38,11 @@ class LoginSignUpControl extends Component {
   };
 
   render() {
-    // console.log(this.state);
     return (
       <div className="LoginSignUpControl">
         <div className="loginBtnControl">
           <button className="loginBtn" onClick={this.loginOpen}>
-            Login
+            로그인
           </button>
           <LoginControl
             className="loginModal"
@@ -53,9 +52,9 @@ class LoginSignUpControl extends Component {
             toSignUp={this.toSignUp}
           />
         </div>
-        <div className="signOutBtnControl">
-          <button className="signOutBtn" onClick={this.signUpOpen}>
-            SignUp
+        <div className="signUpBtnControl">
+          <button className="signUpBtn" onClick={this.signUpOpen}>
+            회원가입
           </button>
           <SignUpControl
             className="signUpModal"
