@@ -1,0 +1,34 @@
+.MyPageDetailCard {
+  display: inline-block;
+  box-sizing: border-box;
+  vertical-align: top;
+  padding: 1em;
+  flex-shrink: 1;
+
+  .cardWrapper {
+    display: inline-block;
+    box-sizing: border-box;
+    vertical-align: top;
+
+    width: 8.4em;
+    height: 16em;
+    flex-shrink: 1;
+    .cardImage {
+      width: 100%;
+      height: 12.1em;
+      border-radius: 2%;
+    }
+    .cardTitle {
+      font-size: 1.1em;
+      font-weight: 600;
+      padding: 0.5em 0 0.3em;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    .cardRate {
+      font-size: 0.8em;
+      color: #f7bf6c;
+    }
+  }
+}

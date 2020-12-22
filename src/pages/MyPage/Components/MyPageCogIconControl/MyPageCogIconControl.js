@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import CogIconModalControl from './Components/CogIconModalControl/CogIconModalControl';
+import CogIconModalControl from '../Components/CogIconModalControl/CogIconModalControl';
 import './MyPageCogIconControl.scss';
-import { COG_ICON } from '../../../config';
+import { COG_ICON } from '../../../../config';
 
 class MyPageCogIconControl extends Component {
   constructor() {
