@@ -1,6 +1,6 @@
-export const NETFLIX_LIST = 'http://192.168.219.113:8000/contents/netflix';
-export const WATCHA_LIST = 'http://192.168.219.113:8000/contents/watcha';
-export const COLLECTION_LIST = 'http://192.168.219.113:8000/contents/tag/1';
-export const COLLECTION_DIRECTOR_LIST =
-  'http://192.168.219.113:8000/contents/people/1';
-export const ACTION_LIST = 'http://192.168.219.113:8000/contents/genre/1';
+export const API = 'http://192.168.219.113:8000';
+export const NETFLIX_LIST = `${API}/contents/netflix`;
+export const WATCHA_LIST = `${API}/contents/watcha`;
+export const COLLECTION_LIST = `${API}/contents/tag/1`;
+export const COLLECTION_DIRECTOR_LIST = `${API}/contents/people/1`;
+export const ACTION_LIST = `${API}/contents/genre/1`;

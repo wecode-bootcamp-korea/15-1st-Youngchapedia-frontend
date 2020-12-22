@@ -4,20 +4,29 @@ main {
   @include display-center;
   flex-direction: column;
   width: 100%;
-  height: 2300px;
   min-height: 100%;
   padding: 0 10px;
-  margin-bottom: 50px;
+  margin-bottom: 300px;
+  z-index: 2;
 
   .mainMovieList {
     margin: 15px;
-    max-width: 80%;
+    max-width: 90%;
+
+    &.rankingSlide {
+      max-width: 80%;
+    }
+
+    &:nth-child(1) {
+      margin-top: 100px;
+    }
 
     .personList {
       cursor: pointer;
     }
 
     .movieHeader {
+      display: flex;
       margin: 15px 5px;
 
       .recoProfile {
@@ -50,6 +59,11 @@ main {
           color: $color-noneclick-menu;
         }
       }
+
+      &.movieHeaderStreaming {
+        display: flex;
+        align-items: center;
+      }
     }
   }
 }
@@ -64,6 +78,11 @@ main {
   @include display-center;
   margin: 0 auto;
 }
+
+.lds-heart {
+  margin-top: 100px;
+}
+
 .lds-heart div {
   top: 32px;
   left: 32px;

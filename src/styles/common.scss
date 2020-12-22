@@ -28,6 +28,8 @@ $color-yellow: #ffdd63;
 $slide-size: 70min;
 
 $tablet: 715px;
+$nav-middle-size: 775px;
+$nav-small-size: 430px;
 $laptop: 1020px;
 $desktop: 1400px;
 
@@ -58,6 +60,11 @@ $slide-test: 1200px;
   color: #a4a4a8;
 }
 
+@mixin align-center {
+  display: flex;
+  align-items: center;
+}
+
 // Mixins Media Query
 @mixin tablet {
   @media (max-width: #{$tablet}) {
@@ -67,6 +74,12 @@ $slide-test: 1200px;
 
 @mixin laptop {
   @media (min-width: #{$laptop}) {
+    @content;
+  }
+}
+
+@mixin nav-middle {
+  @media (max-width: #{$nav-middle-size} ) {
     @content;
   }
 }
@@ -81,4 +94,12 @@ $slide-test: 1200px;
   @media (min-width: #{$slide-test}) {
     @content;
   }
+}
+
+@mixin mainLogoDetail {
+  font-family: Anton;
+  font-size: 1.5em;
+  font-style: bold;
+  font-weight: 900;
+  color: #ff0658;
 }

@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 import MovieContainer from './MovieContainer/MovieContainer';
 import MovieContainerBottom from './MovieContainerBottom/MovieContainerBottom';
 import './MoviePage.scss';
 import {
-  NETFLIX_LIST,
-  WATCHA_LIST,
   COLLECTION_LIST,
   COLLECTION_DIRECTOR_LIST,
   ACTION_LIST,
@@ -17,7 +16,7 @@ class MoviePage extends Component {
     movieList3: [],
     movieList4: [],
     movieList5: [],
-    isLoading: true,
+    isLoading1: true,
     isLoading2: true,
     isLoading3: true,
     isLoading4: true,
@@ -25,56 +24,40 @@ class MoviePage extends Component {
   };
 
   componentDidMount = () => {
-    this.movieList1();
-    this.movieList2();
-    this.movieList3();
-    this.movieList4();
-    this.movieList5();
+    this.getApis();
   };
 
-  movieList1 = () => {
-    fetch(NETFLIX_LIST)
-      .then(response => response.json())
-      .then(response =>
-        this.setState({ movieList1: response.RESULT[0], isLoading: false })
+  getApis = () => {
+    Promise.all([
+      fetch('/data/netflix.json'),
+      fetch('/data/watcha.json'),
+      fetch('/data/people.json'),
+      fetch('/data/genre.json'),
+      fetch('/data/tag.json'),
+    ])
+      .then(([res1, res2, res3, res4, res5]) =>
+        Promise.all([
+          res1.json(),
+          res2.json(),
+          res3.json(),
+          res4.json(),
+          res5.json(),
+        ])
       )
-      .catch(error => console.log(error));
-  };
-
-  movieList2 = () => {
-    fetch(WATCHA_LIST)
-      .then(response => response.json())
-      .then(response =>
-        this.setState({ movieList2: response.RESULT[0], isLoading2: false })
-      )
-      .catch(error => console.log(error));
-  };
-
-  movieList3 = () => {
-    fetch(COLLECTION_LIST)
-      .then(response => response.json())
-      .then(response =>
-        this.setState({ movieList3: response.RESULT[0], isLoading3: false })
-      )
-      .catch(error => console.log(error));
-  };
-
-  movieList4 = () => {
-    fetch(COLLECTION_DIRECTOR_LIST)
-      .then(response => response.json())
-      .then(response =>
-        this.setState({ movieList4: response.RESULT[0], isLoading4: false })
-      )
-      .catch(error => console.log(error));
-  };
-
-  movieList5 = () => {
-    fetch(ACTION_LIST)
-      .then(response => response.json())
-      .then(response =>
-        this.setState({ movieList5: response.MESSAGE[0], isLoading5: false })
-      )
-      .catch(error => console.log(error));
+      .then(([data1, data2, data3, data4, data5]) =>
+        this.setState({
+          movieList1: data1.RESULT[0],
+          movieList2: data2.RESULT[0],
+          movieList3: data3.RESULT[0],
+          movieList4: data4.RESULT[0],
+          movieList5: data5.RESULT[0],
+          isLoading1: false,
+          isLoading2: false,
+          isLoading3: false,
+          isLoading4: false,
+          isLoading5: false,
+        })
+      );
   };
 
   render() {
@@ -84,40 +67,15 @@ class MoviePage extends Component {
       movieList3,
       movieList4,
       movieList5,
-      isLoading,
+      isLoading1,
       isLoading2,
       isLoading3,
       isLoading4,
       isLoading5,
     } = this.state;
-
     return (
       <>
         <main className="MainPage">
-          {isLoading ? (
-            <div className="lds-heart">
-              <div></div>
-            </div>
-          ) : (
-            <section className="mainMovieList">
-              <div className="movieHeader">
-                <p>{movieList1.service_name} 영화 순위</p>
-              </div>
-              <MovieContainer movies={movieList1.contents} />
-            </section>
-          )}
-          {isLoading2 ? (
-            <div className="lds-heart">
-              <div></div>
-            </div>
-          ) : (
-            <section className="mainMovieList">
-              <div className="movieHeader">
-                <p>{movieList2.service_name} 영화 순위</p>
-              </div>
-              <MovieContainer movies={movieList2.contents} />
-            </section>
-          )}
           {isLoading3 ? (
             <div className="lds-heart">
               <div></div>
@@ -125,8 +83,22 @@ class MoviePage extends Component {
           ) : (
             <section className="mainMovieList">
               <div className="movieHeader movieHeaderCollection personList">
-                <div>
-                  <p>#{movieList3.tag_name}</p>
+                <div className="recoProfile">
+                  <img alt="profile" src="/images/profile2.png" />
+                </div>
+                <div
+                  onClick={() => {
+                    this.props.history.push({
+                      pathname: `/filterPage/${movieList3.id}`,
+                      state: { movieList3: movieList3 },
+                    });
+                  }}
+                >
+                  <p className="collectionTxt">영차가 추천하는 작품 💁‍♀️</p>
+                  <p>
+                    🎄크리스마스에는 {movieList3.name} {movieList3.title}의
+                    작품과 함께🎄
+                  </p>
                 </div>
               </div>
               <div className="movieSlideContainer">
@@ -142,11 +114,13 @@ class MoviePage extends Component {
             <section className="mainMovieList">
               <div className="movieHeader movieHeaderCollection personList">
                 <div className="recoProfile">
-                  <img alt="profile" src={movieList4.profile_image_url} />
+                  <img alt="profile" src="/images/profile2.png" />
                 </div>
                 <div>
-                  <p className="collectionTxt">#김별이님의 추천</p>
-                  <p>화제의 감독 {movieList4.name}의 작품</p>
+                  <p className="collectionTxt">영차가 추천하는 작품 💁</p>
+                  <p>
+                    😎 이번 크리스마스에는 {movieList4.genre_name}과 함께! 🦾
+                  </p>
                 </div>
               </div>
               <div className="movieSlideContainer">
@@ -162,16 +136,56 @@ class MoviePage extends Component {
             <section className="mainMovieList">
               <div className="movieHeader movieHeaderCollection personList">
                 <div className="recoProfile">
-                  <img alt="profile" src="/images/profile.jpeg" />
+                  <img alt="profile" src="/images/profile2.png" />
                 </div>
                 <div>
-                  <p className="collectionTxt">김별이님의 추천</p>
-                  <p>크리스마스에는 #{movieList5.genre_name}</p>
+                  <p className="collectionTxt">영차가 추천하는 작품 👼</p>
+                  <p>#{movieList5.tag_name}</p>
                 </div>
               </div>
               <div className="movieSlideContainer">
                 <MovieContainerBottom movies={movieList5.contents} />
               </div>
+            </section>
+          )}
+          {isLoading1 ? (
+            <div className="lds-heart">
+              <div></div>
+            </div>
+          ) : (
+            <section className="mainMovieList">
+              <div className="movieHeader movieHeaderStreaming personList">
+                <div className="recoProfile">
+                  <img
+                    alt="profile"
+                    src="https://an2-img.amz.wtchn.net/image/v1/updatable_images/2571/original/42e70f1bc34d7af54478a311983ecf6d3601eefa.png"
+                  />
+                </div>
+                <div>
+                  <p>😎 넷플릭스 영화</p>
+                </div>
+              </div>
+              <MovieContainer movies={movieList1.contents.slice(10, 20)} />
+            </section>
+          )}
+          {isLoading2 ? (
+            <div className="lds-heart">
+              <div></div>
+            </div>
+          ) : (
+            <section className="mainMovieList">
+              <div className="movieHeader movieHeaderStreaming personList">
+                <div className="recoProfile">
+                  <img
+                    alt="profile"
+                    src="https://an2-img.amz.wtchn.net/image/v1/updatable_images/2570/original/f72039e19e3d483c3c6d8178c526a1c979537975.png"
+                  />
+                </div>
+                <div>
+                  <p>🥳 영차 영화</p>
+                </div>
+              </div>
+              <MovieContainer movies={movieList2.contents.slice(0, 10)} />
             </section>
           )}
         </main>
@@ -180,4 +194,4 @@ class MoviePage extends Component {
   }
 }
 
-export default MoviePage;
+export default withRouter(MoviePage);

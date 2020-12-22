@@ -38,15 +38,13 @@ class MovieContainer extends Component {
     };
     const { movies } = this.props;
     return (
-      <>
-        <ul className="movies">
-          <Slider {...settings}>
-            {movies.slice(0, 10).map((movie, id) => (
-              <MovieCard movie={movie} key={id} />
-            ))}
-          </Slider>
-        </ul>
-      </>
+      <ul className="movies">
+        <Slider {...settings}>
+          {movies.map((movie, id) => (
+            <MovieCard movie={movie} key={id} />
+          ))}
+        </Slider>
+      </ul>
     );
   }
 }

@@ -41,7 +41,7 @@ class MovieContainerBottom extends Component {
       <>
         <ul className="movies">
           <Slider {...settings}>
-            {movies.slice(0, 10).map((movie, id) => (
+            {movies.slice(5, 15).map((movie, id) => (
               <MovieCard movie={movie} key={id} />
             ))}
           </Slider>
