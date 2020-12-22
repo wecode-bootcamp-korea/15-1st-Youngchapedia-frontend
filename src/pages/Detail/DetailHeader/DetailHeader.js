@@ -3,6 +3,9 @@ import './DetailHeader.scss';
 import DetailHeaderWannaWatchingModal from './Components/DetailHeaderWannaWatchingModal/DetailHeaderWannaWatchingModal';
 import DetailHeaderStarsRate from './Components/DetailHeaderStarsRate';
 import DetailHeaderButtons from './Components/DetailHeaderButtons/DetailHeaderButtons';
+import { WANNAWATCHING } from '../../../config';
+
+import { USER1_TOKEN } from '../../../config';
 
 class DetailHeader extends React.Component {
   state = {
@@ -12,6 +15,71 @@ class DetailHeader extends React.Component {
     isclickedWannaWatchingBTN: false,
     isclickedBeingWatchingBTN: false,
     dontCareMovie: false,
+    starsRatingPoint: '',
+    archive_type: '',
+  };
+
+  componentDidMount() {
+    fetch(WANNAWATCHING, {
+      headers: { Authorization: USER1_TOKEN },
+    })
+      .then(res => res.json())
+      .then(res => this.setState({ archive_type: res.archive_type }));
+  }
+
+  PostArchiveTypeWannerWatching = () => {
+    fetch(WANNAWATCHING, {
+      method: 'POST',
+      headers: { Authorization: USER1_TOKEN },
+      body: JSON.stringify({ archive_type: 1 }),
+    }).then(response => response.json());
+  };
+
+  PostArchiveTypeBeingWatching = () => {
+    fetch(WANNAWATCHING, {
+      method: 'POST',
+      headers: { Authorization: USER1_TOKEN },
+      body: JSON.stringify({ archive_type: 2 }),
+    }).then(response => response.json());
+  };
+
+  PostArchiveTypeDontCare = () => {
+    fetch(WANNAWATCHING, {
+      method: 'POST',
+      headers: { Authorization: USER1_TOKEN },
+      body: JSON.stringify({ archive_type: 3 }),
+    }).then(response => response.json());
+  };
+
+  patchArchiveTypeWannerWatching = () => {
+    fetch(WANNAWATCHING, {
+      method: 'PATCH',
+      headers: { Authorization: USER1_TOKEN },
+      body: JSON.stringify({ archive_type: 1 }),
+    }).then(response => response.json());
+  };
+
+  patchArchiveTypeBeingWatching = () => {
+    fetch(WANNAWATCHING, {
+      method: 'PATCH',
+      headers: { Authorization: USER1_TOKEN },
+      body: JSON.stringify({ archive_type: 2 }),
+    }).then(response => response.json());
+  };
+
+  patchArchiveTypeDontCare = () => {
+    fetch(WANNAWATCHING, {
+      method: 'PATCH',
+      headers: { Authorization: USER1_TOKEN },
+      body: JSON.stringify({ archive_type: 3 }),
+    }).then(response => response.json());
+  };
+
+  DeleteArchiveType = () => {
+    fetch(WANNAWATCHING, {
+      method: 'Delete',
+      headers: { Authorization: USER1_TOKEN },
+    });
   };
 
   onWannaWatchingModalToggle = () => {
@@ -38,6 +106,7 @@ class DetailHeader extends React.Component {
       isclickedBeingWatchingBTN: false,
       dontCareMovie: false,
     });
+    this.DeleteArchiveType();
   };
 
   handleActiveBeingWatchingBTN = () => {
@@ -74,8 +143,12 @@ class DetailHeader extends React.Component {
   };
 
   handleControlDontCareButton = () => {
-    this.handleResetButtonStatus();
     this.setState({
+      isActiveWannaWatchingModal: false,
+      isDefaultButton: true,
+      isActiveBTN: false,
+      isclickedWannaWatchingBTN: false,
+      isclickedBeingWatchingBTN: false,
       dontCareMovie: true,
     });
   };

@@ -21,7 +21,7 @@
     color: $color-white;
 
     .wannaWatch {
-      @include display-center;
+      @include flex-center;
       width: 10.188em;
       height: 2.563em;
 
@@ -72,7 +72,7 @@
     color: #111;
 
     .wannaWatch {
-      @include display-center;
+      @include flex-center;
       width: 10em;
       height: 2.563em;
 

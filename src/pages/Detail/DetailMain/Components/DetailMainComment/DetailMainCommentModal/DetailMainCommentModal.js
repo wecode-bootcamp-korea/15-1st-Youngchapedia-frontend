@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { MOVIE_REVIEW } from '../../../../../../config';
+import { USER1_TOKEN } from '../../../../../../config';
 import './DetailMainCommentModal.scss';
 
 class DetailMainCommentModal extends React.Component {
@@ -36,8 +37,7 @@ class DetailMainCommentModal extends React.Component {
     fetch(MOVIE_REVIEW, {
       method: 'POST',
       headers: {
-        Authorization:
-          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo5fQ.T66un2Tsk42sMvfJjqY1YO9Kh4gyuCBKJib6bizw_fE',
+        Authorization: USER1_TOKEN,
       },
       body: JSON.stringify({
         review: comment,

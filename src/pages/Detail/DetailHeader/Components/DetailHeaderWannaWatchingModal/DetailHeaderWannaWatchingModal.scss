@@ -31,7 +31,7 @@
   }
   .DetailHeaderModalCancel {
     height: 50px;
-    @include display-center;
+    @include flex-center;
     color: $color-youngcha;
 
     p {

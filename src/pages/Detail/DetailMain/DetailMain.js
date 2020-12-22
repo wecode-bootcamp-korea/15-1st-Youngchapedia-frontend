@@ -8,14 +8,17 @@ import DetailMainAct from './Components/DetailMainAct/DetailMainAct';
 import DetailMainInfor from './Components/DetailMainInfor/DetailMainInfor';
 import { MOVIE_REVIEW } from '../../../config';
 import { USER1_TOKEN } from '../../../config';
+
 import './DetailMain.scss';
 
 class DetailMain extends React.Component {
   state = {
+    comment: '',
     isCommentValue: false,
     isCommentClicked: false,
     isCheckCommentDelete: false,
     isCommentEdited: false,
+    castingMember: '',
   };
 
   componentDidMount() {
@@ -64,6 +67,7 @@ class DetailMain extends React.Component {
       isCommentClicked,
       isCheckCommentDelete,
       isCommentEdited,
+      castingMember,
     } = this.state;
 
     const {
@@ -121,7 +125,7 @@ class DetailMain extends React.Component {
             movieGenre={movieGenre}
             descriptionValue={descriptionValue}
           />
-          <DetailMainAct />
+          <DetailMainAct castingMember={castingMember} />
         </div>
       </main>
     );

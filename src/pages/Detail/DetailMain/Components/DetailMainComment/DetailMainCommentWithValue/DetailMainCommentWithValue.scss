@@ -4,7 +4,7 @@
   @include detailBorder;
   width: 39.875em;
   height: 6.25em;
-  @include display-center;
+  @include flex-center;
   background-color: $color-white;
   border-radius: 6px;
   margin-bottom: 1.438em;
