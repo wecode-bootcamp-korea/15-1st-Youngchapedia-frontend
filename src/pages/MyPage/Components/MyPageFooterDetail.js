@@ -1,20 +1,20 @@
 import React, { Component } from 'react';
 import Nav from '../../../Components/Nav/Nav';
 import Footer from '../../../Components/Footer/Footer';
-import './MyPageEval.scss';
+import './MyPageFooterDetail.scss';
 
-class MyPageEval extends Component {
+class MyPageFooterDetail extends Component {
   // constructor() {
   //   super();
   //   this.state = {};
   // }
   render() {
     return (
-      <div className="MyPageEval">
+      <div className="MyPageFooterDetail">
         <Nav />
-        <div className="myPageEvalWrapper"></div>
+        <div className="myPageFooterDetailWrapper"></div>
       </div>
     );
   }
 }
-export default MyPageEval;
+export default MyPageFooterDetail;

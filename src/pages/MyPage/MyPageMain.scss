@@ -1,28 +1,42 @@
-
+@mixin flexInfo{
+  display: flex;
+  align-items: center;
+}
+@mixin myPageFooterDetail {
+  color:white;
+  margin:5%;
+}
+@mixin myPageFooterWrapper{
+  display: flex;
+  width: 31%;
+  height: 90%;
+  border-radius: 3%;
+}
 
 .MyPageMain {
+
   .myPageMainWrapper {
-    display: flex;
+    @include flexInfo;
     justify-content: center;
-    align-items: center;
     min-height: 90vh;
     padding-bottom: 1px;
+
     .myPageComponent {
       display: flex;
-      justify-content: center;
-      align-items: center;
       flex-direction: column;
       width: 40em;
       height: 39em;
       border-radius: 1%;
+
       .myPageUpper {
-        z-index: -1;
         display: flex;
         justify-content: flex-end;
-        height: 38%;
+        z-index: -1;
         width: 100%;
-        background-color: #fc92b0;
+        height: 35%;
         border-radius: 5px 5px 0 0;
+        background-color: #ffbfd0;
+
         .cogIcon{
           margin: 1%;
           .svg-icon {
@@ -43,87 +57,86 @@
           }
         }
       }
+
       .myPageProfileSec {
         display: flex;
-        border-left: 1px solid #f5f5f7;
-        border-right: 1px solid #f5f5f7;
         height: 30%;
         width: 100%;
+        border-left: 1px solid #f5f5f7;
+        border-right: 1px solid #f5f5f7;
+
         .myPageProfileWrapper {
           display:flex;
           position: relative;
           height: 100%;
           width: 100%;
+
           .myPageProfile {
-            z-index:-1;
-            margin-top: -1%;
-            margin-left: 4%;
             position: absolute;
+            z-index:-1;
+            top: -10%;
             width: 10%;
             height: 35%;
+            margin-top: -1%;
+            margin-left: 4%;
             border-radius: 80%;
             border: 1px solid #f5f5f7;
-            top: -10%;
+
             img{
               width:100%;
               height:100%;
               border-radius: 80%;
             }
           }
+
           .myPageProfileText{
+            display:flex;
             margin-top:5%;
             margin-left:-2%;
-            display:flex;
             font-weight: 800;
             font-size: 1em;
           }
         }
       }
+
       .myPageFooter {
-        display: flex;
+        @include flexInfo;
         justify-content: space-between;
-        align-items: center;
         height: 37%;
         width: 100%;
-        border-left: 1px solid #f5f5f7;
-        border-right: 1px solid #f5f5f7;
-        border-bottom: 1px solid #f5f5f7;
+        border: 1px solid #f5f5f7;
+        border-top: 0;
         border-radius: 0 0 5px 5px;
         padding: 1% 3%;
+
         .myPageEval {
-          display: flex;
-          width: 31%;
-          height: 90%;
-          background-color: #82d857;
-          border-radius: 3%;
+          @include myPageFooterWrapper;
+          background-color: #9cea75;
+
           .myPageEvalText{
-            color:white;
-            margin: 5%;
+            @include myPageFooterDetail;
           }
         }
+        
         .myPageLikeTo {
-          display: flex;
-          width: 31%;
-          height: 90%;
-          border-radius: 3%;
-          background-color: #febf66;
+          @include myPageFooterWrapper;
+          background-color: #ffcd87;
+
           .myPageLikeToText{
-            color:white;
-            margin: 5%;
+            @include myPageFooterDetail;
           }
         }
+
         .myPageWatching {
-          display: flex;
-          width: 31%;
-          height: 90%;
-          border-radius: 3%;
-          background-color: #62d3ec;
+          @include myPageFooterWrapper;
+          background-color: #86e6f9;
+          
           .myPageWatchingText{
-            color:white;
-            margin: 5%;
+            @include myPageFooterDetail;
           }
         }
       }
     }
   }
 }
+

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import './MyPageMain.scss';
 import Nav from '../../../Components/Nav/Nav';
 import Footer from '../../../Components/Footer/Footer';
+import './MyPageMain.scss';
 
 class MyPageLikeTo extends Component {
   constructor() {

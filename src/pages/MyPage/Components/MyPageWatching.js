@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import './MyPageWatching.scss';
 import Nav from '../../../Components/Nav/Nav';
 import Footer from '../../../Components/Footer/Footer';
+import './MyPageWatching.scss';
 
 class MyPageWatching extends Component {
   constructor() {
