@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Nav from '../../Components/Nav/Nav';
 import Footer from '../../Components/Footer/Footer';
+import MyPageCogIconControl from './Components/MyPageCogIconControl';
 import { COG_ICON } from '../../config';
 import './MyPageMain.scss';
 
@@ -8,11 +9,10 @@ class MyPageMain extends Component {
   constructor() {
     super();
     this.state = {};
-
-  //   handleClick = () => {
-  //     console.log('clicked');
-  //   };
-  // }
+  }
+  handleClick = () => {
+    console.log('clicked');
+  };
   render() {
     return (
       <div className="MyPageMain">
@@ -21,9 +21,7 @@ class MyPageMain extends Component {
           <div className="myPageComponent">
             <div className="myPageUpper">
               <div className="cogIcon">
-                <svg class="svg-icon" viewBox="0 0 20 20">
-                  <path d={COG_ICON} onClick={this.handleClick}></path>
-                </svg>
+                <MyPageCogIconControl />
               </div>
             </div>
             <div className="myPageProfileSec">
