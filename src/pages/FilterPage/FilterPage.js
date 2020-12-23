@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import MovieCard from '../MainPage/Compontents/MoviePages/MovieContainer/MovieCard';
-import '../FilterPage/FilterPage.scss';
 import Nav from '../../Components/Nav/Nav';
 import Footer from '../../Components/Footer/Footer';
+import '../FilterPage/FilterPage.scss';
 
 class FilterPage extends Component {
   render() {
