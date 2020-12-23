@@ -90,6 +90,14 @@ $slide-test: 1200px;
   }
 }
 
+a {
+  text-decoration: none;
+  color: $color-black;
+
+  &:link {
+    color: $color-black;
+  }
+}
 @mixin slide-test {
   @media (min-width: #{$slide-test}) {
     @content;

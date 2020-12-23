@@ -13,6 +13,8 @@ class Routes extends Component {
         <Switch>
           <Route exact path="/mainpage" component={MainPage} />
           <Route exact path="/login" component={Login} />
+          <Route exact path="/filter/:id" component={FilterPage} />
+          <Route exact path="/movies/:id" component={Detail} />
           <Route exact path="/details/:id" component={Detail} />
           <Route exact path="/filterPage/:id" component={FilterPage} />
           <Route exact path="/search/:id" component={SearchResultPage} />
