@@ -1,12 +1,17 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
+import './SearchResultPage.scss';
+import '../Search/Search.scss';
 
 class Search extends Component {
   constructor() {
     super();
     this.state = {
-      searchList: ['조제', '원더우먼', '리플레이', '해리포터'],
+      searchList: [],
       searchValue: '',
+      searchResult: '',
       isListActive: false,
+      searchCheck: false,
     };
   }
 
@@ -14,25 +19,35 @@ class Search extends Component {
     this.setState({ searchValue: event.target.value });
   };
 
-  renderSuggestions() {
-    const { searchValue, searchList } = this.state;
-    if (!searchValue.length) {
-      return null;
+  onKeyPress = event => {
+    if (event.key === 'Enter') {
+      fetch(
+        `http://192.168.219.113:8000/contents/search?keyword=${event.target.value}`,
+        {
+          method: 'GET',
+        }
+      )
+        .then(result => result.json())
+        .then(result =>
+          this.setState({
+            searchList: result.RESULT[0],
+            searchCheck: true,
+            searchResult: event.target.value,
+          })
+        );
     }
-    return (
-      <ul className="results">
-        <li className="popularWordIndex">인기검색어</li>
-        {searchList.map((item, id) => (
-          <li className="result" key={id}>
-            {item}
-          </li>
-        ))}
-      </ul>
-    );
-  }
+  };
+
+  handleSearchEvent = () => {
+    this.props.history.push({
+      pathname: `/search/${this.state.searchResult}`,
+      state: { searchList: this.state.searchList },
+    });
+  };
 
   render() {
-    const { searchValue } = this.state;
+    const { searchValue, searchList, searchCheck } = this.state;
+    console.log(searchList);
     return (
       <>
         <label className="searchWrap">
@@ -41,13 +56,14 @@ class Search extends Component {
             className="searchInput"
             type="search"
             onChange={this.onTextChanged}
+            onKeyPress={this.onKeyPress}
             placeholder="작품 제목,배우,감독을 검색해보세요."
           />
         </label>
-        <div className="searchWrap-dropdown">{this.renderSuggestions()}</div>
+        {!searchCheck ? null : this.handleSearchEvent()}
       </>
     );
   }
 }
 
-export default Search;
+export default withRouter(Search);
