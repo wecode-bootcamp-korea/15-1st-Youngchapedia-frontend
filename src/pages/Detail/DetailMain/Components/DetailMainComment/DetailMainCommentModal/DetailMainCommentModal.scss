@@ -1,0 +1,87 @@
+@import '../../../../../../styles/common.scss';
+
+.DetailMainCommentModal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 2;
+
+  .modalContent {
+    width: 40em;
+    height: 33.75em;
+    background-color: white;
+    position: relative;
+    margin: 6.25em auto;
+    padding: 1.25em;
+    background: $color-white;
+    border-radius: 10px;
+    z-index: 3;
+  }
+
+  .firstLine {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0.5em 0;
+    padding: 0.3em 1em 0.5em;
+    font-size: 1.1em;
+    border-bottom: 1px solid $color-detail-border;
+
+    .icon {
+      color: $color-youngcha;
+      font-size: 1.4em;
+      cursor: pointer;
+    }
+
+    p {
+      font-weight: bold;
+    }
+    .enabledcommentSummit {
+      color: $color-detail-border;
+      background-color: $color-white;
+      border: none;
+      outline: none;
+      font-size: 1em;
+      cursor: pointer;
+    }
+
+    .abledcommentSummit {
+      color: $color-youngcha;
+      background-color: $color-white;
+      border: none;
+      outline: none;
+      font-size: 1em;
+      cursor: pointer;
+    }
+  }
+
+  .SNS {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1em 0.2em;
+    border-bottom: 1px solid $color-detail-border;
+    font-size: 1.3em;
+    color: $color-detail-border;
+
+    img {
+      width: 1.5em;
+      height: 1.5em;
+      border: 1px solid $color-detail-border;
+      border-radius: 10px;
+    }
+  }
+
+  textarea {
+    width: 100%;
+    height: 80%;
+    border: none;
+    padding: 1em;
+    font-size: 1.5em;
+    outline: none;
+    resize: none;
+  }
+}

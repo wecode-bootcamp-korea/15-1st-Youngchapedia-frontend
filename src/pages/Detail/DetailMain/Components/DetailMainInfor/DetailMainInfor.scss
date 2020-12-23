@@ -1,0 +1,93 @@
+@import '../../../../../styles/common.scss';
+
+.DetailMainInfor {
+  background-color: #ffffff;
+
+  .DetailMainInfoMore {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+    font-size: 1em;
+
+    h1 {
+      font-size: 1.188em;
+      font-weight: bold;
+    }
+
+    span {
+      font-size: 1em;
+      $color-youngcha: #ff0658;
+      cursor: pointer;
+    }
+  }
+
+  .DetailMainInfoPTag {
+    padding: 1em;
+    font-size: 1em;
+
+    p {
+      padding-bottom: 0.4em;
+    }
+  }
+
+  .DetailMainInfoDesc {
+    padding: 0 1em;
+    line-height: 1.5em;
+  }
+}
+
+.lds-heart {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+  transform: rotate(45deg);
+  transform-origin: 40px 40px;
+}
+.lds-heart div {
+  top: 32px;
+  left: 32px;
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  background: #ff0658;
+  animation: lds-heart 1.2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+  margin: 0 auto;
+}
+.lds-heart div:after,
+.lds-heart div:before {
+  content: ' ';
+  position: absolute;
+  display: block;
+  width: 32px;
+  height: 32px;
+  background: #ff0658;
+}
+.lds-heart div:before {
+  left: -24px;
+  border-radius: 50% 0 0 50%;
+}
+.lds-heart div:after {
+  top: -24px;
+  border-radius: 50% 50% 0 0;
+}
+@keyframes lds-heart {
+  0% {
+    transform: scale(0.95);
+  }
+  5% {
+    transform: scale(1.1);
+  }
+  39% {
+    transform: scale(0.85);
+  }
+  45% {
+    transform: scale(1);
+  }
+  60% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(0.9);
+  }
+}

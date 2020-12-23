@@ -1,0 +1,31 @@
+@mixin flexInfo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Error {
+}
+.errorTextSection {
+  @include flexInfo;
+  flex-direction: column;
+  background-color: #ff0658;
+
+  min-height: 80vh;
+  .errorText1 {
+    @include flexInfo;
+    font-family: Anton;
+    font-size: 8em;
+    width:2.4em;
+    color: white;
+    line-height:0.8;
+    border-bottom: 3px solid white;
+    
+  }
+  .errorText2 {
+    @include flexInfo;
+    font-family: Anton;
+    font-size: 2em;
+    width: 100%;
+    color: white;
+  }
+}

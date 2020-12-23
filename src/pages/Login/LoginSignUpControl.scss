@@ -1,0 +1,58 @@
+// @import '../../styles/common.scss';
+// @import '../Nav/Search/Search.scss';
+
+@mixin menuValue {
+  margin-right: 15px;
+  color: white;
+  font-size: 13px;
+  cursor: pointer;
+}
+.LoginSignUpControl {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+
+  .loginBtnControl {
+    button {
+      @include menuValue;
+      width: 4em;
+      height: 2.5em;
+    }
+    .loginBtn {
+      border: 0px solid ;
+      height: 30px;
+      border-radius: 6px;
+      background: white;
+      cursor: pointer;
+      color: #7e7e7e;
+      font-weight: 500;
+      font-size: 14px;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  .signUpBtnControl {
+    button {
+      @include menuValue;
+      width: 6em;
+      height: 2rem;
+    }
+    .signUpBtn {
+      border: 1px solid rgba(116, 116, 123, 0.5);
+      // height: 30px;
+      border-radius: 6px;
+      background: white;
+      cursor: pointer;
+      color: rgb(53, 53, 53);
+      font-weight: 500;
+      font-size: 14px;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}

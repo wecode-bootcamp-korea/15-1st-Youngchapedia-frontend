@@ -1,0 +1,21 @@
+@import "../../../../styles/common.scss";
+
+.MyPageCogIconControl {
+  .cogIcon {
+    .svg-icon {
+      width: 1.5em;
+      height: 1.5em;
+    }
+
+    .svg-icon path,
+    .svg-icon polygon,
+    .svg-icon rect {
+      fill: white;
+    }
+
+    .svg-icon circle {
+      stroke: white;
+      stroke-width: 1;
+    }
+  }
+}
