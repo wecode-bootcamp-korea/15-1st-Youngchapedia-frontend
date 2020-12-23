@@ -1,0 +1,82 @@
+@import '../../../styles/common.scss';
+
+.DetailHeader {
+  .DivControl {
+    position: relative;
+  }
+  .fixBackgournd {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    z-index: 0;
+
+    img {
+      width: 100%;
+      height: 20em;
+    }
+  }
+
+  .flexPosterAndDetails {
+    padding: 0.875em 1em 1.375em;
+  }
+
+  .posterConroler {
+    margin: 18em auto 0;
+    width: 63em;
+    position: relative;
+    z-index: 2;
+    display: flex;
+
+    .movieNameAndsores {
+      margin: 3em 0 0 2em;
+      width: 50em;
+
+      h1 {
+        font-size: 1.5em;
+      }
+
+      .yearGenreNation {
+        padding-top: 0.3em;
+        font-size: 1em;
+        color: #7f7f7f;
+      }
+
+      .score {
+        margin-top: 1em;
+        padding: 0.625em 0;
+        border-top: 1px solid #ededed;
+        border-bottom: 1px solid #ededed;
+      }
+    }
+
+    img {
+      width: 9.625em;
+      height: 13.625em;
+      border: 2px solid $color-white;
+      border-radius: 6px;
+    }
+  }
+
+  .posterAndDetailValueControler {
+    margin: 0 auto;
+  }
+
+  .buttonsAndEvaluation {
+    display: flex;
+  }
+  .evaluation {
+    margin-top: 0.5em;
+
+    .evaluating {
+      font-size: 0.75em;
+      color: #808080;
+      margin-bottom: 0.3em;
+    }
+
+    span {
+      font-size: 2.5em;
+    }
+  }
+}
