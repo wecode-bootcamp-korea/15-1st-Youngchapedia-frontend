@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { COLLECTION_DIRECTOR_LIST } from '../../config';
-import Footer from '../../Components/Footer/Footer';
 import FilterPage from '../FilterPage/FilterPage';
+import Nav from '../../Components/Nav/Nav';
+import Footer from '../../Components/Footer/Footer';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 import '../MainPage/MainPage.scss';
 
 class MainPage extends Component {
@@ -32,6 +35,7 @@ class MainPage extends Component {
   };
 
   render() {
+<<<<<<< HEAD
     const { movieList, isLoading } = this.state;
     console.log(movieList);
     return (
@@ -45,6 +49,12 @@ class MainPage extends Component {
             <p onClick={this.goToFilter}>{movieList.name}</p>
           </>
         )}
+=======
+    return (
+      <>
+        <Nav />
+        <MoviePage />
+>>>>>>> 335232c96bc1ad9cf2e1f9c525f745e948c9b7fb
         <Footer />
       </>
     );
