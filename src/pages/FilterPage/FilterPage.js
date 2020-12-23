@@ -1,28 +1,33 @@
 import React, { Component } from 'react';
-import MovieCard from './Components/MovieCard';
+import MovieCard from '../MainPage/Compontents/MoviePages/MovieContainer/MovieCard';
 import '../FilterPage/FilterPage.scss';
+import Nav from '../../Components/Nav/Nav';
+import Footer from '../../Components/Footer/Footer';
 
 class FilterPage extends Component {
   render() {
-    const { profile_image_url, name, title, contents } = this.props.movies;
+    const { collectionDirectorList } = this.props.location.state;
+    const contents = collectionDirectorList.contents;
     return (
       <>
+        <Nav />
         <main className="FilterPage">
-          <header className="filterHeader">
-            <div className="headerProfile">
-              <img src={profile_image_url} />
-            </div>
-            <div className="headerInfo">
-              <h1 className="title">{name}</h1>
-              <p className="job">{title}</p>
-            </div>
-          </header>
           <ul className="resultList">
-            {contents.map((movie, id) => (
+            <header className="filterHeader">
+              <div className="headerProfile">
+                <img src={collectionDirectorList.profile_image_url} />
+              </div>
+              <div className="headerInfo">
+                <h1 className="title">{collectionDirectorList.name}</h1>
+                <p className="job">{collectionDirectorList.title}</p>
+              </div>
+            </header>
+            {contents.slice(0, 30).map((movie, id) => (
               <MovieCard movie={movie} key={id} />
             ))}
           </ul>
         </main>
+        <Footer />
       </>
     );
   }
