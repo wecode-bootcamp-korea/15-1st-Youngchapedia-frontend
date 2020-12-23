@@ -1,0 +1,42 @@
+@import '../../../../styles/common.scss';
+.MyPageFooterDetail {
+  .myPageFooterDetailWrapper {
+    display: flex;
+    flex-direction: column;
+    .myPageFooterArrow {
+      display: flex;
+      width: 4.5%;
+      padding: 0.7em;
+      padding-bottom: 0.3em;
+      cursor: pointer;
+      .svg-icon {
+        width: 1.3em;
+        padding-top: 4em;
+        font-size: 15px;
+      }
+      .svg-icon path,
+      .svg-icon polygon,
+      .svg-icon rect {
+        fill: $color-youngcha;
+      }
+      .svg-icon circle {
+        stroke: $color-youngcha;
+        stroke-width: 1;
+      }
+    }
+    .myPageFooterTitle {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      padding: 0.5em;
+      padding-left: 0.6em;
+      border-bottom: 1px solid $color-right-grey;
+      color: $color-black;
+      font-size: 1.4em;
+      font-weight: bold;
+    }
+    .cardSection {
+      display: block;
+    }
+  }
+}
