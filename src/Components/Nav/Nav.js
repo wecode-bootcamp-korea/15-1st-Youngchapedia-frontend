@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 import Search from './Search/Search';
 import '../Nav/Nav.scss';
-
 class Nav extends Component {
   state = {
     logged: false,
+  };
+
+  goToMoviePage = () => {
+    this.props.history.push('/mainpage');
   };
   render() {
     const { logged } = this.state;
@@ -12,10 +16,10 @@ class Nav extends Component {
       <nav className="Nav">
         <div className="container">
           <div className="navLeft">
-            <img alt="logo image" src="images/logo.png" />
-            <li className="menu">영화</li>
-            <li className="menu">TV 프로그램</li>
-            <li className="menu">책</li>
+            <div className="logoSection" onClick={this.goToMoviePage}>
+              <div className="mainLogoHigh">YOUNGCHA</div>
+              <div className="mainLogoLow">PEDIA</div>
+            </div>
           </div>
           <div className="navRight">
             <div className="inputContainer">
@@ -41,4 +45,4 @@ class Nav extends Component {
   }
 }
 
-export default Nav;
+export default withRouter(Nav);

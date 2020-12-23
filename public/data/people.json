@@ -1,0 +1,225 @@
+{
+"MESSAGE": "SUCCESS",
+"RESULT": [
+{
+"id": 1,
+"name": "김영환",
+"title": [
+"감독"
+],
+"profile_image_url": "https://freeclassicimages.com/images/tn_007_PIERCE_BROSNAN_V8_Autograph.jpg",
+"contents": [
+{
+"id": 1,
+"title_korean": "검객",
+"title_original": "The Swordsman",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/3-Nuts-In-Search-Of-Bolt-01-movie-poster.jpg"
+},
+{
+"id": 2,
+"title_korean": "국제수사",
+"title_original": "The Golden Holiday",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/America-3000-01-movie-poster.jpg"
+},
+{
+"id": 3,
+"title_korean": "내가 죽던 날",
+"title_original": "THE DAY I DIED : UNCLOSED CASE",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/3-stooges-1941-movie-poster.jpg"
+},
+{
+"id": 4,
+"title_korean": "담보",
+"title_original": "Pawn",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/3-stooges-1942-movie-poster.jpg"
+},
+{
+"id": 5,
+"title_korean": "도굴",
+"title_original": "Collectors",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/3stooges-movie-maniacs-1935-movie-poster.jpg"
+},
+{
+"id": 6,
+"title_korean": "디바",
+"title_original": "Diva",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/7th-Commandment-01-movie-poster.jpg"
+},
+{
+"id": 7,
+"title_korean": "런 보이 런",
+"title_original": "RUN BOY RUN",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/13-Frightened-Girls-01-movie-poster.jpg"
+},
+{
+"id": 8,
+"title_korean": "반도",
+"title_original": "Peninsula",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/20-Million-Miles-To-Earth-01-movie-poster.jpg"
+},
+{
+"id": 9,
+"title_korean": "브레이크 더 사일런스: 더 무비",
+"title_original": "Break the Silence: The Movie",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/20-Million-Miles-To-Earth-06-movie-poster.jpg"
+},
+{
+"id": 10,
+"title_korean": "삼진그룹 영어토익반",
+"title_original": "SAMJIN COMPANY ENGLISH CLASS",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/27th-Day-03-movie-poster.jpg"
+},
+{
+"id": 11,
+"title_korean": "소리꾼",
+"title_original": "The Singer",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/100-Monsters-01-movie-poster.jpg"
+},
+{
+"id": 12,
+"title_korean": "소리도 없이",
+"title_original": "Voice of Silence",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/102-dalmatians-2000-movie-poster.jpg"
+},
+{
+"id": 13,
+"title_korean": "스웨그",
+"title_original": "SWAG",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/eat-drink-man-woman-1994-movie-poster.jpg"
+},
+{
+"id": 14,
+"title_korean": "오! 문희",
+"title_original": "Oh! My Gran",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/edward-scissorhands-1990-movie-poster.jpg"
+},
+{
+"id": 15,
+"title_korean": "이웃사촌",
+"title_original": "Best Friend",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/vanishing-private-1943-movie-poster.jpg"
+},
+{
+"id": 16,
+"title_korean": "인플루언서",
+"title_original": "Influnencer",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/madhouse2-movie-poster.jpg"
+},
+{
+"id": 17,
+"title_korean": "조제",
+"title_original": "Josée",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/maisie-1938-movie-poster.jpg"
+},
+{
+"id": 18,
+"title_korean": "태백권",
+"title_original": "The Therapist : Fist of Tae-baek",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/man-in-the-white-suit-1951-movie-poster.jpg"
+},
+{
+"id": 19,
+"title_korean": "프리즈너",
+"title_original": "The Prisoner",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/officer-duck-1939-movie-poster.jpg"
+},
+{
+"id": 20,
+"title_korean": "가장 보통의 연애",
+"title_original": "Crazy Romance",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/shadow-of-chinatown-1936-movie-poster.jpg"
+},
+{
+"id": 21,
+"title_korean": "감쪽같은 그녀",
+"title_original": "A Little Princess",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/kid_millions_1934_movie_poster.jpg"
+},
+{
+"id": 22,
+"title_korean": "강철비2 : 정상회담 확장판",
+"title_original": "Steel Rain2: Summit (Director's Cut)",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/kind-hearts-and-coronets-1949-belgium-movie-poster.jpg"
+},
+{
+"id": 23,
+"title_korean": "강철비2: 정상회담",
+"title_original": "Steel Rain2: Summit",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/figaro-and-cleo-1943-movie-poster.jpg"
+},
+{
+"id": 24,
+"title_korean": "결백",
+"title_original": "Innocence",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/fight-for-peace-1938-movie-poster.jpg"
+},
+{
+"id": 25,
+"title_korean": "공수도",
+"title_original": "Justice High",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/NEAR-DARK-TEASER-movie-poster.jpg"
+},
+{
+"id": 26,
+"title_korean": "광대들: 풍문조작단",
+"title_original": "Jesters: The Game Changers",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/walter-lantz-cartune-generic-1941-movie-poster.jpg"
+},
+{
+"id": 27,
+"title_korean": "귀신의 향기",
+"title_original": "Scent of Ghost",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/Zombi-2-01-movie-poster.jpg"
+},
+{
+"id": 28,
+"title_korean": "기방도령",
+"title_original": "HOMME FATALE",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/underworld-1937-movie-poster.jpg"
+},
+{
+"id": 29,
+"title_korean": "기생충",
+"title_original": "PARASITE",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/underworld-1937-movie-poster.jpg"
+},
+{
+"id": 30,
+"title_korean": "깡패와소녀",
+"title_original": "Bully and girl",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/unbearable-lightness-of-being-1988-movie-poster.jpg"
+}
+]
+}
+]
+}
