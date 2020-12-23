@@ -32,9 +32,7 @@
         cursor: pointer;
         border-top: 2px solid #ff0658;
         border-right: 2px solid #ff0658;
-        .mainLogoHigh {
-          @include mainLogoDetail;
-        }
+        .mainLogoHigh,
         .mainLogoLow {
           @include mainLogoDetail;
         }
