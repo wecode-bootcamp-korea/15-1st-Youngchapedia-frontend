@@ -2,12 +2,10 @@ import React, { Component } from 'react';
 import './MyPageDetailCard.scss';
 
 class MyPageDetailCard extends Component {
-  constructor() {
-    super();
-    this.state = {};
-  }
   render() {
     const { rateMovie } = this.props;
+    const { rateTitle } = this.props;
+
     return (
       <>
         {rateMovie.map((el, id) => {
@@ -18,9 +16,11 @@ class MyPageDetailCard extends Component {
                   className="cardImage"
                   src={el.content_image}
                   alt="movieImage"
-                ></img>
+                />
                 <div className="cardTitle">{el.content_title}</div>
-                <div className="cardRate">평가함 &#9733; {el.rating}</div>
+                <div className="cardRate">
+                  {rateTitle} &#9733; {el.rating.toFixed(1)}
+                </div>
               </div>
             </div>
           );

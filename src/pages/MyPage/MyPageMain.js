@@ -2,13 +2,7 @@ import React, { Component } from 'react';
 import Nav from '../../Components/Nav/Nav';
 import Footer from '../../Components/Footer/Footer';
 import MyPageCogIconControl from './Components/MyPageCogIconControl/MyPageCogIconControl';
-import {
-  TEST_TOKEN,
-  API_MY_PAGE_MAIN,
-  API_MY_PAGE_EVAL,
-  API_MY_PAGE_WISH,
-  API_MY_PAGE_WATCHING,
-} from '../../config';
+import { TEST_TOKEN, API_MY_PAGE_MAIN } from '../../config';
 import './MyPageMain.scss';
 
 class MyPageMain extends Component {
@@ -29,32 +23,30 @@ class MyPageMain extends Component {
       .then(response => response.json())
       .then(result => {
         this.setState({ myPageInfo: result });
-        // console.log(result);
-        // console.log(this.state.myPageInfo);
       });
   };
 
-  // componentDidMount = () => {
-  //   fetch(API_MY_PAGE_WISH, {
-  //     method: 'GET',
-  //     headers: {
-  //       Authorization: TEST_TOKEN,
-  //     },
-  //     body: {
-  //       archive_type: '1',
-  //     },
-  //   })
-  //     .then(response => response.json())
-  //     .then(result => this.setState({ myPageInfo: result }));
-  // };
-
   handleClickEval = () => {
-    // this.props.history.push('/mypagefooterdetail');
     this.props.history.push({
       pathname: '/mypagefooterdetail',
-      state: { titleSection: '평가' },
+      state: { titleSection: '평가한 작품들' },
     });
   };
+
+  handleClickWish = () => {
+    this.props.history.push({
+      pathname: '/mypagefooterdetail',
+      state: { titleSection: '보고싶어요' },
+    });
+  };
+
+  handleClickWatching = () => {
+    this.props.history.push({
+      pathname: '/mypagefooterdetail',
+      state: { titleSection: '보는중' },
+    });
+  };
+
   render() {
     return (
       <div className="MyPageMain">
@@ -80,12 +72,15 @@ class MyPageMain extends Component {
                   {`평가`} &#9733; {`${this.state.myPageInfo.rate}`}
                 </div>
               </div>
-              <div className="myPageLikeTo">
+              <div className="myPageLikeTo" onClick={this.handleClickWish}>
                 <div className="myPageLikeToText">
                   {`보고싶어요`} &#9733; {`${this.state.myPageInfo.wish}`}
                 </div>
               </div>
-              <div className="myPageWatching">
+              <div
+                className="myPageWatching"
+                onClick={this.handleClickWatching}
+              >
                 <div className="myPageWatchingText">
                   {`보는중`} &#9733; {`${this.state.myPageInfo.watching}`}
                 </div>

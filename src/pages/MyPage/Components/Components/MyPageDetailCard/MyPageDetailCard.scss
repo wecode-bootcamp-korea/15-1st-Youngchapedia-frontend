@@ -1,15 +1,14 @@
+@import "../../../../../styles/common.scss";
+
 .MyPageDetailCard {
   display: inline-block;
-  box-sizing: border-box;
   vertical-align: top;
   padding: 1em;
   flex-shrink: 1;
 
   .cardWrapper {
     display: inline-block;
-    box-sizing: border-box;
     vertical-align: top;
-
     width: 8.4em;
     height: 16em;
     flex-shrink: 1;
@@ -19,12 +18,12 @@
       border-radius: 2%;
     }
     .cardTitle {
-      font-size: 1.1em;
-      font-weight: 600;
       padding: 0.5em 0 0.3em;
       text-overflow: ellipsis;
       overflow: hidden;
       white-space: nowrap;
+      font-size: 1.1em;
+      font-weight: 600;
     }
     .cardRate {
       font-size: 0.8em;

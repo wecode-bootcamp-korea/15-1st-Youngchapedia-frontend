@@ -1,7 +1,7 @@
 import React from 'react';
-import './CogIconModalControl.scss';
-import { withRouter } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import { withRouter } from 'react-router-dom';
+import './CogIconModalControl.scss';
 
 class CogIconModalControl extends React.Component {
   deleteAccountHandler = () => {

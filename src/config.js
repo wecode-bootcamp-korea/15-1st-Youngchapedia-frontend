@@ -9,8 +9,10 @@ export const TEST_TOKEN =
 export const API_MY_PAGE_MAIN = 'http://192.168.219.156:8000/archive/user/main';
 export const API_MY_PAGE_EVAL =
   'http://192.168.219.156:8000/archive/rating/user';
-export const API_MY_PAGE_WISH = 'http://192.168.219.156:8000/archive/user';
-export const API_MY_PAGE_WATCHING = 'http://192.168.219.156:8000/archive/user';
+export const API_MY_PAGE_WISH =
+  'http://192.168.219.156:8000/archive/user?archive_type=1';
+export const API_MY_PAGE_WATCHING =
+  'http://192.168.219.156:8000/archive/user?archive_type=2';
 
 //id:test123@test.com pw:123123qweqwe mrtest123
 //1@test.com 111111qqq

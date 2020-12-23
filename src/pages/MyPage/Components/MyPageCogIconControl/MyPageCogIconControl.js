@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import CogIconModalControl from '../Components/CogIconModalControl/CogIconModalControl';
-import './MyPageCogIconControl.scss';
 import { COG_ICON } from '../../../../config';
+import './MyPageCogIconControl.scss';
 
 class MyPageCogIconControl extends Component {
   constructor() {
@@ -22,7 +22,7 @@ class MyPageCogIconControl extends Component {
       <div className="MyPageCogIconControl">
         <div className="cogIcon" onClick={this.myPageModalOpen}>
           <svg class="svg-icon" viewBox="0 0 20 20">
-            <path d={COG_ICON}></path>
+            <path d={COG_ICON} />
           </svg>
           <CogIconModalControl
             myPageModalStatus={this.state.myPageModalStatus}
