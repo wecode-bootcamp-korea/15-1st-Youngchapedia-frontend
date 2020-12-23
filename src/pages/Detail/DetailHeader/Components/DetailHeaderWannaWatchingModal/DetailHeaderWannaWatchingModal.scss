@@ -1,0 +1,41 @@
+@import '../../../../../styles/common.scss';
+.DetailHeaderModal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 2;
+
+  .DetailHeaderModalBackGround {
+    width: 375px;
+    height: 320px;
+    background-color: white;
+    position: relative;
+    box-sizing: border-box;
+    margin: 14em auto;
+    padding: 1.25em;
+    background: $color-white;
+    border-radius: 10px;
+    z-index: 3;
+  }
+
+  .DetailHeaderModalBTNs {
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid $color-detail-border;
+    border-bottom: 1px solid $color-detail-border;
+    margin-top: 1em;
+    height: 96px;
+  }
+  .DetailHeaderModalCancel {
+    height: 50px;
+    @include flex-center;
+    color: $color-youngcha;
+
+    p {
+      cursor: pointer;
+    }
+  }
+}

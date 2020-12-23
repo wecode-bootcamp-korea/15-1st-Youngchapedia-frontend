@@ -1,0 +1,18 @@
+.DetailMainAct {
+  padding: 1em;
+  background-color: #ffffff;
+
+  h1 {
+    font-size: 1.213em;
+    font-weight: bold;
+    margin: 0.5em 0;
+  }
+
+  ul {
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    overflow-x: scroll;
+  }
+}
