@@ -72,7 +72,6 @@ class LoginControl extends React.Component {
     const emailRuleSet = !email.match(emailRule);
     const pwRuleSet = !pw.match(pwRule);
     const inputPass = !emailRuleSet && !pwRuleSet;
-
     this.setState({
       emailStatus: emailRuleSet ? true : false,
       passwordStatus: pwRuleSet ? true : false,

@@ -55,12 +55,10 @@
 
       .loginPageLogoHigh {
         @include logoDetail;
-
       }
 
       .loginPageLogoLow {
         @include logoDetail;
-
       }
     }
 
@@ -86,8 +84,10 @@
     .emailSection {
       @include flexCenter;
       width: 100%;
+
       .emailInput {
         margin: 0.3em 0em;
+        border: none;
         @include inputAndBtn;
       }
       .emailInput::placeholder {
@@ -97,6 +97,42 @@
 
       .emailInput:focus {
         outline: none;
+      }
+      .svg-icon1 {
+        position: absolute;
+        margin-right: -14em;
+        width: 1em;
+        height: 1em;
+      }
+      .svg-icon1 path,
+      .svg-icon1 polygon,
+      .svg-icon1 rect {
+        fill: #4691f6;
+      }
+      .svg-icon1 circle {
+        stroke: #4691f6;
+        stroke-width: 1;
+      }
+      .inputIconDelete{
+
+      }
+      .svg-icon2 {
+        position: absolute;
+        margin-right: -17em;
+        width: 1em;
+        height: 1em;
+      }
+      .svg-icon2 path,
+      .svg-icon2 polygon,
+      .svg-icon2 rect {
+        fill: #4691f6;
+      }
+      .svg-icon2 circle {
+        stroke: #4691f6;
+        stroke-width: 1;
+      }
+      .inputIconCheck{
+
       }
     }
 
@@ -157,9 +193,3 @@
     }
   }
 }
-
-
-
-
-
-
