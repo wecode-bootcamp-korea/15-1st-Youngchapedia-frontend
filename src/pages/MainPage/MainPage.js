@@ -35,26 +35,10 @@ class MainPage extends Component {
   };
 
   render() {
-<<<<<<< HEAD
-    const { movieList, isLoading } = this.state;
-    console.log(movieList);
-    return (
-      <>
-        {isLoading ? (
-          <div className="lds-heart">
-            <div></div>
-          </div>
-        ) : (
-          <>
-            <p onClick={this.goToFilter}>{movieList.name}</p>
-          </>
-        )}
-=======
     return (
       <>
         <Nav />
         <MoviePage />
->>>>>>> 335232c96bc1ad9cf2e1f9c525f745e948c9b7fb
         <Footer />
       </>
     );
