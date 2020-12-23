@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { MOVIE_REVIEW } from '../../../../../../config';
-import { USER1_TOKEN } from '../../../../../../config';
+import { USER1_TOKEN, USER2_TOKEN } from '../../../../../../config';
 import './DetailMainCommentModal.scss';
 
 class DetailMainCommentModal extends React.Component {
@@ -37,7 +37,7 @@ class DetailMainCommentModal extends React.Component {
     fetch(MOVIE_REVIEW, {
       method: 'POST',
       headers: {
-        Authorization: USER1_TOKEN,
+        Authorization: USER2_TOKEN,
       },
       body: JSON.stringify({
         review: comment,
@@ -47,7 +47,7 @@ class DetailMainCommentModal extends React.Component {
 
   render() {
     const { comment, commentBtnStatus } = this.state;
-
+    const { movieTitle } = this.props;
     return (
       <section className="DetailMainCommentModal">
         <div className="modalContent">
@@ -56,7 +56,7 @@ class DetailMainCommentModal extends React.Component {
               <div className="icon" onClick={this.onCloseComment}>
                 <i className="fas fa-times" />
               </div>
-              <p>원더우먼</p>
+              <p>{movieTitle}</p>
               <button
                 className={
                   commentBtnStatus

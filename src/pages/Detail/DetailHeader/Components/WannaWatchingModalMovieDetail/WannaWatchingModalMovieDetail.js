@@ -11,7 +11,7 @@ class WannaWatchingModalMovieDetail extends React.Component {
             alt="moviePoster"
           />
         </div>
-        <div className="WannaWatchingModalMovieDetailNameAndDetail">
+        <div className="ModalMovieDetailNameAndDetail">
           <p className="WannaWatchingMovieName">아람피터와 진실의방</p>
           <p className="WannaWatchingMovieDetail">영화</p>
         </div>

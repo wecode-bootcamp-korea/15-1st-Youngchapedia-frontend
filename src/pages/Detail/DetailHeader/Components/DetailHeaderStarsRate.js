@@ -20,6 +20,7 @@ class DetailHeaderStarsRate extends React.Component {
     },
     starsValue: '',
     starsRatingScore: 0,
+    isRating: false,
   };
 
   componentDidMount() {
@@ -36,7 +37,6 @@ class DetailHeaderStarsRate extends React.Component {
           starsRatingScore: res.result.rating,
           starsValue: this.state.starsRate[this.state.starsRatingScore],
         });
-        console.log(this.state.starsRatingScore);
       });
   }
 
@@ -47,7 +47,11 @@ class DetailHeaderStarsRate extends React.Component {
       body: JSON.stringify({
         rating: newValue,
       }),
-    }).then(res => res.json());
+    })
+      .then(res => res.json())
+      .then(res => {
+        this.setState({ ratedStar: true, starsRatingScore: res });
+      });
   }
 
   petchStarsRatingScore(newValue) {
@@ -57,60 +61,57 @@ class DetailHeaderStarsRate extends React.Component {
       body: JSON.stringify({
         rating: newValue,
       }),
-    }).then(res => res.json());
+    })
+      .then(res => res.json())
+      .then(res => {
+        this.setState({ ratedStar: true, starsRatingScore: res });
+      });
   }
 
   deleteStarsRatingScore() {
     fetch(MOVIE_RARTING, {
       method: 'DELETE',
       headers: { Authorization: USER1_TOKEN },
-    });
+    })
+      .then(res => res.json())
+      .then(res => {
+        this.setState({ ratedStar: false });
+      });
   }
 
   activeStarRateFunction = newValue => {
-    const { starsRatingScore } = this.state;
+    const { starsRatingScore, ratedStar } = this.state;
     this.setState({
       starsValue: this.state.starsRate[newValue],
       starsRatingScore: newValue,
-      ratedStar: true,
     });
-    console.log(newValue, starsRatingScore);
-    if (starsRatingScore === 0) return this.postStarsRatingScore(newValue);
 
-    if (starsRatingScore !== newValue)
+    if (starsRatingScore === 0 && ratedStar === false)
+      return this.postStarsRatingScore(newValue);
+
+    if (
+      starsRatingScore !== 0 &&
+      ratedStar === true &&
+      starsRatingScore !== newValue
+    )
       return this.petchStarsRatingScore(newValue);
   };
 
-  deleteActiveStarRate = click => {
-    const starsRatingClientX = {
-      0.5: 532,
-      1.0: 552,
-      1.5: 586,
-      2.0: 611,
-      2.5: 640,
-      3.0: 666,
-      3.5: 693,
-      4.0: 715,
-      4.5: 746,
-      5.0: 761,
-    };
-    if (click.clientX === starsRatingClientX[this.state.starsRatingScore])
+  deleteActiveStarRate = () => {
+    const { starsRatingScore, ratedStar } = this.state;
+    if (ratedStar === true && starsRatingScore !== 0)
       return this.deleteStarsRatingScore();
-    console.log(click);
+    console.log(starsRatingScore, ratedStar);
   };
 
   render() {
-    const { ratedStar, starsValue, starsRatingScore } = this.state;
+    const { starsValue, starsRatingScore } = this.state;
 
     return (
       <section className="DetailHeaderStarsRate">
         <div className="evaluation">
           <div>
-            {ratedStar ? (
-              <div className="evaluating">{starsValue}</div>
-            ) : (
-              <div className="evaluating">평가하기</div>
-            )}
+            <div className="evaluating">{starsValue}</div>
           </div>
           <div className="starsRoomControl">
             <div className="starsRoom" onClick={this.deleteActiveStarRate}>

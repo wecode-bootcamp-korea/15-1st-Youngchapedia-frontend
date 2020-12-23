@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
 import './DetailAsideGallery.scss';
 
-class DetailAsideGallery extends React.Component {
+class DetailAsideGallery extends Component {
   render() {
-    return <div></div>;
+    const { picture } = this.props;
+    return (
+      <li className="DetailAsideGallery">
+        <img src={picture} alt="영화 그림" />
+      </li>
+    );
   }
 }
 

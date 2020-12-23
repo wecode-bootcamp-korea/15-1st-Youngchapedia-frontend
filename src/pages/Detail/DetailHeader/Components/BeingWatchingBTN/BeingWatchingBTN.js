@@ -10,6 +10,7 @@ class BeingWatchingBTN extends Component {
       isclickedBeingWatchingBTN,
     } = this.props;
     this.props.handleActiveBeingWatchingBTN();
+
     if (
       isDefaultButton === false &&
       isActiveBTN === false &&

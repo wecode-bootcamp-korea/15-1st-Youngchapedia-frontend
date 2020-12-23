@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
-import { MOVIE_REVIEW, USER1_TOKEN } from '../../../../../../config';
+import {
+  MOVIE_REVIEW,
+  USER1_TOKEN,
+  USER2_TOKEN,
+} from '../../../../../../config';
 import './DetailMainCommentEditModal.scss';
 
 class DetailMainCommentEditModal extends React.Component {
@@ -36,7 +40,7 @@ class DetailMainCommentEditModal extends React.Component {
     fetch(MOVIE_REVIEW, {
       method: 'PATCH',
       headers: {
-        Authorization: USER1_TOKEN,
+        Authorization: USER2_TOKEN,
       },
       body: JSON.stringify({
         review: comment,

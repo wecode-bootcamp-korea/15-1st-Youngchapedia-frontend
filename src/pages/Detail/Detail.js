@@ -3,10 +3,10 @@ import DetailHeader from './DetailHeader/DetailHeader';
 import DetailMain from './DetailMain/DetailMain';
 import DetailAside from './DetailAside/DetailAside';
 import { MOVIES_DETAIL } from '../../config';
-import { MOVIES_DESCRIPTION } from '../../config';
+import { MOVIES_DESCRIPTION, MOVIE_DETAIL_GALLERY } from '../../config';
 import './Detail.scss';
 
-class Detail extends React.Component {
+class Detail extends Component {
   state = {
     movies: [],
     posterImgURL: '',
@@ -15,10 +15,17 @@ class Detail extends React.Component {
     movieGenre: '',
     makeCountry: '',
     descriptionValue: '',
-    isLoading: false,
+    moivesGallery: '',
+    isLoading: true,
   };
 
   componentDidMount() {
+    this.getMoiveDetail();
+    this.getMoiveDescription();
+    this.getMovieGallery();
+  }
+
+  getMoiveDetail = () => {
     fetch(MOVIES_DETAIL)
       .then(res => res.json())
       .then(res => {
@@ -31,12 +38,24 @@ class Detail extends React.Component {
           isLoading: false,
         });
       });
+  };
 
+  getMoiveDescription = () => {
     fetch(MOVIES_DESCRIPTION)
       .then(response => response.json())
       .then(response =>
         this.setState({ descriptionValue: response.MESSAGE[0].description })
       );
+  };
+
+  getMovieGallery() {
+    fetch('./data/gallery.json')
+      // MOVIE_DETAIL_GALLERY
+      .then(res => res.json())
+      .then(res => {
+        console.log(this.state.moivesGallery);
+        this.setState({ moivesGallery: res.RESULT[0].galleris_image });
+      });
   }
 
   render() {
@@ -48,6 +67,7 @@ class Detail extends React.Component {
       makeCountry,
       descriptionValue,
       isLoading,
+      moivesGallery,
     } = this.state;
     return (
       <>
@@ -63,6 +83,7 @@ class Detail extends React.Component {
               movieReleaseYear={movieReleaseYear}
               movieGenre={movieGenre}
               makeCountry={makeCountry}
+              moivesGallery={moivesGallery}
             />
             <div className="DetailMainAside">
               <DetailMain
@@ -72,7 +93,7 @@ class Detail extends React.Component {
                 movieGenre={movieGenre}
                 descriptionValue={descriptionValue}
               />
-              <DetailAside />
+              <DetailAside moivesGallery={moivesGallery} />
             </div>
           </div>
         )}

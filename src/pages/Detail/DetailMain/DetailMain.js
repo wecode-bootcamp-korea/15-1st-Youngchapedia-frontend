@@ -6,8 +6,12 @@ import DeleteCommentCheckModal from './Components/DetailMainComment/DeleteCommen
 import DetailMainCommentEditModal from './Components/DetailMainComment/DetailMainCommentEditModal/DetailMainCommentEditModal';
 import DetailMainAct from './Components/DetailMainAct/DetailMainAct';
 import DetailMainInfor from './Components/DetailMainInfor/DetailMainInfor';
-import { MOVIE_REVIEW } from '../../../config';
-import { USER1_TOKEN } from '../../../config';
+import {
+  MOVIE_REVIEW,
+  MOVIE_CAST,
+  USER1_TOKEN,
+  USER2_TOKEN,
+} from '../../../config';
 
 import './DetailMain.scss';
 
@@ -16,15 +20,20 @@ class DetailMain extends React.Component {
     comment: '',
     isCommentValue: false,
     isCommentClicked: false,
-    isCheckCommentDelete: false,
     isCommentEdited: false,
-    castingMember: '',
+    isCheckCommentDelete: false,
+    castingMembers: [],
   };
 
   componentDidMount() {
+    if (this.state.comment) return this.getMovieReview();
+    this.getMovieCast();
+  }
+
+  getMovieReview() {
     fetch(MOVIE_REVIEW, {
       headers: {
-        Authorization: { USER1_TOKEN },
+        Authorization: USER2_TOKEN,
       },
     })
       .then(response => response.json())
@@ -34,6 +43,13 @@ class DetailMain extends React.Component {
           isCommentValue: true,
         });
       });
+  }
+
+  getMovieCast() {
+    // MOVIE_CAST
+    fetch('./data/cast.json')
+      .then(response => response.json())
+      .then(response => this.setState({ castingMembers: response.RESULT }));
   }
 
   handleLeaveCommentToggle = () => {
@@ -67,7 +83,7 @@ class DetailMain extends React.Component {
       isCommentClicked,
       isCheckCommentDelete,
       isCommentEdited,
-      castingMember,
+      castingMembers,
     } = this.state;
 
     const {
@@ -83,6 +99,7 @@ class DetailMain extends React.Component {
           <DetailMainCommentModal
             handleLeaveCommentToggle={this.handleLeaveCommentToggle}
             handleCommentValue={this.handleCommentValue}
+            movieTitle={movieTitle}
           />
         )}
 
@@ -125,7 +142,7 @@ class DetailMain extends React.Component {
             movieGenre={movieGenre}
             descriptionValue={descriptionValue}
           />
-          <DetailMainAct castingMember={castingMember} />
+          <DetailMainAct castingMembers={castingMembers} />
         </div>
       </main>
     );

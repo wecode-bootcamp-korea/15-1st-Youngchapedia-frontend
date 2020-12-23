@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import WannaWatchingModalMovieDetail from '../WannaWatchingModalMovieDetail/WannaWatchingModalMovieDetail';
 import WannaWatchingBTN from '../WannaWatchingBTN/WannaWatchingBTN';
 import BeingWatchingBTN from '../BeingWatchingBTN/BeingWatchingBTN';
-
 import DontCareBTN from '../DontCareBTN/DontCareBTN';
 import './DetailHeaderWannaWatchingModal.scss';
 
@@ -20,37 +19,31 @@ class DetailHeaderWannaWatchingModal extends React.Component {
       dontCareMovie,
       handleControlDontCareButton,
     } = this.props;
+
+    const passingProps = {
+      isDefaultButton: isDefaultButton,
+      isActiveBTN: isActiveBTN,
+      isclickedWannaWatchingBTN: isclickedWannaWatchingBTN,
+      isclickedBeingWatchingBTN: isclickedBeingWatchingBTN,
+      handleResetButtonStatus: handleResetButtonStatus,
+      handleActiveWannaWatchingBTN: handleActiveWannaWatchingBTN,
+    };
     return (
       <section className="DetailHeaderModal">
         <div className="DetailHeaderModalBackGround">
           <WannaWatchingModalMovieDetail />
           <div className="DetailHeaderModalBTNs">
-            <WannaWatchingBTN
-              isDefaultButton={isDefaultButton}
-              isActiveBTN={isActiveBTN}
-              isclickedWannaWatchingBTN={isclickedWannaWatchingBTN}
-              isclickedBeingWatchingBTN={isclickedBeingWatchingBTN}
-              handleResetButtonStatus={handleResetButtonStatus}
-              handleActiveWannaWatchingBTN={handleActiveWannaWatchingBTN}
-            />
+            <WannaWatchingBTN {...passingProps} />
             <BeingWatchingBTN
-              isDefaultButton={isDefaultButton}
-              isActiveBTN={isActiveBTN}
-              isclickedWannaWatchingBTN={isclickedWannaWatchingBTN}
-              isclickedBeingWatchingBTN={isclickedBeingWatchingBTN}
-              handleActiveBeingWatchingBTN={handleActiveBeingWatchingBTN}
-              handleResetButtonStatus={handleResetButtonStatus}
+              {...passingProps}
               handleControlDontCareButton={handleControlDontCareButton}
+              handleActiveBeingWatchingBTN={handleActiveBeingWatchingBTN}
             />
           </div>
 
           <DontCareBTN
-            isDefaultButton={isDefaultButton}
-            isActiveBTN={isActiveBTN}
-            isclickedWannaWatchingBTN={isclickedWannaWatchingBTN}
-            isclickedBeingWatchingBTN={isclickedBeingWatchingBTN}
+            {...passingProps}
             dontCareMovie={dontCareMovie}
-            handleResetButtonStatus={handleResetButtonStatus}
             handleControlDontCareButton={handleControlDontCareButton}
           />
           <div

@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
-import { MOVIE_REVIEW } from '../../../../../../config';
+import {
+  MOVIE_REVIEW,
+  USER1_TOKEN,
+  USER2_TOKEN,
+} from '../../../../../../config';
 import './DeleteCommentCheckModal.scss';
 
 class DeleteCommentCheckModal extends Component {
@@ -12,10 +16,9 @@ class DeleteCommentCheckModal extends Component {
     fetch(MOVIE_REVIEW, {
       method: 'DELETE',
       headers: {
-        Authorization:
-          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo5fQ.T66un2Tsk42sMvfJjqY1YO9Kh4gyuCBKJib6bizw_fE',
+        Authorization: USER2_TOKEN,
       },
-    }).then(response => response.json());
+    });
   };
 
   render() {

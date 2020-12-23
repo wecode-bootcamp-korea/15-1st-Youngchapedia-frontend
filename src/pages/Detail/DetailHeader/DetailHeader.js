@@ -169,12 +169,20 @@ class DetailHeader extends React.Component {
       movieReleaseYear,
       movieGenre,
       makeCountry,
+      moivesGallery,
     } = this.props;
+
+    const detailHeaderpassingProps = {
+      isDefaultButton: isDefaultButton,
+      isActiveBTN: isActiveBTN,
+      isclickedWannaWatchingBTN: isclickedWannaWatchingBTN,
+      isclickedBeingWatchingBTN: isclickedBeingWatchingBTN,
+    };
     return (
       <header className="DetailHeader">
         <div className="DivControl">
           <div className="fixBackgournd">
-            <img src={posterImgURL} alt={movieTitle} />
+            <img src={moivesGallery[0]} alt={movieTitle} />
           </div>
           <div className="flexPosterAndDetails">
             <div className="posterConroler">
@@ -185,12 +193,9 @@ class DetailHeader extends React.Component {
                 <div className="score">평균 ★5.0 (41명)</div>
                 <div className="buttonsAndEvaluation">
                   <DetailHeaderButtons
-                    isActiveWannaWatchingModal={isActiveWannaWatchingModal}
-                    isDefaultButton={isDefaultButton}
-                    isActiveBTN={isActiveBTN}
-                    isclickedWannaWatchingBTN={isclickedWannaWatchingBTN}
-                    isclickedBeingWatchingBTN={isclickedBeingWatchingBTN}
+                    {...detailHeaderpassingProps}
                     onWannaWatchingModalToggle={this.onWannaWatchingModalToggle}
+                    isActiveWannaWatchingModal={isActiveWannaWatchingModal}
                     onClickedWhenClickedBeingWatchingButton={
                       this.onClickedWhenClickedBeingWatchingButton
                     }
@@ -203,10 +208,7 @@ class DetailHeader extends React.Component {
                   </div>
                   {isActiveWannaWatchingModal && (
                     <DetailHeaderWannaWatchingModal
-                      isDefaultButton={isDefaultButton}
-                      isActiveBTN={isActiveBTN}
-                      isclickedWannaWatchingBTN={isclickedWannaWatchingBTN}
-                      isclickedBeingWatchingBTN={isclickedBeingWatchingBTN}
+                      {...detailHeaderpassingProps}
                       dontCareMovie={dontCareMovie}
                       onWannaWatchingModalToggle={
                         this.onWannaWatchingModalToggle
