@@ -20,6 +20,8 @@ $color-background: #f8f8f8;
 $color-info-font-color: #4a4a4a;
 /* 상세페이지 코멘트 배경 색상*/
 $color-cmt-background: #f2f2f2;
+$color-detail-border: #d2d2d2;
+
 /* 코멘트 색상 */
 $color-cmt-font: #202020;
 /* 상세페이지 별점색상 */
@@ -90,6 +92,8 @@ $slide-test: 1200px;
   }
 }
 
+@mixin detailBorder {
+  border: 1px solid #d2d2d2;
 a {
   text-decoration: none;
   color: $color-black;

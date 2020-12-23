@@ -5,6 +5,8 @@ import Login from './Pages/Login/Login';
 import Detail from './Pages/Detail/Detail';
 import MyPageMain from './Pages/MyPage/MyPageMain';
 import MyPageFooterDetail from './Pages/MyPage/Components/MyPageFooterDetail/MyPageFooterDetail';
+import DetailMainCommentLink from './Pages/Detail/DetailMain/Components/DetailMainComment/DetailMainCommentModal/DetailMainCommentModal';
+import '@fortawesome/fontawesome-free/js/all.js';
 import FilterPage from './Pages/FilterPage/FilterPage';
 import SearchResultPage from './Components/Nav/Search/SearchResultPage';
 
@@ -23,6 +25,8 @@ class Routes extends Component {
             path="/mypagefooterdetail"
             component={MyPageFooterDetail}
           />
+
+          <Route exact path="/detail" component={Detail} />
           <Route exact path="/filter/:id" component={FilterPage} />
           <Route exact path="/movies/:id" component={Detail} />
           <Route exact path="/details/:id" component={Detail} />
