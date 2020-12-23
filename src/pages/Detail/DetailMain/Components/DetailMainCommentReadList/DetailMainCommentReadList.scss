@@ -1,0 +1,86 @@
+@import '../../../../../styles/common.scss';
+
+.DetailMainCommentReadList {
+  background-color: #f2f2f2;
+  @include detailBorder;
+
+  min-width: 19em;
+  height: 19.5em;
+  margin-left: 1em;
+  border-radius: 10px;
+
+  .CommentListUserName {
+    padding: 0.5em;
+    display: flex;
+    align-items: center;
+    margin: 0.7em 0 0.6em 0;
+
+    img {
+      width: 2em;
+      height: 2em;
+
+      margin-right: 1em;
+      border-radius: 50%;
+    }
+    span {
+      font-size: 1.5em;
+      margin-top: 0.2em;
+    }
+  }
+  .CommentListUserReview {
+    height: 8em;
+    margin: 0 0.4em;
+    padding: 1.5em 1em;
+    font-size: 1.1em;
+    border-top: 1px solid $color-detail-border;
+  }
+  .UserLikeAndComment {
+    display: flex;
+    align-items: center;
+    padding: 0.2em 0.5em;
+    margin: 0 0.45em;
+    height: 3em;
+    font-size: 1em;
+    border-top: 1px solid $color-detail-border;
+    color: $color-info-font-color;
+
+    .UserLike {
+      margin-right: 0.6em;
+
+      .fa-thumbs-up {
+        margin-right: 0.2em;
+      }
+    }
+
+    .fa-comment {
+      margin-right: 0.2em;
+    }
+  }
+  .inActiveUserCommentLike {
+    height: 3em;
+    display: flex;
+    align-items: center;
+    padding: 0.2em 0.5em;
+    margin: 0 0.43em;
+    color: $color-youngcha;
+    border-top: 1px solid $color-detail-border;
+    cursor: pointer;
+  }
+  .ActiveUserCommentLike {
+    height: 2.3em;
+    display: flex;
+    align-items: center;
+    border-top: 1px solid $color-detail-border;
+    padding: 0.2em 0.5em;
+    margin: 0 0.43em;
+
+    span {
+      background-color: $color-youngcha;
+      color: #ffffff;
+      padding: 0.2em;
+      border-top: 1px solid $color-detail-border;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+  }
+}

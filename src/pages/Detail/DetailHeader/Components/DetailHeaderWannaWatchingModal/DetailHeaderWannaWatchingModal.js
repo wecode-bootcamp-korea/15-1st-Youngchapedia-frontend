@@ -40,7 +40,6 @@ class DetailHeaderWannaWatchingModal extends React.Component {
               handleActiveBeingWatchingBTN={handleActiveBeingWatchingBTN}
             />
           </div>
-
           <DontCareBTN
             {...passingProps}
             dontCareMovie={dontCareMovie}

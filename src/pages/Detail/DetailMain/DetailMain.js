@@ -3,14 +3,15 @@ import DetailMainCommentWithoutValue from './Components/DetailMainComment/Detail
 import DetailMainCommentWithValue from './Components/DetailMainComment/DetailMainCommentWithValue/DetailMainCommentWithValue';
 import DetailMainCommentModal from './Components/DetailMainComment/DetailMainCommentModal/DetailMainCommentModal';
 import DeleteCommentCheckModal from './Components/DetailMainComment/DeleteCommentCheckModal/DeleteCommentCheckModal';
-import DetailMainCommentEditModal from './Components/DetailMainComment/DetailMainCommentEditModal/DetailMainCommentEditModal';
 import DetailMainAct from './Components/DetailMainAct/DetailMainAct';
 import DetailMainInfor from './Components/DetailMainInfor/DetailMainInfor';
+import DetailMainCommentRead from './Components/DetailMainCommentRead/DetailMainCommentRead';
 import {
   MOVIE_REVIEW,
   MOVIE_CAST,
   USER1_TOKEN,
   USER2_TOKEN,
+  ACRIVE_USER_COMMENT,
 } from '../../../config';
 
 import './DetailMain.scss';
@@ -30,26 +31,19 @@ class DetailMain extends React.Component {
     this.getMovieCast();
   }
 
-  getMovieReview() {
-    fetch(MOVIE_REVIEW, {
-      headers: {
-        Authorization: USER2_TOKEN,
-      },
-    })
-      .then(response => response.json())
-      .then(response => {
-        this.setState({
-          comment: response.my_result.review,
-          isCommentValue: true,
-        });
-      });
-  }
-
   getMovieCast() {
     // MOVIE_CAST
     fetch('./data/cast.json')
       .then(response => response.json())
       .then(response => this.setState({ castingMembers: response.RESULT }));
+  }
+
+  getMovieComments() {
+    fetch(ACRIVE_USER_COMMENT)
+      .then(response => response.json())
+      .then(response => {
+        this.setState({ UserComments: response.result });
+      });
   }
 
   handleLeaveCommentToggle = () => {
@@ -151,6 +145,7 @@ class DetailMain extends React.Component {
             descriptionValue={descriptionValue}
           />
           <DetailMainAct castingMembers={castingMembers} />
+          <DetailMainCommentRead />
         </div>
       </main>
     );

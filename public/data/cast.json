@@ -1,23 +1,65 @@
 {
-"MESSAGE": "SUCCESS",
-"RESULT": [
-{
-"people_id": 1,
-"people_name": "김영환",
-"role": "감독",
-"people_image_url": "https://freeclassicimages.com/images/tn_007_PIERCE_BROSNAN_V8_Autograph.jpg"
-},
-{
-"people_id": 11,
-"people_name": "김정웅",
-"role": "주연",
-"people_image_url": "https://freeclassicimages.com/images/tn_Bela-Lugosi-Autograph.jpg"
-},
-{
-"people_id": 31,
-"people_name": "박주원",
-"role": "조연",
-"people_image_url": "https://freeclassicimages.com/images/tn_DAWN-FRENCH-Autograph.jpg"
-}
-]
+  "MESSAGE": "SUCCESS",
+  "RESULT": [
+    {
+      "people_id": 1,
+      "people_name": "김영환",
+      "role": "감독",
+      "people_image_url": "https://freeclassicimages.com/images/tn_007_PIERCE_BROSNAN_V8_Autograph.jpg"
+    },
+    {
+      "people_id": 11,
+      "people_name": "김정웅",
+      "role": "주연",
+      "people_image_url": "https://freeclassicimages.com/images/tn_Bela-Lugosi-Autograph.jpg"
+    },
+    {
+      "people_id": 31,
+      "people_name": "박주원",
+      "role": "조연",
+      "people_image_url": "https://freeclassicimages.com/images/tn_DAWN-FRENCH-Autograph.jpg"
+    },
+    {
+      "people_id": 31,
+      "people_name": "박주원",
+      "role": "조연",
+      "people_image_url": "https://freeclassicimages.com/images/tn_DAWN-FRENCH-Autograph.jpg"
+    },
+    {
+      "people_id": 31,
+      "people_name": "박주원",
+      "role": "조연",
+      "people_image_url": "https://freeclassicimages.com/images/tn_DAWN-FRENCH-Autograph.jpg"
+    },
+    {
+      "people_id": 31,
+      "people_name": "박주원",
+      "role": "조연",
+      "people_image_url": "https://freeclassicimages.com/images/tn_DAWN-FRENCH-Autograph.jpg"
+    },
+    {
+      "people_id": 31,
+      "people_name": "박주원",
+      "role": "조연",
+      "people_image_url": "https://freeclassicimages.com/images/tn_DAWN-FRENCH-Autograph.jpg"
+    },
+    {
+      "people_id": 31,
+      "people_name": "박주원",
+      "role": "조연",
+      "people_image_url": "https://freeclassicimages.com/images/tn_DAWN-FRENCH-Autograph.jpg"
+    },
+    {
+      "people_id": 31,
+      "people_name": "박주원",
+      "role": "조연",
+      "people_image_url": "https://freeclassicimages.com/images/tn_DAWN-FRENCH-Autograph.jpg"
+    },
+    {
+      "people_id": 31,
+      "people_name": "박주원",
+      "role": "조연",
+      "people_image_url": "https://freeclassicimages.com/images/tn_DAWN-FRENCH-Autograph.jpg"
+    }
+  ]
 }

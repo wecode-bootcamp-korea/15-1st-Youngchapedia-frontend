@@ -12,6 +12,8 @@ export const MOVIE_RARTING =
   'http://192.168.219.156:8000/archive/rating/content/1';
 export const WANNAWATCHING = `http://192.168.219.156:8000/archive/content/1`;
 export const MOVIE_DETAIL_GALLERY = `http://192.168.219.113:8000/contents/gallery/1`;
+export const ACRIVE_USER_COMMENT = `http://192.168.219.156:8000/review/list/content/1`;
+export const ACRIVE_USER_COMMENT_LIKE = `http://192.168.219.156:8000/review/like`;
 export const USER1_TOKEN =
   'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo5fQ.T66un2Tsk42sMvfJjqY1YO9Kh4gyuCBKJib6bizw_fE';
 export const USER2_TOKEN =

@@ -1,13 +1,17 @@
+@import '../../../../../styles/common.scss';
+
 .DetailMainActList {
   li {
     display: flex;
-    margin: 1em 0;
+    margin: 0.5em 3em 1em 0;
+    min-width: 14em;
+    border-bottom: 1px solid $color-detail-border;
 
     img {
       width: 3.563em;
       height: 3.563em;
       border-radius: 6px;
-      margin-right: 1em;
+      margin: 0 1em 0.2em 0;
     }
 
     div {
