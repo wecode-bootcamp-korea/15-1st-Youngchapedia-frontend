@@ -5,12 +5,12 @@ import './DetailMainCommentModal.scss';
 
 class DetailMainCommentModal extends React.Component {
   state = {
-    comment: '',
+    comment: this.props.currentComment,
     commentBtnStatus: true,
   };
 
   onCloseComment = () => {
-    this.props.handleLeaveCommentToggle();
+    this.props.closeModal();
   };
 
   receiveValue = e => {
@@ -32,10 +32,11 @@ class DetailMainCommentModal extends React.Component {
     this.props.handleCommentValue(comment);
   };
 
-  writingComment = () => {
+  saveComment = () => {
     const { comment } = this.state;
+    const { apiMethod } = this.props;
     fetch(MOVIE_REVIEW, {
-      method: 'POST',
+      method: apiMethod,
       headers: {
         Authorization: USER2_TOKEN,
       },
@@ -47,7 +48,7 @@ class DetailMainCommentModal extends React.Component {
 
   render() {
     const { comment, commentBtnStatus } = this.state;
-    const { movieTitle } = this.props;
+    const { btnType, movieTitle } = this.props;
     return (
       <section className="DetailMainCommentModal">
         <div className="modalContent">
@@ -64,20 +65,18 @@ class DetailMainCommentModal extends React.Component {
                     : 'abledcommentSummit'
                 }
                 disabled={commentBtnStatus}
-                onClick={this.writingComment}
+                onClick={this.saveComment}
               >
-                코멘트 작성
+                {btnType}
               </button>
             </div>
             <div className="SNS">
               <div>sns</div>
-
               <img
                 src="https://t1.daumcdn.net/cfile/tistory/2179484B51E15ABC35"
                 alt="트위터"
               />
             </div>
-
             <textarea onChange={this.receiveValue} value={comment}></textarea>
           </form>
         </div>

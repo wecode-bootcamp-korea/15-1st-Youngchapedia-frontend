@@ -65,7 +65,12 @@ class DetailMain extends React.Component {
   };
 
   handleCommentValue = comment => {
-    this.setState({ comment, isCommentValue: true, isCommentClicked: false });
+    this.setState({
+      comment,
+      isCommentValue: true,
+      isCommentClicked: false,
+      isCommentEdited: false,
+    });
   };
 
   handleEditCommentValue = comment => {
@@ -97,9 +102,21 @@ class DetailMain extends React.Component {
       <main className="DetailMain">
         {isCommentClicked && (
           <DetailMainCommentModal
-            handleLeaveCommentToggle={this.handleLeaveCommentToggle}
+            closeModal={this.handleLeaveCommentToggle}
+            currentComment={''}
+            apiMethod={'POST'}
+            btnType={'코멘트 작성'}
             handleCommentValue={this.handleCommentValue}
-            movieTitle={movieTitle}
+          />
+        )}
+
+        {isCommentEdited && (
+          <DetailMainCommentModal
+            closeModal={this.handleCommentEditToggle}
+            currentComment={comment}
+            apiMethod={'PATCH'}
+            btnType={'코멘트 수정'}
+            handleCommentValue={this.handleCommentValue}
           />
         )}
 
@@ -107,15 +124,6 @@ class DetailMain extends React.Component {
           <DeleteCommentCheckModal
             isCheckCommentDelete={this.isCheckCommentDelete}
             handleCommentDelete={this.handleCommentDelete}
-          />
-        )}
-
-        {isCommentEdited && (
-          <DetailMainCommentEditModal
-            comment={comment}
-            handleCommentEditToggle={this.handleCommentEditToggle}
-            handleCommentValue={this.handleCommentValue}
-            handleEditCommentValue={this.handleEditCommentValue}
           />
         )}
 

@@ -3,6 +3,7 @@ import './WannaWatchingModalMovieDetail.scss';
 
 class WannaWatchingModalMovieDetail extends React.Component {
   render() {
+    const { movieTitle } = this.props;
     return (
       <div className="WannaWatchingModalMovieDetail">
         <div className="WannaWatchingModalMovieDetailImg">
@@ -12,7 +13,7 @@ class WannaWatchingModalMovieDetail extends React.Component {
           />
         </div>
         <div className="ModalMovieDetailNameAndDetail">
-          <p className="WannaWatchingMovieName">아람피터와 진실의방</p>
+          <p className="WannaWatchingMovieName">{movieTitle}</p>
           <p className="WannaWatchingMovieDetail">영화</p>
         </div>
       </div>

@@ -3,14 +3,7 @@ import './DontCareBTN.scss';
 
 class DontCareBTN extends Component {
   onActiveDontCareButton = () => {
-    const {
-      // isDefaultButton,
-      // isActiveBTN,
-      // isclickedWannaWatchingBTN,
-      // sclickedBeingWatchingBTN,
-      // isActivedontCareMovie,
-      dontCareMovie,
-    } = this.props;
+    const { dontCareMovie } = this.props;
     this.props.handleControlDontCareButton();
     if (dontCareMovie) {
       this.props.handleResetButtonStatus();

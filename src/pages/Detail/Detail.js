@@ -16,7 +16,7 @@ class Detail extends Component {
     makeCountry: '',
     descriptionValue: '',
     moivesGallery: '',
-    isLoading: true,
+    isLoading: false,
   };
 
   componentDidMount() {

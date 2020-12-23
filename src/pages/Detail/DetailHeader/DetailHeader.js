@@ -209,6 +209,7 @@ class DetailHeader extends React.Component {
                   {isActiveWannaWatchingModal && (
                     <DetailHeaderWannaWatchingModal
                       {...detailHeaderpassingProps}
+                      movieTitle={movieTitle}
                       dontCareMovie={dontCareMovie}
                       onWannaWatchingModalToggle={
                         this.onWannaWatchingModalToggle
