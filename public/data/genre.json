@@ -1,0 +1,655 @@
+{
+"MESSAGE": "SUCCESS",
+"RESULT": [
+{
+"genre_id": 1,
+"genre_name": "액션",
+"contents": [
+{
+"id": 229,
+"title_korean": "혼숨",
+"title_original": "HIDE-AND-NEVER SEEK",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/terry-and-the-pirates-1940-movie-poster.jpg"
+},
+{
+"id": 230,
+"title_korean": "1급기밀",
+"title_original": "The Discloser",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/tarzan-fearless-1933-movie-poster.jpg"
+},
+{
+"id": 231,
+"title_korean": "검사외전",
+"title_original": "A Violent Prosecutor",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/tale-of-two-cities-1956-movie-poster.jpg"
+},
+{
+"id": 232,
+"title_korean": "검은 사제들",
+"title_original": "The Priests",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/jailhouse-rock-1957-movie-poster.jpg"
+},
+{
+"id": 233,
+"title_korean": "궁합",
+"title_original": "The Princess and the Matchmaker",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/JEEPERS-CREEPERS-movie-poster.jpg"
+},
+{
+"id": 234,
+"title_korean": "귀향",
+"title_original": "Spirits' Homecoming",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/JAWS-3-D-movie-poster.JPG"
+},
+{
+"id": 235,
+"title_korean": "그날의 분위기",
+"title_original": "Mood of the Day",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/jerky1turkey11945-movie-poster.jpg"
+},
+{
+"id": 236,
+"title_korean": "그놈이다",
+"title_original": "FATAL INTUITION",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/jack1frost11934-movie-poster.jpg"
+},
+{
+"id": 237,
+"title_korean": "나는 증인이다",
+"title_original": "The Witness",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/Above-The-Law-01-movie-poster.jpg"
+},
+{
+"id": 238,
+"title_korean": "나를 잊지 말아요",
+"title_original": "Remember You",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/Abigail-Leslie-Is-Back-In-Town-01-movie-poster.jpg"
+},
+{
+"id": 239,
+"title_korean": "대배우",
+"title_original": "THE GREAT ACTOR",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/Abductors-01-movie-poster.jpg"
+},
+{
+"id": 240,
+"title_korean": "대호",
+"title_original": "The Tiger",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/AATANK-movie-poster.JPG"
+},
+{
+"id": 241,
+"title_korean": "더 폰",
+"title_original": "The Phone",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/3-Nuts-In-Search-Of-Bolt-01-movie-poster.jpg"
+},
+{
+"id": 242,
+"title_korean": "도리화가",
+"title_original": "THE SOUND OF A FLOWER",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/America-3000-01-movie-poster.jpg"
+},
+{
+"id": 243,
+"title_korean": "돌연변이",
+"title_original": "Collective Invention",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/3-stooges-1941-movie-poster.jpg"
+},
+{
+"id": 244,
+"title_korean": "동주",
+"title_original": "DONGJU; The Portrait of A Poet",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/3-stooges-1942-movie-poster.jpg"
+},
+{
+"id": 245,
+"title_korean": "럭키",
+"title_original": "LUCK-KEY",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/3stooges-movie-maniacs-1935-movie-poster.jpg"
+},
+{
+"id": 246,
+"title_korean": "로봇, 소리",
+"title_original": "SORI: Voice from the Heart",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/7th-Commandment-01-movie-poster.jpg"
+},
+{
+"id": 247,
+"title_korean": "무수단",
+"title_original": "MUSUDAN",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/13-Frightened-Girls-01-movie-poster.jpg"
+},
+{
+"id": 248,
+"title_korean": "미쓰 와이프",
+"title_original": "Wonderful Nightmare",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/20-Million-Miles-To-Earth-01-movie-poster.jpg"
+},
+{
+"id": 249,
+"title_korean": "미씽: 사라진 여자",
+"title_original": "MISSING",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/20-Million-Miles-To-Earth-06-movie-poster.jpg"
+},
+{
+"id": 250,
+"title_korean": "미안해 사랑해 고마워",
+"title_original": "Summer Snow",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/27th-Day-03-movie-poster.jpg"
+},
+{
+"id": 251,
+"title_korean": "번개맨",
+"title_original": "Bungaeman",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/100-Monsters-01-movie-poster.jpg"
+},
+{
+"id": 252,
+"title_korean": "뷰티 인사이드",
+"title_original": "The Beauty Inside",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/102-dalmatians-2000-movie-poster.jpg"
+},
+{
+"id": 155,
+"title_korean": "신과함께-죄와 벌",
+"title_original": "Along with the Gods: The Two Worlds",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/in-laws-1979-movie-poster.jpg"
+},
+{
+"id": 156,
+"title_korean": "썬키스 패밀리",
+"title_original": "Sunkist Family",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/I-DISMEMBER-MAMA-movie-poster.JPG"
+},
+{
+"id": 157,
+"title_korean": "아이 캔 스피크",
+"title_original": "I Can Speak ",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/HAIRSPAY--2007--movie-poster.JPG"
+},
+{
+"id": 158,
+"title_korean": "암수살인",
+"title_original": "Dark Figure of Crime",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/generic-poster-1950-movie-poster.jpg"
+},
+{
+"id": 159,
+"title_korean": "어느날",
+"title_original": "Oneday",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/lady-killer-1933-movie-poster.jpg"
+},
+{
+"id": 160,
+"title_korean": "염력",
+"title_original": "Psychokinesis",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/law-and-order-1953-movie-poster.jpg"
+},
+{
+"id": 161,
+"title_korean": "이웃집 스타",
+"title_original": "Star Nextdoor",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/lawless-range-1934-movie-poster.jpg"
+},
+{
+"id": 162,
+"title_korean": "장산범",
+"title_original": "The Mimic",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/last-wave-1977-movie-poster.jpg"
+},
+{
+"id": 163,
+"title_korean": "젝스키스 에이틴",
+"title_original": "SECHSKIES Eighteen",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/DAWN-OF-THE-DEAD---REMAKE--FOREIGN--movie-poster.jpg"
+},
+{
+"id": 164,
+"title_korean": "조선명탐정: 흡혈괴마의 비밀",
+"title_original": "Detective K: Secret of the Living Dead",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/Call-of-the-Wild-The-1923-1A4-movie-poster.jpg"
+},
+{
+"id": 165,
+"title_korean": "지금 만나러 갑니다",
+"title_original": "Be With You",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/cactus-flower-1969-movie-poster.jpg"
+},
+{
+"id": 166,
+"title_korean": "채비",
+"title_original": "The Preparation",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/Babs-Burglar-1917-1A3-movie-poster.jpg"
+},
+{
+"id": 167,
+"title_korean": "챔피언",
+"title_original": "Champion",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/terms-of-endearment-1983-movie-poster.jpg"
+},
+{
+"id": 168,
+"title_korean": "청년경찰",
+"title_original": "Midnight Runners",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/THE-ABOMINABLE-DR.PHIBES-movie-poster.JPG"
+},
+{
+"id": 169,
+"title_korean": "치즈인더트랩",
+"title_original": "Cheese in the Trap",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/terry-and-the-pirates-1940-movie-poster.jpg"
+},
+{
+"id": 170,
+"title_korean": "침묵",
+"title_original": "Heart Blackened",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/tarzan-fearless-1933-movie-poster.jpg"
+},
+{
+"id": 171,
+"title_korean": "택시운전사",
+"title_original": "A Taxi Driver",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/tale-of-two-cities-1956-movie-poster.jpg"
+},
+{
+"id": 172,
+"title_korean": "특별시민",
+"title_original": "The Mayor",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/jailhouse-rock-1957-movie-poster.jpg"
+},
+{
+"id": 173,
+"title_korean": "파파 오랑후탄",
+"title_original": "PAPA ORANGHUTAN",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/JEEPERS-CREEPERS-movie-poster.jpg"
+},
+{
+"id": 174,
+"title_korean": "하루",
+"title_original": "A Day",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/JAWS-3-D-movie-poster.JPG"
+},
+{
+"id": 175,
+"title_korean": "해빙",
+"title_original": "Bluebeard",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/jerky1turkey11945-movie-poster.jpg"
+},
+{
+"id": 176,
+"title_korean": "허스토리",
+"title_original": "Herstory",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/jack1frost11934-movie-poster.jpg"
+},
+{
+"id": 177,
+"title_korean": "흥부: 글로 세상을 바꾼 자",
+"title_original": "Heung-boo: The Revolutionist",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/Above-The-Law-01-movie-poster.jpg"
+},
+{
+"id": 178,
+"title_korean": "1987",
+"title_original": "1987: When the Day Comes",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/Abigail-Leslie-Is-Back-In-Town-01-movie-poster.jpg"
+},
+{
+"id": 97,
+"title_korean": "성난황소",
+"title_original": "Unstoppable",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/HAIRSPAY--2007--movie-poster.JPG"
+},
+{
+"id": 98,
+"title_korean": "속닥속닥",
+"title_original": "The Whispering",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/generic-poster-1950-movie-poster.jpg"
+},
+{
+"id": 99,
+"title_korean": "스윙키즈",
+"title_original": "Swing Kids",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/lady-killer-1933-movie-poster.jpg"
+},
+{
+"id": 100,
+"title_korean": "신비아파트: 금빛 도깨비와 비밀의 동굴",
+"title_original": "The Haunted House: The Secret of the Cave",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/law-and-order-1953-movie-poster.jpg"
+},
+{
+"id": 101,
+"title_korean": "안시성",
+"title_original": "The Great Battle",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/lawless-range-1934-movie-poster.jpg"
+},
+{
+"id": 102,
+"title_korean": "암전",
+"title_original": "Warning: Do Not Play",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/last-wave-1977-movie-poster.jpg"
+},
+{
+"id": 103,
+"title_korean": "여곡성",
+"title_original": "The Wrath",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/DAWN-OF-THE-DEAD---REMAKE--FOREIGN--movie-poster.jpg"
+},
+{
+"id": 104,
+"title_korean": "여중생A",
+"title_original": "Student A",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/Call-of-the-Wild-The-1923-1A4-movie-poster.jpg"
+},
+{
+"id": 105,
+"title_korean": "예스 평창!",
+"title_original": "Yes PyeongChang",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/cactus-flower-1969-movie-poster.jpg"
+},
+{
+"id": 106,
+"title_korean": "오늘도 위위",
+"title_original": "The Journey of the 12 Cats",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/Babs-Burglar-1917-1A3-movie-poster.jpg"
+},
+{
+"id": 107,
+"title_korean": "완벽한 타인",
+"title_original": "Intimate Strangers",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/terms-of-endearment-1983-movie-poster.jpg"
+},
+{
+"id": 108,
+"title_korean": "우상",
+"title_original": "Idol",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/THE-ABOMINABLE-DR.PHIBES-movie-poster.JPG"
+},
+{
+"id": 109,
+"title_korean": "원더풀 고스트",
+"title_original": "THE SOUL-MATE",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/terry-and-the-pirates-1940-movie-poster.jpg"
+},
+{
+"id": 110,
+"title_korean": "인랑",
+"title_original": "ILLANG : THE WOLF BRIGADE",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/tarzan-fearless-1933-movie-poster.jpg"
+},
+{
+"id": 111,
+"title_korean": "자전차왕 엄복동",
+"title_original": "Race to Freedom : Um Bok Dong",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/tale-of-two-cities-1956-movie-poster.jpg"
+},
+{
+"id": 112,
+"title_korean": "증인",
+"title_original": "Innocent Witness",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/jailhouse-rock-1957-movie-poster.jpg"
+},
+{
+"id": 113,
+"title_korean": "진범",
+"title_original": "The Culprit",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/JEEPERS-CREEPERS-movie-poster.jpg"
+},
+{
+"id": 114,
+"title_korean": "창궐",
+"title_original": "Rampant",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/JAWS-3-D-movie-poster.JPG"
+},
+{
+"id": 115,
+"title_korean": "클로젯",
+"title_original": "The Closet",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/jerky1turkey11945-movie-poster.jpg"
+},
+{
+"id": 116,
+"title_korean": "탐정: 리턴즈",
+"title_original": "The Accidental Detective 2: In Action",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/jack1frost11934-movie-poster.jpg"
+},
+{
+"id": 117,
+"title_korean": "해피 투게더",
+"title_original": "Happy Together",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/Above-The-Law-01-movie-poster.jpg"
+},
+{
+"id": 118,
+"title_korean": "협상",
+"title_original": "THE NEGOTIATION",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/Abigail-Leslie-Is-Back-In-Town-01-movie-poster.jpg"
+},
+{
+"id": 38,
+"title_korean": "레드슈즈",
+"title_original": "Red Shoes",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/generic-poster-1950-movie-poster.jpg"
+},
+{
+"id": 39,
+"title_korean": "롱 리브 더 킹: 목포 영웅",
+"title_original": "Long Live the King",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/lady-killer-1933-movie-poster.jpg"
+},
+{
+"id": 40,
+"title_korean": "배심원들",
+"title_original": "Juror 8",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/law-and-order-1953-movie-poster.jpg"
+},
+{
+"id": 41,
+"title_korean": "백두산",
+"title_original": "ASHFALL",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/lawless-range-1934-movie-poster.jpg"
+},
+{
+"id": 42,
+"title_korean": "변신",
+"title_original": "Metamorphosis",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/last-wave-1977-movie-poster.jpg"
+},
+{
+"id": 43,
+"title_korean": "봉오동 전투",
+"title_original": "The Battle: Roar to Victory",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/DAWN-OF-THE-DEAD---REMAKE--FOREIGN--movie-poster.jpg"
+},
+{
+"id": 44,
+"title_korean": "블랙머니",
+"title_original": "BLACK MONEY",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/Call-of-the-Wild-The-1923-1A4-movie-poster.jpg"
+},
+{
+"id": 45,
+"title_korean": "비스트",
+"title_original": "The Beast",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/cactus-flower-1969-movie-poster.jpg"
+},
+{
+"id": 46,
+"title_korean": "뽀로로 극장판 보물섬 대모험",
+"title_original": "Treasure Island Adventure",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/Babs-Burglar-1917-1A3-movie-poster.jpg"
+},
+{
+"id": 47,
+"title_korean": "사라진 시간",
+"title_original": "ME AND ME",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/terms-of-endearment-1983-movie-poster.jpg"
+},
+{
+"id": 48,
+"title_korean": "시동",
+"title_original": "START-UP",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/THE-ABOMINABLE-DR.PHIBES-movie-poster.JPG"
+},
+{
+"id": 49,
+"title_korean": "신의 한 수: 귀수편",
+"title_original": "The Divine Move 2: The Wrathful",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/terry-and-the-pirates-1940-movie-poster.jpg"
+},
+{
+"id": 50,
+"title_korean": "양자물리학",
+"title_original": "By Quantum Physics: A Nightlife Venture",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/tarzan-fearless-1933-movie-poster.jpg"
+},
+{
+"id": 51,
+"title_korean": "어린 의뢰인",
+"title_original": "My First Client",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/tale-of-two-cities-1956-movie-poster.jpg"
+},
+{
+"id": 52,
+"title_korean": "얼굴없는 보스",
+"title_original": "The Faceless Boss",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/jailhouse-rock-1957-movie-poster.jpg"
+},
+{
+"id": 53,
+"title_korean": "엑시트",
+"title_original": "EXIT",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/JEEPERS-CREEPERS-movie-poster.jpg"
+},
+{
+"id": 54,
+"title_korean": "오케이 마담",
+"title_original": "OK! MADAM",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/JAWS-3-D-movie-poster.JPG"
+},
+{
+"id": 55,
+"title_korean": "왓칭",
+"title_original": "Watching",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/jerky1turkey11945-movie-poster.jpg"
+},
+{
+"id": 56,
+"title_korean": "유열의 음악앨범",
+"title_original": "Tune in for Love",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/jack1frost11934-movie-poster.jpg"
+},
+{
+"id": 57,
+"title_korean": "장사리 : 잊혀진 영웅들",
+"title_original": "Battle of Jangsari",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/Above-The-Law-01-movie-poster.jpg"
+},
+{
+"id": 58,
+"title_korean": "저 산 너머",
+"title_original": "BEYOND THE MOUNTAIN",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/Abigail-Leslie-Is-Back-In-Town-01-movie-poster.jpg"
+},
+{
+"id": 59,
+"title_korean": "정의심판",
+"title_original": "Justice Judgment",
+"category": "movie",
+"main_image_url": "https://freeclassicimages.com/images/Abductors-01-movie-poster.jpg"
+}
+]
+}
+]
+}
