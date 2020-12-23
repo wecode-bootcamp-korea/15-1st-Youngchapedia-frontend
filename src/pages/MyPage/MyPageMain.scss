@@ -1,0 +1,20 @@
+.MyPageMain{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .MyPageUpper{
+        display:flex;
+
+    }
+    .MyPageProfile{
+        display:flex;
+
+    }
+    .MyPageFooter{
+        .MyPageMovieBtn{    display:flex;
+        }
+        .MyPageTVBtn{    display:flex;
+        }
+    }
+}

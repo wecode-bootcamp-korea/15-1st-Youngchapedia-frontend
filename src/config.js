@@ -1,3 +1,5 @@
+export const APISIGNUP = 'http://192.168.219.156:8000/user/signup';
+export const APILOGIN = 'http://192.168.219.156:8000/user/signin';
 export const API = 'http://192.168.219.113:8000';
 export const NETFLIX_LIST = `${API}/contents/netflix`;
 export const WATCHA_LIST = `${API}/contents/watcha`;
