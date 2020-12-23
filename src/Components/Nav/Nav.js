@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import Search from './Search/Search';
 import '../Nav/Nav.scss';
-
 class Nav extends Component {
   state = {
     logged: false,

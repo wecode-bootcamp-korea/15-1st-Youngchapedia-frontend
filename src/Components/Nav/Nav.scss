@@ -1,5 +1,4 @@
 @import '../../styles/common.scss';
-@import '../Nav/Search/Search.scss';
 
 @mixin mainLogoDetail {
   font-family: Anton;
@@ -9,7 +8,7 @@
   color: #ff0658;
 }
 .Nav {
-  @include flex-center;
+  @extend %display-center;
   position: fixed;
   width: 100%;
   height: 62px;
