@@ -6,7 +6,8 @@
 }
 @mixin myPageFooterDetail {
   color:$color-white;
-  margin:5%;
+  margin:6%;
+  font-weight: 450;
 }
 @mixin myPageFooterWrapper{
   display: flex;
