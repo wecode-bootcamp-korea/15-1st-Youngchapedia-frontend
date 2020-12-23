@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 import Search from './Search/Search';
 import '../Nav/Nav.scss';
 import LoginSignUpControl from '../../Pages/Login/LoginSignUpControl';
@@ -7,13 +8,17 @@ class Nav extends Component {
   state = {
     logged: false,
   };
+
+  goToMoviePage = () => {
+    this.props.history.push('/mainpage');
+  };
   render() {
     const { logged } = this.state;
     return (
       <nav className="Nav">
         <div className="container">
           <div className="navLeft">
-            <div className="logoSection">
+            <div className="logoSection" onClick={this.goToMoviePage}>
               <div className="mainLogoHigh">YOUNGCHA</div>
               <div className="mainLogoLow">PEDIA</div>
             </div>
@@ -44,4 +49,4 @@ class Nav extends Component {
   }
 }
 
-export default Nav;
+export default withRouter(Nav);

@@ -1,27 +1,24 @@
 import React, { Component } from 'react';
-import './MainPage.scss';
-import Footer from '../../Components/Footer/Footer';
+import { withRouter } from 'react-router-dom';
+import MoviePage from './Compontents/MoviePages/MoviePage';
+import { COLLECTION_DIRECTOR_LIST } from '../../config';
+import FilterPage from '../FilterPage/FilterPage';
 import Nav from '../../Components/Nav/Nav';
-import LoginSignUpControl from '../Login/LoginSignUpControl';
+import Footer from '../../Components/Footer/Footer';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import '../MainPage/MainPage.scss';
 
 class MainPage extends Component {
-  constructor() {
-    super();
-    this.state = {};
-  }
-
   render() {
     return (
-      <div className="MainTest">
-        <div className="navBar">
-          <Nav />
-          {/* <LoginSignUpControl /> */}
-        </div>
-        <div className="mainBody">this is body</div>
+      <>
+        <Nav />
+        <MoviePage />
         <Footer />
-      </div>
+      </>
     );
   }
 }
 
-export default MainPage;
+export default withRouter(MainPage);

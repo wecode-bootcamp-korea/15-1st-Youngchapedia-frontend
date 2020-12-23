@@ -1,0 +1,81 @@
+@import '../../styles/common.scss';
+
+.FilterPage {
+  display: flex;
+  margin: 0 auto;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 50px;
+
+  .filterHeader {
+    width: 90%;
+    margin: 100px 0px 20px 10px;
+    display: flex;
+    flex-wrap: wrap;
+
+    .headerProfile {
+      width: 100px;
+      height: 100px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+      }
+    }
+
+    .headerInfo {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+
+      .title {
+        font-size: 30px;
+        font-weight: bold;
+        margin-left: 10px;
+      }
+
+      .job {
+        font-size: 15px;
+        color: $color-noneclick-menu;
+        margin: 10px 0px 0px 10px;
+      }
+    }
+  }
+
+  .resultList {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    .movieCard {
+      margin-bottom: 10px;
+      .moviePoster {
+        width: 150px;
+        height: 200px;
+
+        .imgWrap {
+          height: 100%;
+          border-radius: 5px;
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+
+      .movieInfo {
+        width: 80%;
+
+        .movieTitle {
+          font-size: 14px;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+}

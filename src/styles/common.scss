@@ -25,14 +25,39 @@ $color-cmt-font: #202020;
 /* 상세페이지 별점색상 */
 $color-yellow: #ffdd63;
 
+$slide-size: 70min;
+
 $tablet: 715px;
+$nav-middle-size: 775px;
+$nav-small-size: 430px;
 $laptop: 1020px;
 $desktop: 1400px;
 
-@mixin flex-center {
+// media query
+$slide-test: 1200px;
+
+%display-center {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@mixin slide-arrow {
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  box-sizing: border-box;
+  border: 1px solid rgb(249, 249, 249);
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 4px 0px;
+  background-size: 12px;
+  width: 34px;
+  height: 34px;
+  cursor: pointer;
+  z-index: 1;
+  color: #a4a4a8;
 }
 
 @mixin align-center {
@@ -53,8 +78,36 @@ $desktop: 1400px;
   }
 }
 
+@mixin nav-middle {
+  @media (max-width: #{$nav-middle-size} ) {
+    @content;
+  }
+}
+
 @mixin desktop {
   @media (min-width: #{$desktop}) {
     @content;
   }
+}
+
+a {
+  text-decoration: none;
+  color: $color-black;
+
+  &:link {
+    color: $color-black;
+  }
+}
+@mixin slide-test {
+  @media (min-width: #{$slide-test}) {
+    @content;
+  }
+}
+
+@mixin mainLogoDetail {
+  font-family: Anton;
+  font-size: 1.5em;
+  font-style: bold;
+  font-weight: 900;
+  color: #ff0658;
 }
