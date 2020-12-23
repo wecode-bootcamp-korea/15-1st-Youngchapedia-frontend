@@ -1,7 +1,6 @@
 {
 "MESSAGE": "SUCCESS",
-"RESULT": [
-{
+"RESULT": {
 "service_id": 2,
 "service_name": "netflix",
 "contents": [
@@ -1407,5 +1406,4 @@
 }
 ]
 }
-]
 }

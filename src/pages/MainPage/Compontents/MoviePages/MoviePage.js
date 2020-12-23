@@ -2,20 +2,24 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import MovieContainer from './MovieContainer/MovieContainer';
 import MovieContainerBottom from './MovieContainerBottom/MovieContainerBottom';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 import './MoviePage.scss';
 import {
   COLLECTION_LIST,
   COLLECTION_DIRECTOR_LIST,
   ACTION_LIST,
+  NETFLIX_LIST,
+  WATCHA_LIST,
 } from '../../../../config';
 
 class MoviePage extends Component {
   state = {
-    movieList1: [],
-    movieList2: [],
-    movieList3: [],
-    movieList4: [],
-    movieList5: [],
+    netflixMovieList: [],
+    watchaMovieList: [],
+    collectionDirectorList: [],
+    collectionGenreList: [],
+    movieActionList: [],
     isLoading1: true,
     isLoading2: true,
     isLoading3: true,
@@ -46,11 +50,11 @@ class MoviePage extends Component {
       )
       .then(([data1, data2, data3, data4, data5]) =>
         this.setState({
-          movieList1: data1.RESULT[0],
-          movieList2: data2.RESULT[0],
-          movieList3: data3.RESULT[0],
-          movieList4: data4.RESULT[0],
-          movieList5: data5.RESULT[0],
+          netflixMovie: data1.RESULT,
+          watchaMovieList: data2.RESULT,
+          collectionDirectorList: data3.RESULT[0],
+          collectionGenreList: data4.RESULT[0],
+          movieActionList: data5.RESULT[0],
           isLoading1: false,
           isLoading2: false,
           isLoading3: false,
@@ -62,11 +66,11 @@ class MoviePage extends Component {
 
   render() {
     const {
-      movieList1,
-      movieList2,
-      movieList3,
-      movieList4,
-      movieList5,
+      netflixMovie,
+      watchaMovieList,
+      collectionDirectorList,
+      collectionGenreList,
+      movieActionList,
       isLoading1,
       isLoading2,
       isLoading3,
@@ -74,122 +78,121 @@ class MoviePage extends Component {
       isLoading5,
     } = this.state;
     return (
-      <>
-        <main className="MainPage">
-          {isLoading3 ? (
-            <div className="lds-heart">
-              <div></div>
+      <main className="MainPage">
+        {isLoading3 ? (
+          <div className="lds-heart">
+            <div></div>
+          </div>
+        ) : (
+          <section className="mainMovieList">
+            <div className="movieHeader movieHeaderCollection personList">
+              <div className="recoProfile">
+                <img alt="profile" src="/images/profile2.png" />
+              </div>
+              <div
+                onClick={() => {
+                  this.props.history.push({
+                    pathname: `/filterPage/${collectionDirectorList.id}`,
+                    state: { collectionDirectorList: collectionDirectorList },
+                  });
+                }}
+              >
+                <p className="collectionTxt">영차가 추천하는 작품 💁‍♀️</p>
+                <p>
+                  🎄크리스마스에는 {collectionDirectorList.name}
+                  {collectionDirectorList.title}의 작품과 함께🎄
+                </p>
+              </div>
             </div>
-          ) : (
-            <section className="mainMovieList">
-              <div className="movieHeader movieHeaderCollection personList">
-                <div className="recoProfile">
-                  <img alt="profile" src="/images/profile2.png" />
-                </div>
-                <div
-                  onClick={() => {
-                    this.props.history.push({
-                      pathname: `/filterPage/${movieList3.id}`,
-                      state: { movieList3: movieList3 },
-                    });
-                  }}
-                >
-                  <p className="collectionTxt">영차가 추천하는 작품 💁‍♀️</p>
-                  <p>
-                    🎄크리스마스에는 {movieList3.name} {movieList3.title}의
-                    작품과 함께🎄
-                  </p>
-                </div>
-              </div>
-              <div className="movieSlideContainer">
-                <MovieContainerBottom movies={movieList3.contents} />
-              </div>
-            </section>
-          )}
-          {isLoading4 ? (
-            <div className="lds-heart">
-              <div></div>
+            <div className="movieSlideContainer">
+              <MovieContainerBottom movies={collectionDirectorList.contents} />
             </div>
-          ) : (
-            <section className="mainMovieList">
-              <div className="movieHeader movieHeaderCollection personList">
-                <div className="recoProfile">
-                  <img alt="profile" src="/images/profile2.png" />
-                </div>
-                <div>
-                  <p className="collectionTxt">영차가 추천하는 작품 💁</p>
-                  <p>
-                    😎 이번 크리스마스에는 {movieList4.genre_name}과 함께! 🦾
-                  </p>
-                </div>
+          </section>
+        )}
+        {isLoading4 ? (
+          <div className="lds-heart">
+            <div></div>
+          </div>
+        ) : (
+          <section className="mainMovieList">
+            <div className="movieHeader movieHeaderCollection personList">
+              <div className="recoProfile">
+                <img alt="profile" src="/images/profile2.png" />
               </div>
-              <div className="movieSlideContainer">
-                <MovieContainerBottom movies={movieList4.contents} />
+              <div>
+                <p className="collectionTxt">영차가 추천하는 작품 💁</p>
+                <p>
+                  😎 이번 크리스마스에는 {collectionGenreList.genre_name}과
+                  함께! 🦾
+                </p>
               </div>
-            </section>
-          )}
-          {isLoading5 ? (
-            <div className="lds-heart">
-              <div></div>
             </div>
-          ) : (
-            <section className="mainMovieList">
-              <div className="movieHeader movieHeaderCollection personList">
-                <div className="recoProfile">
-                  <img alt="profile" src="/images/profile2.png" />
-                </div>
-                <div>
-                  <p className="collectionTxt">영차가 추천하는 작품 👼</p>
-                  <p>#{movieList5.tag_name}</p>
-                </div>
-              </div>
-              <div className="movieSlideContainer">
-                <MovieContainerBottom movies={movieList5.contents} />
-              </div>
-            </section>
-          )}
-          {isLoading1 ? (
-            <div className="lds-heart">
-              <div></div>
+            <div className="movieSlideContainer">
+              <MovieContainerBottom movies={collectionGenreList.contents} />
             </div>
-          ) : (
-            <section className="mainMovieList">
-              <div className="movieHeader movieHeaderStreaming personList">
-                <div className="recoProfile">
-                  <img
-                    alt="profile"
-                    src="https://an2-img.amz.wtchn.net/image/v1/updatable_images/2571/original/42e70f1bc34d7af54478a311983ecf6d3601eefa.png"
-                  />
-                </div>
-                <div>
-                  <p>😎 넷플릭스 영화</p>
-                </div>
+          </section>
+        )}
+        {isLoading5 ? (
+          <div className="lds-heart">
+            <div></div>
+          </div>
+        ) : (
+          <section className="mainMovieList">
+            <div className="movieHeader movieHeaderCollection personList">
+              <div className="recoProfile">
+                <img alt="profile" src="/images/profile2.png" />
               </div>
-              <MovieContainer movies={movieList1.contents.slice(10, 20)} />
-            </section>
-          )}
-          {isLoading2 ? (
-            <div className="lds-heart">
-              <div></div>
+              <div>
+                <p className="collectionTxt">영차가 추천하는 작품 👼</p>
+                <p>#{movieActionList.tag_name}</p>
+              </div>
             </div>
-          ) : (
-            <section className="mainMovieList">
-              <div className="movieHeader movieHeaderStreaming personList">
-                <div className="recoProfile">
-                  <img
-                    alt="profile"
-                    src="https://an2-img.amz.wtchn.net/image/v1/updatable_images/2570/original/f72039e19e3d483c3c6d8178c526a1c979537975.png"
-                  />
-                </div>
-                <div>
-                  <p>🥳 영차 영화</p>
-                </div>
+            <div className="movieSlideContainer">
+              <MovieContainerBottom movies={movieActionList.contents} />
+            </div>
+          </section>
+        )}
+        {isLoading1 ? (
+          <div className="lds-heart">
+            <div></div>
+          </div>
+        ) : (
+          <section className="mainMovieList">
+            <div className="movieHeader movieHeaderStreaming personList">
+              <div className="recoProfile">
+                <img
+                  alt="profile"
+                  src="https://an2-img.amz.wtchn.net/image/v1/updatable_images/2571/original/42e70f1bc34d7af54478a311983ecf6d3601eefa.png"
+                />
               </div>
-              <MovieContainer movies={movieList2.contents.slice(0, 10)} />
-            </section>
-          )}
-        </main>
-      </>
+              <div>
+                <p>😎 넷플릭스 영화</p>
+              </div>
+            </div>
+            <MovieContainer movies={netflixMovie.contents.slice(10, 20)} />
+          </section>
+        )}
+        {isLoading2 ? (
+          <div className="lds-heart">
+            <div></div>
+          </div>
+        ) : (
+          <section className="mainMovieList">
+            <div className="movieHeader movieHeaderStreaming personList">
+              <div className="recoProfile">
+                <img
+                  alt="profile"
+                  src="https://an2-img.amz.wtchn.net/image/v1/updatable_images/2570/original/f72039e19e3d483c3c6d8178c526a1c979537975.png"
+                />
+              </div>
+              <div>
+                <p>🥳 영차 영화</p>
+              </div>
+            </div>
+            <MovieContainer movies={watchaMovieList.contents.slice(0, 10)} />
+          </section>
+        )}
+      </main>
     );
   }
 }

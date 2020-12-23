@@ -36,7 +36,7 @@ $desktop: 1400px;
 // media query
 $slide-test: 1200px;
 
-@mixin display-center {
+%display-center {
   display: flex;
   justify-content: center;
   align-items: center;

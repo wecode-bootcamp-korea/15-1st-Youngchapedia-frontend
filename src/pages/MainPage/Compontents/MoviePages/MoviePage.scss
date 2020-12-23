@@ -1,12 +1,12 @@
 @import '../../../../styles/common.scss';
 
-main {
-  @include display-center;
+.MainPage {
+  @extend %display-center;
   flex-direction: column;
   width: 100%;
   min-height: 100%;
   padding: 0 10px;
-  margin-bottom: 300px;
+  margin-bottom: 200px;
   z-index: 2;
 
   .mainMovieList {
@@ -73,14 +73,11 @@ main {
   position: relative;
   width: 80px;
   height: 80px;
+  margin: 0 auto;
+  margin-top: 100px;
   transform: rotate(45deg);
   transform-origin: 40px 40px;
-  @include display-center;
-  margin: 0 auto;
-}
-
-.lds-heart {
-  margin-top: 100px;
+  @extend %display-center;
 }
 
 .lds-heart div {

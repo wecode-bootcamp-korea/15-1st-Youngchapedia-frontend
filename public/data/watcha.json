@@ -1,7 +1,6 @@
 {
 "MESSAGE": "SUCCESS",
-"RESULT": [
-{
+"RESULT": {
 "service_id": 1,
 "service_name": "watcha",
 "contents": [
@@ -1407,5 +1406,4 @@
 }
 ]
 }
-]
 }
