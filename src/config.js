@@ -6,13 +6,12 @@ export const ARROW_ICON =
 export const TEST_TOKEN =
   'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozfQ.VUCJcgl9ZEFdjr20lj0cLy7ngiMSkb9p-3bH4L3KBDU';
 
-export const API_MY_PAGE_MAIN = 'http://192.168.219.156:8000/archive/user/main';
-export const API_MY_PAGE_EVAL =
-  'http://192.168.219.156:8000/archive/rating/user';
+export const API_MY_PAGE_MAIN = 'http://18.217.93.205:8000/archive/user/main';
+export const API_MY_PAGE_EVAL = 'http://18.217.93.205:8000/archive/rating/user';
 export const API_MY_PAGE_WISH =
-  'http://192.168.219.156:8000/archive/user?archive_type=1';
+  'http://18.217.93.205:8000/archive/user?archive_type=1';
 export const API_MY_PAGE_WATCHING =
-  'http://192.168.219.156:8000/archive/user?archive_type=2';
+  'http://18.217.93.205:8000/archive/user?archive_type=2';
 
 //id:test123@test.com pw:123123qweqwe mrtest123
 //1@test.com 111111qqq

@@ -20,8 +20,9 @@
   .myPageMainWrapper {
     @include flexInfo;
     justify-content: center;
-    min-height: 90vh;
-    padding-bottom: 1px;
+    padding-top: 7em;
+    // min-height: 90vh;
+    padding-bottom: 3em;
 
     .myPageComponent {
       display: flex;

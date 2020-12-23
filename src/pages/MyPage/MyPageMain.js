@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Nav from '../../Components/Nav/Nav';
 import Footer from '../../Components/Footer/Footer';
 import MyPageCogIconControl from './Components/MyPageCogIconControl/MyPageCogIconControl';
-import { TEST_TOKEN, API_MY_PAGE_MAIN } from '../../config';
+import { API_MY_PAGE_MAIN } from '../../config';
 import './MyPageMain.scss';
 
 class MyPageMain extends Component {
@@ -14,10 +14,11 @@ class MyPageMain extends Component {
     };
   }
   componentDidMount = () => {
+    const currentToken = sessionStorage.getItem('access_token');
     fetch(API_MY_PAGE_MAIN, {
       method: 'GET',
       headers: {
-        Authorization: TEST_TOKEN,
+        Authorization: currentToken,
       },
     })
       .then(response => response.json())
