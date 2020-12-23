@@ -94,18 +94,25 @@ $slide-test: 1200px;
 
 @mixin detailBorder {
   border: 1px solid #d2d2d2;
-a {
-  text-decoration: none;
-  color: $color-black;
-
-  &:link {
+  a {
+    text-decoration: none;
     color: $color-black;
+
+    &:link {
+      color: $color-black;
+    }
   }
 }
 @mixin slide-test {
   @media (min-width: #{$slide-test}) {
     @content;
   }
+}
+
+@mixin display-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @mixin mainLogoDetail {
