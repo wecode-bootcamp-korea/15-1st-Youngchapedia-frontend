@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import MovieContainerBottom from './MovieContainer/MovieContainer';
+import MovieContainer from './MovieContainer/MovieContainer';
 
 class movieInfo extends Component {
   render() {
@@ -22,10 +22,7 @@ class movieInfo extends Component {
           </div>
         </div>
         <div className="movieSlideContainer">
-          <MovieContainerBottom
-            movies={slideMovies}
-            slidesToShow={slidesToShow}
-          />
+          <MovieContainer movies={slideMovies} slidesToShow={slidesToShow} />
         </div>
       </section>
     );

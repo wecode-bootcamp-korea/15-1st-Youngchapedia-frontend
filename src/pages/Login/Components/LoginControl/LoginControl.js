@@ -35,7 +35,7 @@ class LoginControl extends React.Component {
           sessionStorage.setItem('access_token', result.access_token);
           Swal.fire({
             icon: 'success',
-            text: 'welcome to YoungchaPedia!',
+            text: 'welcomeback!!',
           });
           this.props.loginClose();
           this.resetInputStatus();

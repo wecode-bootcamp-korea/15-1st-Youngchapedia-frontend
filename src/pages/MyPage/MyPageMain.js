@@ -13,6 +13,7 @@ class MyPageMain extends Component {
       titleSection: '',
     };
   }
+
   componentDidMount = () => {
     const currentToken = sessionStorage.getItem('access_token');
     fetch(API_MY_PAGE_MAIN, {
