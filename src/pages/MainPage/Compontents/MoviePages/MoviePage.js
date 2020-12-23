@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
-import MovieContainer from './MovieContainer/MovieContainer';
-import MovieContainerBottom from './MovieContainerBottom/MovieContainerBottom';
+import Movieinfo from './Movieinfo';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import './MoviePage.scss';
@@ -79,118 +78,81 @@ class MoviePage extends Component {
     } = this.state;
     return (
       <main className="MainPage">
-        {isLoading3 ? (
+        {isLoading5 ? (
           <div className="lds-heart">
             <div></div>
           </div>
         ) : (
-          <section className="mainMovieList">
-            <div className="movieHeader movieHeaderCollection personList">
-              <div className="recoProfile">
-                <img alt="profile" src="/images/profile2.png" />
-              </div>
-              <div
-                onClick={() => {
-                  this.props.history.push({
-                    pathname: `/filterPage/${collectionDirectorList.id}`,
-                    state: { collectionDirectorList: collectionDirectorList },
-                  });
-                }}
-              >
-                <p className="collectionTxt">영차가 추천하는 작품 💁‍♀️</p>
-                <p>
-                  🎄크리스마스에는 {collectionDirectorList.name}
-                  {collectionDirectorList.title}의 작품과 함께🎄
-                </p>
-              </div>
-            </div>
-            <div className="movieSlideContainer">
-              <MovieContainerBottom movies={collectionDirectorList.contents} />
-            </div>
-          </section>
+          <Movieinfo
+            goToFilter={event => {
+              this.props.history.push({
+                pathname: `/filterPage/${collectionDirectorList.id}`,
+                state: { collectionDirectorList: collectionDirectorList },
+              });
+            }}
+            collectionTitle={'영차가 추천하는 작품 💁‍♀️'}
+            collectionContent={`🎄크리스마스에는 ${collectionDirectorList.name} ${collectionDirectorList.title}의 작품과 함께`}
+            slideMovies={collectionDirectorList.contents}
+            slidesToShow={5}
+          />
         )}
         {isLoading4 ? (
           <div className="lds-heart">
             <div></div>
           </div>
         ) : (
-          <section className="mainMovieList">
-            <div className="movieHeader movieHeaderCollection personList">
-              <div className="recoProfile">
-                <img alt="profile" src="/images/profile2.png" />
-              </div>
-              <div>
-                <p className="collectionTxt">영차가 추천하는 작품 💁</p>
-                <p>
-                  😎 이번 크리스마스에는 {collectionGenreList.genre_name}과
-                  함께! 🦾
-                </p>
-              </div>
-            </div>
-            <div className="movieSlideContainer">
-              <MovieContainerBottom movies={collectionGenreList.contents} />
-            </div>
-          </section>
+          <Movieinfo
+            goToFilter={event => {
+              event.stopPropagation();
+            }}
+            collectionTitle={'영차가 추천하는 작품 💁'}
+            collectionContent={`😎 이번 크리스마스에는 ${collectionGenreList.genre_name}과 함께! 🦾`}
+            slideMovies={collectionGenreList.contents}
+            slidesToShow={5}
+          />
         )}
-        {isLoading5 ? (
+        {isLoading3 ? (
           <div className="lds-heart">
             <div></div>
           </div>
         ) : (
-          <section className="mainMovieList">
-            <div className="movieHeader movieHeaderCollection personList">
-              <div className="recoProfile">
-                <img alt="profile" src="/images/profile2.png" />
-              </div>
-              <div>
-                <p className="collectionTxt">영차가 추천하는 작품 👼</p>
-                <p>#{movieActionList.tag_name}</p>
-              </div>
-            </div>
-            <div className="movieSlideContainer">
-              <MovieContainerBottom movies={movieActionList.contents} />
-            </div>
-          </section>
-        )}
-        {isLoading1 ? (
-          <div className="lds-heart">
-            <div></div>
-          </div>
-        ) : (
-          <section className="mainMovieList">
-            <div className="movieHeader movieHeaderStreaming personList">
-              <div className="recoProfile">
-                <img
-                  alt="profile"
-                  src="https://an2-img.amz.wtchn.net/image/v1/updatable_images/2571/original/42e70f1bc34d7af54478a311983ecf6d3601eefa.png"
-                />
-              </div>
-              <div>
-                <p>😎 넷플릭스 영화</p>
-              </div>
-            </div>
-            <MovieContainer movies={netflixMovie.contents.slice(10, 20)} />
-          </section>
+          <Movieinfo
+            goToFilter={event => {
+              event.stopPropagation();
+            }}
+            collectionTitle={'영차가 추천하는 작품 👼'}
+            collectionContent={`#${movieActionList.tag_name}`}
+            slideMovies={movieActionList.contents}
+            slidesToShow={5}
+          />
         )}
         {isLoading2 ? (
           <div className="lds-heart">
             <div></div>
           </div>
         ) : (
-          <section className="mainMovieList">
-            <div className="movieHeader movieHeaderStreaming personList">
-              <div className="recoProfile">
-                <img
-                  alt="profile"
-                  src="https://an2-img.amz.wtchn.net/image/v1/updatable_images/2570/original/f72039e19e3d483c3c6d8178c526a1c979537975.png"
-                />
-              </div>
-              <div>
-                <p>🥳 영차 영화</p>
-              </div>
-            </div>
-            <MovieContainer movies={watchaMovieList.contents.slice(0, 10)} />
-          </section>
+          <Movieinfo
+            goToFilter={event => {
+              event.stopPropagation();
+            }}
+            collectionContent={'😎 넷플릭스 영화'}
+            slideMovies={netflixMovie.contents.slice(10, 20)}
+            slidesToShow={4}
+          />
+        )}
+        {isLoading1 ? (
+          <div className="lds-heart">
+            <div></div>
+          </div>
+        ) : (
+          <Movieinfo
+            goToFilter={event => {
+              event.stopPropagation();
+            }}
+            collectionContent={'🥳 영차 영화'}
+            slideMovies={watchaMovieList.contents.slice(0, 10)}
+            slidesToShow={4}
+          />
         )}
       </main>
     );

@@ -2,14 +2,14 @@ import React, { Component } from 'react';
 import MovieCard from './MovieCard';
 import Slider from 'react-slick';
 
-class MovieContainer extends Component {
+class MovieContainerBottom extends Component {
   render() {
     const settings = {
       dots: false,
       infinite: true,
       speed: 500,
-      slidesToShow: 4,
-      slidesToScroll: 4,
+      slidesToShow: this.props.slidesToShow,
+      slidesToScroll: 5,
       responsive: [
         {
           breakpoint: 1024,
@@ -37,16 +37,23 @@ class MovieContainer extends Component {
       ],
     };
     const { movies } = this.props;
+    console.log(this.props);
     return (
-      <ul className="movies">
-        <Slider {...settings}>
-          {movies.map((movie, id) => (
-            <MovieCard movie={movie} key={id} />
-          ))}
-        </Slider>
-      </ul>
+      <>
+        <ul className="movies">
+          <Slider {...settings}>
+            {movies.slice(5, 15).map((movie, id) => (
+              <MovieCard
+                movie={movie}
+                key={id}
+                slidesToShow={this.props.slidesToShow}
+              />
+            ))}
+          </Slider>
+        </ul>
+      </>
     );
   }
 }
 
-export default MovieContainer;
+export default MovieContainerBottom;
