@@ -20,6 +20,9 @@ export const API_MY_PAGE_WATCHING =
 //2@test.com 222222www
 // access_token: " “eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozfQ.VUCJcgl9ZEFdjr20lj0cLy7ngiMSkb9p-3bH4L3KBDU”"
 
+
+export const APISIGNUP = 'http://192.168.219.156:8000/user/signup';
+export const APILOGIN = 'http://192.168.219.156:8000/user/signin';
 export const API = 'http://192.168.219.113:8000';
 export const NETFLIX_LIST = `${API}/contents/netflix`;
 export const WATCHA_LIST = `${API}/contents/watcha`;
