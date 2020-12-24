@@ -19,7 +19,7 @@ class DetailMainInfor extends React.Component {
         </div>
         <div className="DetailMainInfoPTag">
           <p>{movieTitle}</p>
-          <p>{`${movieReleaseYear} ∙ ${makeCountry} ∙ ${movieGenre}`}</p>
+          <p>{`${movieReleaseYear} ${makeCountry} ${movieGenre}`}</p>
           <p>시간</p>
         </div>
         <div className="DetailMainInfoDesc">(줄거리){descriptionValue}</div>
