@@ -14,10 +14,11 @@ class MyPageMain extends Component {
     };
   }
   componentDidMount = () => {
+    const currentToken = sessionStorage.getItem('access_token');
     fetch(API_MY_PAGE_MAIN, {
       method: 'GET',
       headers: {
-        Authorization: TEST_TOKEN,
+        Authorization: currentToken,
       },
     })
       .then(response => response.json())
@@ -89,22 +90,6 @@ class MyPageMain extends Component {
           </div>
         </div>
         <Footer />
-
-    this.state = {};
-  }
-  render() {
-    return (
-      <div className="MyPageMain">
-        <div className="MyPageUpper">
-          upper
-          <i class="fas fa-cog"></i>
-        </div>
-        <div className="MyPageProfile">profile</div>
-        <div className="MyPageFooter">
-          footer
-          <div className="MyPageMovieBtn"></div>
-          <div className="MyPageTVBtn"></div>
-        </div>
       </div>
     );
   }

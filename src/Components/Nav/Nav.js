@@ -5,15 +5,10 @@ import '../Nav/Nav.scss';
 import LoginSignUpControl from '../../Pages/Login/LoginSignUpControl';
 
 class Nav extends Component {
-  state = {
-    logged: false,
-  };
-
   goToMoviePage = () => {
     this.props.history.push('/mainpage');
   };
   render() {
-    const { logged } = this.state;
     return (
       <nav className="Nav">
         <div className="container">
@@ -30,7 +25,7 @@ class Nav extends Component {
             <div className="inputContainer">
               <Search />
             </div>
-            {!logged ? (
+            {sessionStorage.length === 0 ? (
               <>
                 <LoginSignUpControl />
               </>
@@ -38,7 +33,11 @@ class Nav extends Component {
               <>
                 <li className="menu">평가하기</li>
                 <li className="profile">
-                  <img alt="profile" src="/images/profile.jpg" />
+                  <img
+                    alt="profile"
+                    src="/images/profile.jpg"
+                    onClick={this.goToMyPage}
+                  />
                 </li>
               </>
             )}
