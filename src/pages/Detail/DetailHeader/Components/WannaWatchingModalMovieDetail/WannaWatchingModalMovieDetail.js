@@ -3,13 +3,12 @@ import './WannaWatchingModalMovieDetail.scss';
 
 class WannaWatchingModalMovieDetail extends React.Component {
   render() {
-    const { movieTitle, posterImgURL } = this.props;
+    const { movieTitle } = this.props;
     return (
       <div className="WannaWatchingModalMovieDetail">
         <div className="WannaWatchingModalMovieDetailImg">
           <img
-            className="MovieDetailImg"
-            src={posterImgURL}
+            src="https://img.yts.mx/assets/images/movies/gabriels_rapture_2020/medium-cover.jpg"
             alt="moviePoster"
           />
         </div>

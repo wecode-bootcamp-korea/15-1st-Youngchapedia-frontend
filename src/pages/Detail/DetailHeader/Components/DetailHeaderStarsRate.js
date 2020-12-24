@@ -24,68 +24,59 @@ class DetailHeaderStarsRate extends React.Component {
   };
 
   componentDidMount() {
-    if (this.state.starsRatingScore && sessionStorage)
-      return this.getstarsRatingScore();
+    if (this.state.starsRatingScore) return this.getstarsRatingScore();
   }
 
   getstarsRatingScore() {
-    const currentToken = sessionStorage.getItem('access_token');
-    sessionStorage &&
-      fetch(`${MOVIE_RARTING}/${this.props.Id}`, {
-        headers: { Authorization: currentToken },
-      })
-        .then(res => res.json())
-        .then(res => {
-          this.setState({
-            starsRatingScore: res.result.rating,
-            starsValue: this.state.starsRate[this.state.starsRatingScore],
-          });
+    fetch(MOVIE_RARTING, {
+      headers: { Authorization: USER1_TOKEN },
+    })
+      .then(res => res.json())
+      .then(res => {
+        this.setState({
+          starsRatingScore: res.result.rating,
+          starsValue: this.state.starsRate[this.state.starsRatingScore],
         });
+      });
   }
 
   postStarsRatingScore(newValue) {
-    const currentToken = sessionStorage.getItem('access_token');
-    sessionStorage &&
-      fetch(`${MOVIE_RARTING}/${this.props.Id}`, {
-        method: 'POST',
-        headers: { Authorization: currentToken },
-        body: JSON.stringify({
-          rating: newValue,
-        }),
-      })
-        .then(res => res.json())
-        .then(res => {
-          this.setState({ ratedStar: true, starsRatingScore: res });
-        });
+    fetch(MOVIE_RARTING, {
+      method: 'POST',
+      headers: { Authorization: USER1_TOKEN },
+      body: JSON.stringify({
+        rating: newValue,
+      }),
+    })
+      .then(res => res.json())
+      .then(res => {
+        this.setState({ ratedStar: true, starsRatingScore: res });
+      });
   }
 
   petchStarsRatingScore(newValue) {
-    const currentToken = sessionStorage.getItem('access_token');
-    sessionStorage &&
-      fetch(`${MOVIE_RARTING}/${this.props.Id}`, {
-        method: 'PATCH',
-        headers: { Authorization: currentToken },
-        body: JSON.stringify({
-          rating: newValue,
-        }),
-      })
-        .then(res => res.json())
-        .then(res => {
-          this.setState({ ratedStar: true, starsRatingScore: res });
-        });
+    fetch(MOVIE_RARTING, {
+      method: 'PATCH',
+      headers: { Authorization: USER1_TOKEN },
+      body: JSON.stringify({
+        rating: newValue,
+      }),
+    })
+      .then(res => res.json())
+      .then(res => {
+        this.setState({ ratedStar: true, starsRatingScore: res });
+      });
   }
 
   deleteStarsRatingScore() {
-    const currentToken = sessionStorage.getItem('access_token');
-    sessionStorage &&
-      fetch(`${MOVIE_RARTING}/${this.Id}`, {
-        method: 'DELETE',
-        headers: { Authorization: currentToken },
-      })
-        .then(res => res.json())
-        .then(res => {
-          this.setState({ ratedStar: false });
-        });
+    fetch(MOVIE_RARTING, {
+      method: 'DELETE',
+      headers: { Authorization: USER1_TOKEN },
+    })
+      .then(res => res.json())
+      .then(res => {
+        this.setState({ ratedStar: false });
+      });
   }
 
   activeStarRateFunction = newValue => {
@@ -96,20 +87,21 @@ class DetailHeaderStarsRate extends React.Component {
     });
 
     if (starsRatingScore === 0 && ratedStar === false)
-      return sessionStorage && this.postStarsRatingScore(newValue);
+      return this.postStarsRatingScore(newValue);
 
     if (
       starsRatingScore !== 0 &&
       ratedStar === true &&
       starsRatingScore !== newValue
     )
-      return sessionStorage && this.petchStarsRatingScore(newValue);
+      return this.petchStarsRatingScore(newValue);
   };
 
   deleteActiveStarRate = () => {
     const { starsRatingScore, ratedStar } = this.state;
     if (ratedStar === true && starsRatingScore !== 0)
-      return sessionStorage && this.deleteStarsRatingScore();
+      return this.deleteStarsRatingScore();
+    console.log(starsRatingScore, ratedStar);
   };
 
   render() {

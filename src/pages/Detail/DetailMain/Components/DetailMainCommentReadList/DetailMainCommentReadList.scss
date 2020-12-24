@@ -2,7 +2,7 @@
 
 .DetailMainCommentReadList {
   background-color: #f2f2f2;
-  border: 1px solid #d2d2d2;
+  @include detailBorder;
 
   min-width: 19em;
   height: 19.5em;
