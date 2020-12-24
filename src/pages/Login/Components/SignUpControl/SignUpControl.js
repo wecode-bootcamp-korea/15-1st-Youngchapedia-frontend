@@ -32,10 +32,10 @@ class SignUpControl extends React.Component {
       .then(response => response.json())
       .then(result => {
         if (result.message === 'SUCCESS') {
-          sessionStorage.setItem('access_token', result.access_token);
+          // sessionStorage.setItem('access_token', result.access_token);
           Swal.fire({
             icon: 'success',
-            text: 'welcome to YoungchaPedia!',
+            text: 'welcome to YoungchaPedia, please login again!',
           });
           this.props.signUpClose();
           this.resetInputStatus();

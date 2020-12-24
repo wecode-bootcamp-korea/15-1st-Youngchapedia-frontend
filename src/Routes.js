@@ -9,6 +9,7 @@ import DetailMainCommentLink from './Pages/Detail/DetailMain/Components/DetailMa
 import '@fortawesome/fontawesome-free/js/all.js';
 import FilterPage from './Pages/FilterPage/FilterPage';
 import SearchResultPage from './Components/Nav/Search/SearchResultPage';
+import Login from './Pages/Login/LoginSignUpControl';
 
 class Routes extends Component {
   render() {

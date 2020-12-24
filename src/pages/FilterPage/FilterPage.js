@@ -8,6 +8,7 @@ class FilterPage extends Component {
   render() {
     const { collectionDirectorList } = this.props.location.state;
     const contents = collectionDirectorList.contents;
+    console.log(collectionDirectorList, contents);
     return (
       <>
         <Nav />

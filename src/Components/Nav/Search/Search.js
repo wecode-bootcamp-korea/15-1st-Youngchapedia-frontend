@@ -28,7 +28,7 @@ class Search extends Component {
         .then(result => result.json())
         .then(result =>
           this.setState({
-            searchList: result.RESULT[0],
+            searchList: result.RESULT,
             searchCheck: true,
             searchResult: event.target.value,
           })
@@ -42,6 +42,7 @@ class Search extends Component {
       pathname: `/search/${searchResult}`,
       state: { searchList: searchList },
     });
+    console.log(searchList, searchResult);
   };
 
   render() {

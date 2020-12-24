@@ -8,7 +8,7 @@
   background-color: $color-white;
   border-radius: 6px;
   margin-bottom: 1.438em;
-  @include flex-center;
+  @include display-center;
 
   div {
     color: $color-info-font-color;
