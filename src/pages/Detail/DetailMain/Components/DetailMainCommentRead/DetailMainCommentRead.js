@@ -13,18 +13,20 @@ class DetailMainCommentRead extends Component {
   }
 
   getMovieReview() {
-    // MOVIE_REVIEW
-    fetch('../data/review.json', {
-      headers: {
-        Authorization: USER2_TOKEN,
-      },
-    })
-      .then(response => response.json())
-      .then(response => {
-        this.setState({
-          UserComments: response.result,
+    const currentToken = sessionStorage.getItem('access_token');
+
+    sessionStorage &&
+      fetch(`${MOVIE_REVIEW}${this.props.Id}`, {
+        headers: {
+          Authorization: currentToken,
+        },
+      })
+        .then(response => response.json())
+        .then(response => {
+          this.setState({
+            UserComments: response.result,
+          });
         });
-      });
   }
   render() {
     const { UserComments } = this.state;

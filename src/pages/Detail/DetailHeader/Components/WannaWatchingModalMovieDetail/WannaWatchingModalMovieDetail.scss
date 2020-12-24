@@ -7,13 +7,13 @@
     width: 4em;
     height: 5em;
 
-    img {
-      width: 100%;
-      height: 100%;
+    .MovieDetailImg {
+      width: 5em;
+      height: 6em;
     }
   }
   .ModalMovieDetailNameAndDetail {
-    padding: 10px 0;
+    padding: 1em 1em;
     margin-left: 1em;
 
     .WannaWatchingMovieName {

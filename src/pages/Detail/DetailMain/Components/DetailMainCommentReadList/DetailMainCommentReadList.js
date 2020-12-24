@@ -22,25 +22,28 @@ class DetailMainCommentReadList extends React.Component {
   };
 
   postActiveUserCommentLike = () => {
-    fetch(`${ACRIVE_USER_COMMENT_LIKE}/${this.props.commentId}`, {
-      method: 'POST',
-      headers: {
-        Authorization: USER2_TOKEN,
-      },
-    }).then(response => response.json());
+    const currentToken = sessionStorage.getItem('access_token');
+    sessionStorage &&
+      fetch(`${ACRIVE_USER_COMMENT_LIKE}/${currentToken}`, {
+        method: 'POST',
+        headers: {
+          Authorization: currentToken,
+        },
+      }).then(response => response.json());
   };
 
   deleteActiveUserCommentLike = () => {
-    fetch(`${ACRIVE_USER_COMMENT_LIKE}/${this.props.commentId}`, {
-      method: 'DELETE',
-      headers: {
-        Authorization: USER2_TOKEN,
-      },
-    }).then(response => response.json());
+    const currentToken = sessionStorage.getItem('access_token');
+    sessionStorage &&
+      fetch(`${ACRIVE_USER_COMMENT_LIKE}/${currentToken}`, {
+        method: 'DELETE',
+        headers: {
+          Authorization: currentToken,
+        },
+      }).then(response => response.json());
   };
 
   render() {
-    console.log(this.state.likes);
     const { isActiveUserCommentLike } = this.state;
     const { userName, userProfileImg, review, likes } = this.props;
     return (
