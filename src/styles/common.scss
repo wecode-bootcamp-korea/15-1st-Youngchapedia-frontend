@@ -21,29 +21,23 @@ $color-info-font-color: #4a4a4a;
 /* 상세페이지 코멘트 배경 색상*/
 $color-cmt-background: #f2f2f2;
 $color-detail-border: #d2d2d2;
-
 /* 코멘트 색상 */
 $color-cmt-font: #202020;
 /* 상세페이지 별점색상 */
 $color-yellow: #ffdd63;
-
 $slide-size: 70min;
-
 $tablet: 715px;
 $nav-middle-size: 775px;
 $nav-small-size: 430px;
 $laptop: 1020px;
 $desktop: 1400px;
-
 // media query
 $slide-test: 1200px;
-
 %display-center {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
 @mixin slide-arrow {
   font-size: 25px;
   display: flex;
@@ -61,45 +55,39 @@ $slide-test: 1200px;
   z-index: 1;
   color: #a4a4a8;
 }
-
 @mixin align-center {
   display: flex;
   align-items: center;
 }
-
 // Mixins Media Query
 @mixin tablet {
   @media (max-width: #{$tablet}) {
     @content;
   }
 }
-
 @mixin laptop {
   @media (min-width: #{$laptop}) {
     @content;
   }
 }
-
 @mixin nav-middle {
   @media (max-width: #{$nav-middle-size} ) {
     @content;
   }
 }
-
 @mixin desktop {
   @media (min-width: #{$desktop}) {
     @content;
   }
 }
-
 @mixin detailBorder {
   border: 1px solid #d2d2d2;
-a {
-  text-decoration: none;
-  color: $color-black;
-
-  &:link {
+  a {
+    text-decoration: none;
     color: $color-black;
+    &:link {
+      color: $color-black;
+    }
   }
 }
 @mixin slide-test {
@@ -107,11 +95,20 @@ a {
     @content;
   }
 }
-
+@mixin display-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 @mixin mainLogoDetail {
   font-family: Anton;
   font-size: 1.5em;
   font-style: bold;
   font-weight: 900;
   color: #ff0658;
+}
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

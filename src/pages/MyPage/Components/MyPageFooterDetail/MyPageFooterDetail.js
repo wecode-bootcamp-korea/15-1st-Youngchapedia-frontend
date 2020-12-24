@@ -22,7 +22,6 @@ class MyPageFooterDetail extends Component {
   componentDidMount = () => {
     const { titleSection } = this.props.location.state;
     if (titleSection === '평가한 작품들') {
-      console.log('평작');
       fetch(API_MY_PAGE_EVAL, {
         method: 'GET',
         headers: {
@@ -31,12 +30,10 @@ class MyPageFooterDetail extends Component {
       })
         .then(response => response.json())
         .then(result => {
-          console.log(result);
           this.setState({ rateMovie: result.result, rateTitle: '평가함' });
         });
     }
     if (titleSection === '보고싶어요') {
-      console.log('보고싶어요');
       fetch(API_MY_PAGE_WISH, {
         method: 'GET',
         headers: {
@@ -49,7 +46,6 @@ class MyPageFooterDetail extends Component {
         });
     }
     if (titleSection === '보는중') {
-      console.log('보는중');
       fetch(API_MY_PAGE_WATCHING, {
         method: 'GET',
         headers: {
