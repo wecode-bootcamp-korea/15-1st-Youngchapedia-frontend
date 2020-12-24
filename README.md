@@ -1,9 +1,7 @@
 # Youngchapedia
 
+![alt text](https://github.com/wecode-bootcamp-korea/15-1st-Youngchapedia-frontend/blob/feature/login/public/images/YOUNGCHAPEDIA.png?raw=true)
 
-
-<br><br>
- 
 ---
 
 ## 왓챠피디아
@@ -12,11 +10,13 @@
 
 ## 팀원
 영차영차 긍정마인드로 이루어진 최강 소통팀을 소개합니다.
-- Front-end: 김별이, 조아람, 한준희
-- Back-end: 김순태, 이재혁(PM)
+- Front-end: 
+김별이, 조아람, 한준희
+- Back-end: 
+김순태, 이재혁(PM)
 
 ## 개발 기간
-- 기간: 2020.12.14 ~ 2020.11.24 (11일)
+- 기간: 2020.12.14 ~ 2020.12.24 (11일)
 
 ## 적용 기술
 - Front-end: React.js(Class), React-router,  SASS
@@ -30,6 +30,7 @@
 
 ## 개인 역할
 >front-end
+
 `김별이`
 
 
@@ -40,6 +41,7 @@
 
 
 >back-end
+
 `김순태`
 
 
