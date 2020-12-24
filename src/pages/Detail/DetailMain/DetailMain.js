@@ -6,7 +6,13 @@ import DeleteCommentCheckModal from './Components/DetailMainComment/DeleteCommen
 import DetailMainAct from './Components/DetailMainAct/DetailMainAct';
 import DetailMainInfor from './Components/DetailMainInfor/DetailMainInfor';
 import DetailMainCommentRead from './Components/DetailMainCommentRead/DetailMainCommentRead';
-import { ACRIVE_USER_COMMENT, MOVIE_CAST } from '../../../config';
+import {
+  MOVIE_REVIEW,
+  MOVIE_CAST,
+  USER1_TOKEN,
+  USER2_TOKEN,
+  ACRIVE_USER_COMMENT,
+} from '../../../config';
 
 import './DetailMain.scss';
 
@@ -26,13 +32,14 @@ class DetailMain extends React.Component {
   }
 
   getMovieCast() {
-    fetch(`${MOVIE_CAST}${this.props.Id}`)
+    // MOVIE_CAST
+    fetch('./data/cast.json')
       .then(response => response.json())
       .then(response => this.setState({ castingMembers: response.RESULT }));
   }
 
   getMovieComments() {
-    fetch(`${ACRIVE_USER_COMMENT}${this.props.Id}`)
+    fetch(ACRIVE_USER_COMMENT)
       .then(response => response.json())
       .then(response => {
         this.setState({ UserComments: response.result });
@@ -79,7 +86,6 @@ class DetailMain extends React.Component {
     } = this.state;
 
     const {
-      Id,
       movieTitle,
       movieReleaseYear,
       makeCountry,
@@ -110,7 +116,6 @@ class DetailMain extends React.Component {
 
         {isCheckCommentDelete && (
           <DeleteCommentCheckModal
-            Id={Id}
             isCheckCommentDelete={this.isCheckCommentDelete}
             handleCommentDelete={this.handleCommentDelete}
           />
@@ -140,7 +145,7 @@ class DetailMain extends React.Component {
             descriptionValue={descriptionValue}
           />
           <DetailMainAct castingMembers={castingMembers} />
-          <DetailMainCommentRead Id={Id} />
+          <DetailMainCommentRead />
         </div>
       </main>
     );
