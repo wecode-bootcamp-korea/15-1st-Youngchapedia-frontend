@@ -10,7 +10,7 @@ import '@fortawesome/fontawesome-free/js/all.js';
 import FilterPage from './Pages/FilterPage/FilterPage';
 import SearchResultPage from './Components/Nav/Search/SearchResultPage';
 
-class Routes extends Component {
+class Routes extends React.Component {
   render() {
     return (
       <Router>
