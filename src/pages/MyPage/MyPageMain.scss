@@ -6,7 +6,8 @@
 }
 @mixin myPageFooterDetail {
   color: $color-white;
-  margin: 5%;
+  margin: 6%;
+  font-weight: 450;
 }
 @mixin myPageFooterWrapper {
   display: flex;
@@ -19,8 +20,8 @@
   .myPageMainWrapper {
     @include flexInfo;
     justify-content: center;
-    min-height: 90vh;
-    padding-bottom: 1px;
+    padding-top: 7em;
+    padding-bottom: 3em;
 
     .myPageComponent {
       display: flex;

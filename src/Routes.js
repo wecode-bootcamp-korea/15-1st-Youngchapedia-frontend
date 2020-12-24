@@ -18,7 +18,8 @@ class Routes extends React.Component {
           <Route exact path="/mainpage" component={MainPage} />
           <Route exact path="/details" component={Detail} />
           <Route exact path="/mypage" component={MyPageMain} />
-          <Route path="/error" component={Error} />
+          <Route exact path="/error" component={Error} />
+          <Route exact path="/details" component={Detail} />
           <Route exact path="/mypage" component={MyPageMain} />
           <Route
             exact
