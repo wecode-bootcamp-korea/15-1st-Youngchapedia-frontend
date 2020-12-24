@@ -10,10 +10,7 @@ import '@fortawesome/fontawesome-free/js/all.js';
 import FilterPage from './Pages/FilterPage/FilterPage';
 import SearchResultPage from './Components/Nav/Search/SearchResultPage';
 
-
-
 class Routes extends Component {
-
   render() {
     return (
       <Router>
@@ -37,7 +34,6 @@ class Routes extends Component {
           <Route exact path="/details/:id" component={Detail} />
           <Route exact path="/filterPage/:id" component={FilterPage} />
           <Route exact path="/search/:id" component={SearchResultPage} />
-
         </Switch>
       </Router>
     );
