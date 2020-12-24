@@ -37,7 +37,6 @@ class MovieContainerBottom extends Component {
       ],
     };
     const { movies } = this.props;
-    console.log(this.props);
     return (
       <>
         <ul className="movies">

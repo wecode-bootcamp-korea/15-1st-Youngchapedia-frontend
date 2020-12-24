@@ -22,9 +22,6 @@ class Nav extends Component {
               <div className="mainLogoHigh">YOUNGCHA</div>
               <div className="mainLogoLow">PEDIA</div>
             </div>
-            <li className="menu">영화</li>
-            <li className="menu">TV 프로그램</li>
-            <li className="menu">책</li>
           </div>
           <div className="navRight">
             <div className="inputContainer">

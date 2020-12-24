@@ -32,11 +32,11 @@ class MoviePage extends Component {
 
   getApis = () => {
     Promise.all([
-      fetch('/data/netflix.json'),
-      fetch('/data/watcha.json'),
-      fetch('/data/people.json'),
-      fetch('/data/genre.json'),
-      fetch('/data/tag.json'),
+      fetch(NETFLIX_LIST),
+      fetch(WATCHA_LIST),
+      fetch(COLLECTION_DIRECTOR_LIST),
+      fetch(ACTION_LIST),
+      fetch(COLLECTION_LIST),
     ])
       .then(([res1, res2, res3, res4, res5]) =>
         Promise.all([
@@ -84,7 +84,7 @@ class MoviePage extends Component {
           </div>
         ) : (
           <Movieinfo
-            goToFilter={event => {
+            goToFilter={() => {
               this.props.history.push({
                 pathname: `/filterPage/${collectionDirectorList.id}`,
                 state: { collectionDirectorList: collectionDirectorList },
