@@ -33,7 +33,7 @@ class Nav extends Component {
             </div>
           ) : (
             <div className="navRight">
-              <li className="menu">평가하기</li>
+              {/* <li className="menu">평가하기</li> */}
               <li className="profile">
                 <img
                   alt="profile"

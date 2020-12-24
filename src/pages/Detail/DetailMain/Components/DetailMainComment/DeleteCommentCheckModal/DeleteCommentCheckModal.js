@@ -12,12 +12,11 @@ class DeleteCommentCheckModal extends Component {
   };
 
   onCommentDelete = () => {
-    const currentToken = sessionStorage.getItem('access_token');
-    sessionStorage && this.props.handleCommentDelete();
-    fetch(`${MOVIE_REVIEW}${this.props.Id}`, {
+    this.props.handleCommentDelete();
+    fetch(MOVIE_REVIEW, {
       method: 'DELETE',
       headers: {
-        Authorization: currentToken,
+        Authorization: USER2_TOKEN,
       },
     });
   };
