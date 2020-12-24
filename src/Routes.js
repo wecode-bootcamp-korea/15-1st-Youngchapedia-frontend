@@ -11,7 +11,7 @@ import FilterPage from './Pages/FilterPage/FilterPage';
 import SearchResultPage from './Components/Nav/Search/SearchResultPage';
 import Login from './Pages/Login/LoginSignUpControl';
 
-class Routes extends React.Component {
+class Routes extends Component {
   render() {
     return (
       <Router>
