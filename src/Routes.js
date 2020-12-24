@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import MainPage from './Pages/MainPage/MainPage';
 import Detail from './Pages/Detail/Detail';
@@ -9,6 +9,7 @@ import DetailMainCommentLink from './Pages/Detail/DetailMain/Components/DetailMa
 import '@fortawesome/fontawesome-free/js/all.js';
 import FilterPage from './Pages/FilterPage/FilterPage';
 import SearchResultPage from './Components/Nav/Search/SearchResultPage';
+import Login from './Pages/Login/LoginSignUpControl';
 
 class Routes extends React.Component {
   render() {
@@ -19,6 +20,7 @@ class Routes extends React.Component {
           <Route exact path="/details" component={Detail} />
           <Route exact path="/mypage" component={MyPageMain} />
           <Route exact path="/error" component={Error} />
+          <Route exact path="/login" component={Login} />
           <Route exact path="/details" component={Detail} />
           <Route exact path="/mypage" component={MyPageMain} />
           <Route
