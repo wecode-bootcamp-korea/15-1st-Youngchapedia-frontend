@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import './MovieCard.scss';
-
 class MovieCard extends Component {
   render() {
     const { movie } = this.props;
@@ -24,11 +23,12 @@ class MovieCard extends Component {
         <div className="movieInfo">
           <p className="movieTitle">{movie.title_korean}</p>
           <p className="yearAndCountry">2020 ・ 대한민국</p>
-          <p className="rating">예상 ★ 2.5점</p>
+          <p className="rating">
+            {movie.rating ? `예상 ★ ${movie.rating.toFixed(1)}` : ''}
+          </p>
         </div>
       </li>
     );
   }
 }
-
 export default withRouter(MovieCard);

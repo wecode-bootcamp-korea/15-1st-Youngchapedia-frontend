@@ -5,7 +5,6 @@ import './DetailMainCommentReadList.scss';
 class DetailMainCommentReadList extends React.Component {
   state = {
     isActiveUserCommentLike: false,
-    likes: this.props.likes,
   };
 
   onActiveUserCommentLike = () => {
@@ -22,25 +21,26 @@ class DetailMainCommentReadList extends React.Component {
   };
 
   postActiveUserCommentLike = () => {
-    fetch(`${ACRIVE_USER_COMMENT_LIKE}/${this.props.commentId}`, {
+    const currentToken = sessionStorage.getItem('access_token');
+    fetch(`${ACRIVE_USER_COMMENT_LIKE}/${currentToken}`, {
       method: 'POST',
       headers: {
-        Authorization: USER2_TOKEN,
+        Authorization: currentToken,
       },
     }).then(response => response.json());
   };
 
   deleteActiveUserCommentLike = () => {
-    fetch(`${ACRIVE_USER_COMMENT_LIKE}/${this.props.commentId}`, {
+    const currentToken = sessionStorage.getItem('access_token');
+    fetch(`${ACRIVE_USER_COMMENT_LIKE}/${currentToken}`, {
       method: 'DELETE',
       headers: {
-        Authorization: USER2_TOKEN,
+        Authorization: currentToken,
       },
     }).then(response => response.json());
   };
 
   render() {
-    console.log(this.state.likes);
     const { isActiveUserCommentLike } = this.state;
     const { userName, userProfileImg, review, likes } = this.props;
     return (

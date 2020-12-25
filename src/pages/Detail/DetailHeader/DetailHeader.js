@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import DetailHeaderWannaWatchingModal from './Components/DetailHeaderWannaWatchingModal/DetailHeaderWannaWatchingModal';
 import DetailHeaderStarsRate from './Components/DetailHeaderStarsRate';
 import DetailHeaderButtons from './Components/DetailHeaderButtons/DetailHeaderButtons';
-import { WANNAWATCHING, USER1_TOKEN } from '../../../config';
+import { WANNAWATCHING } from '../../../config';
 import './DetailHeader.scss';
 
 class DetailHeader extends React.Component {
@@ -18,18 +18,21 @@ class DetailHeader extends React.Component {
   };
 
   componentDidMount() {
-    fetch(WANNAWATCHING, {
-      headers: { Authorization: USER1_TOKEN },
+    const currentToken = sessionStorage.getItem('access_token');
+    fetch(`${WANNAWATCHING}${this.props.Id}`, {
+      headers: { Authorization: currentToken },
     })
       .then(res => res.json())
       .then(res => this.setState({ archive_type: res.archive_type }));
   }
 
   DeleteArchiveType = () => {
-    fetch(WANNAWATCHING, {
-      method: 'Delete',
-      headers: { Authorization: USER1_TOKEN },
-    });
+    const currentToken = sessionStorage.getItem('access_token');
+    sessionStorage &&
+      fetch(`${WANNAWATCHING}${this.props.Id}`, {
+        method: 'Delete',
+        headers: { Authorization: currentToken },
+      });
   };
 
   onWannaWatchingModalToggle = () => {
@@ -114,6 +117,7 @@ class DetailHeader extends React.Component {
     } = this.state;
 
     const {
+      Id,
       posterImgURL,
       movieTitle,
       movieReleaseYear,
@@ -132,14 +136,14 @@ class DetailHeader extends React.Component {
       <header className="DetailHeader">
         <div className="DivControl">
           <div className="fixBackgournd">
-            <img src={moivesGallery[0]} alt={movieTitle} />
+            <img src={moivesGallery[1]} alt={movieTitle} />
           </div>
           <div className="flexPosterAndDetails">
             <div className="posterConroler">
               <img src={posterImgURL} alt="poster" />
               <div className="movieNameAndsores">
                 <h1>{movieTitle}</h1>
-                <div className="yearGenreNation">{`${movieReleaseYear}∙${movieGenre}∙${makeCountry}`}</div>
+                <div className="yearGenreNation">{`${movieReleaseYear} ${movieGenre} ${makeCountry}`}</div>
                 <div className="score">평균 ★5.0 (41명)</div>
                 <div className="buttonsAndEvaluation">
                   <DetailHeaderButtons
@@ -154,12 +158,13 @@ class DetailHeader extends React.Component {
                     }
                   />
                   <div className="evaluation">
-                    <DetailHeaderStarsRate />
+                    <DetailHeaderStarsRate Id={Id} />
                   </div>
                   {isActiveWannaWatchingModal && (
                     <DetailHeaderWannaWatchingModal
                       {...detailHeaderpassingProps}
                       movieTitle={movieTitle}
+                      posterImgURL={posterImgURL}
                       dontCareMovie={dontCareMovie}
                       onWannaWatchingModalToggle={
                         this.onWannaWatchingModalToggle

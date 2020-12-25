@@ -1,12 +1,13 @@
 @import '../../../../../styles/common.scss';
 .DetailMainCommentRead {
-  padding: 1em;
+  padding: 0em 0.7em 0.7em 0.7em;
   background-color: #ffffff;
 
   .commentReadHeader {
     display: flex;
     align-items: center;
-    height: 4em;
+    height: 3em;
+    margin-left: 0.5em;
 
     p {
       font-size: 1.5em;

@@ -13,10 +13,10 @@ class DetailMainCommentRead extends Component {
   }
 
   getMovieReview() {
-    // MOVIE_REVIEW
-    fetch('../data/review.json', {
+    const currentToken = sessionStorage.getItem('access_token');
+    fetch(`${MOVIE_REVIEW}${this.props.Id}`, {
       headers: {
-        Authorization: USER2_TOKEN,
+        Authorization: currentToken,
       },
     })
       .then(response => response.json())

@@ -2,9 +2,7 @@
 
 .DetailMainCommentReadList {
   background-color: #f2f2f2;
-  @include detailBorder;
-
-  min-width: 19em;
+  min-width: 23em;
   height: 19.5em;
   margin-left: 1em;
   border-radius: 10px;
@@ -28,18 +26,20 @@
     }
   }
   .CommentListUserReview {
-    height: 8em;
+    height: 9em;
     margin: 0 0.4em;
-    padding: 1.5em 1em;
+    padding: 1em 0.3em;
     font-size: 1.1em;
     border-top: 1px solid $color-detail-border;
+    line-height: 1.3em;
+    overflow-y: scroll;
   }
   .UserLikeAndComment {
     display: flex;
     align-items: center;
     padding: 0.2em 0.5em;
     margin: 0 0.45em;
-    height: 3em;
+    height: 2.5em;
     font-size: 1em;
     border-top: 1px solid $color-detail-border;
     color: $color-info-font-color;
