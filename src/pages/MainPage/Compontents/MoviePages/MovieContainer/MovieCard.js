@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import './MovieCard.scss';
-
 class MovieCard extends Component {
   render() {
     const { movie } = this.props;
@@ -32,5 +31,4 @@ class MovieCard extends Component {
     );
   }
 }
-
 export default withRouter(MovieCard);

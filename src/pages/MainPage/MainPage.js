@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import MoviePage from './Compontents/MoviePages/MoviePage';
-import { COLLECTION_DIRECTOR_LIST } from '../../config';
-import FilterPage from '../FilterPage/FilterPage';
 import Nav from '../../Components/Nav/Nav';
 import Footer from '../../Components/Footer/Footer';
 import 'slick-carousel/slick/slick.css';
