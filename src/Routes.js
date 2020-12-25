@@ -9,7 +9,6 @@ import DetailMainCommentLink from './Pages/Detail/DetailMain/Components/DetailMa
 import '@fortawesome/fontawesome-free/js/all.js';
 import FilterPage from './Pages/FilterPage/FilterPage';
 import SearchResultPage from './Components/Nav/Search/SearchResultPage';
-import Login from './Pages/Login/LoginSignUpControl';
 
 class Routes extends React.Component {
   render() {
@@ -19,17 +18,14 @@ class Routes extends React.Component {
           <Route exact path="/mainpage" component={MainPage} />
           <Route exact path="/details" component={Detail} />
           <Route exact path="/mypage" component={MyPageMain} />
-          <Route exact path="/error" component={Error} />
-          <Route exact path="/login" component={Login} />
-          <Route exact path="/details" component={Detail} />
+          <Route path="/error" component={Error} />
           <Route exact path="/mypage" component={MyPageMain} />
           <Route
             exact
             path="/mypagefooterdetail"
             component={MyPageFooterDetail}
           />
-
-          <Route exact path="/detail" component={Detail} />
+          <Route exact path="/details" component={Detail} />
           <Route exact path="/filter/:id" component={FilterPage} />
           <Route exact path="/movies/:id" component={Detail} />
           <Route exact path="/details/:id" component={Detail} />

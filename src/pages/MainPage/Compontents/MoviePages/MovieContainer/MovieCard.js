@@ -24,7 +24,9 @@ class MovieCard extends Component {
         <div className="movieInfo">
           <p className="movieTitle">{movie.title_korean}</p>
           <p className="yearAndCountry">2020 ・ 대한민국</p>
-          <p className="rating">예상 ★ 2.5점</p>
+          <p className="rating">
+            {movie.rating ? `예상 ★ ${movie.rating.toFixed(1)}` : ''}
+          </p>
         </div>
       </li>
     );

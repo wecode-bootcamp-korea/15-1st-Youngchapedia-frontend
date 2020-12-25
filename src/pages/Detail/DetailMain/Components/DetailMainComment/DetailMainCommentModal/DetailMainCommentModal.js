@@ -9,6 +9,22 @@ class DetailMainCommentModal extends React.Component {
     commentBtnStatus: true,
   };
 
+  getMovieReview() {
+    const currentToken = sessionStorage.getItem('access_token');
+    sessionStorage &&
+      fetch(`${MOVIE_REVIEW}${this.props.match.params.id}`, {
+        headers: {
+          Authorization: currentToken,
+        },
+      })
+        .then(response => response.json())
+        .then(response => {
+          this.setState({
+            UserComments: response.result,
+          });
+        });
+  }
+
   onCloseComment = () => {
     this.props.closeModal();
   };
@@ -33,17 +49,19 @@ class DetailMainCommentModal extends React.Component {
   };
 
   saveComment = () => {
+    const currentToken = sessionStorage.getItem('access_token');
     const { comment } = this.state;
     const { apiMethod } = this.props;
-    fetch(MOVIE_REVIEW, {
-      method: apiMethod,
-      headers: {
-        Authorization: USER2_TOKEN,
-      },
-      body: JSON.stringify({
-        review: comment,
-      }),
-    }).then(response => response.json());
+    sessionStorage &&
+      fetch(MOVIE_REVIEW, {
+        method: apiMethod,
+        headers: {
+          Authorization: currentToken,
+        },
+        body: JSON.stringify({
+          review: comment,
+        }),
+      }).then(response => response.json());
   };
 
   render() {

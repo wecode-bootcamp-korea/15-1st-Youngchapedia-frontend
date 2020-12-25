@@ -12,6 +12,8 @@ class DetailHeaderWannaWatchingModal extends React.Component {
       isActiveBTN,
       isclickedWannaWatchingBTN,
       isclickedBeingWatchingBTN,
+      posterImgURL,
+      movieTitle,
       handleResetButtonStatus,
       handleActiveBeingWatchingBTN,
       handleActiveWannaWatchingBTN,
@@ -31,7 +33,10 @@ class DetailHeaderWannaWatchingModal extends React.Component {
     return (
       <section className="DetailHeaderModal">
         <div className="DetailHeaderModalBackGround">
-          <WannaWatchingModalMovieDetail />
+          <WannaWatchingModalMovieDetail
+            movieTitle={movieTitle}
+            posterImgURL={posterImgURL}
+          />
           <div className="DetailHeaderModalBTNs">
             <WannaWatchingBTN {...passingProps} />
             <BeingWatchingBTN

@@ -9,20 +9,20 @@ class DetailMainInfor extends React.Component {
       makeCountry,
       movieGenre,
       descriptionValue,
+      runningtime,
     } = this.props;
 
     return (
       <div className="DetailMainInfor">
         <div className="DetailMainInfoMore">
           <h1>기본 정보</h1>
-          <span>더보기</span>
         </div>
         <div className="DetailMainInfoPTag">
           <p>{movieTitle}</p>
           <p>{`${movieReleaseYear} ${makeCountry} ${movieGenre}`}</p>
-          <p>시간</p>
+          <p>{runningtime} 분</p>
         </div>
-        <div className="DetailMainInfoDesc">(줄거리){descriptionValue}</div>
+        <div className="DetailMainInfoDesc">{descriptionValue}</div>
       </div>
     );
   }
