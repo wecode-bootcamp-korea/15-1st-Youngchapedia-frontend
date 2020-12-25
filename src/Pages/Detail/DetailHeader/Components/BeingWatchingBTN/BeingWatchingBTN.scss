@@ -1,0 +1,26 @@
+@import '../../../../../styles/common.scss';
+
+.BeingWatchingBTN {
+  @include display-center;
+  flex-direction: column;
+  width: 50%;
+
+  .inactiveBeingWatchingBTN,
+  .activeBeingWatchingBTN {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 2.7em;
+    color: #787878;
+
+    span {
+      margin-top: 0.6em;
+      font-size: 0.38em;
+      color: #111;
+    }
+  }
+
+  .activeBeingWatchingBTN {
+    color: #03a0ff;
+  }
+}

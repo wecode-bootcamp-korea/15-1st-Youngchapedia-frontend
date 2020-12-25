@@ -1,0 +1,151 @@
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin inputAndBtn {
+  width: 90%;
+  height: 7%;
+  border: 0px;
+  border-radius: 0.3em;
+}
+@mixin logoDetail {
+  font-family: Anton;
+  font-size: 2em;
+  font-style: bold;
+  font-weight: 900;
+  color: #ff0658;
+}
+.Signup {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6);
+  .underSignup {
+    @include flexCenter;
+    height: 100%;
+    width: 100%;
+    
+    .signUpBox {
+      @include flexCenter;
+      flex-direction: column;
+      background-color: #fafafa;
+      border-radius: 2%;
+      width: 21em;
+      height: 35em;
+
+      .signUpLogo {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        padding-right: 1px;
+        padding-right: 3px;
+        border-right: 2px solid #ff0658;
+
+        .sigUpPageLogoHigh {
+          @include logoDetail;
+        }
+
+        .sigUpPageLogoLow {
+          @include logoDetail;
+        }
+      }
+
+      .signUpText {
+        margin: 0.8em 0em;
+        padding: 0.8em 0em;
+        font-weight: bold;
+      }
+
+      .nameInput {
+        margin: 0.2em 0em;
+        background-color: #f5f5f7;
+        caret-color: #ff0658;
+        @include inputAndBtn;
+      }
+
+      .nameInput::placeholder {
+        color: #cacaca;
+        padding-left: 0.5em;
+      }
+
+      .nameInput:focus {
+        outline: none;
+      }
+
+      .displayNone {
+        display: none;
+      }
+
+      .inputStatus {
+        padding-top: 0.2ex;
+        font-size: 0.4em;
+        width: 88%;
+        display: flex;
+        color: #ff0658;
+      }
+
+      .emailInput {
+        margin: 0.2em 0em;
+        background-color: #f5f5f7;
+        caret-color: #ff0658;
+        @include inputAndBtn;
+      }
+
+      .emailInput::placeholder {
+        color: #cacaca;
+        padding-left: 0.5em;
+      }
+
+      .emailInput:focus {
+        outline: none;
+      }
+
+      .passwordInput {
+        margin: 0.2em 0em;
+        background-color: #f5f5f7;
+        caret-color: #ff0658;
+        @include inputAndBtn;
+      }
+
+      .passwordInput::placeholder {
+        color: #cacaca;
+        padding-left: 0.5em;
+      }
+
+      .passwordInput:focus {
+        outline: none;
+      }
+      // }
+      .signUpBtn {
+        color: white;
+        font-size: 0.8em;
+        margin: 1em 0em;
+        background-color: #ff0658;
+        @include inputAndBtn;
+        cursor: pointer;
+      }
+
+      .signUpBtn:focus {
+        outline: 0;
+      }
+
+      .signUpCheckTxt {
+        display: flex;
+        color: grey;
+        margin: 0.7em 0em;
+        font-weight: 350;
+        font-size: 0.9em;
+
+        .loginNowBtn {
+          padding-left: 0.3em;
+          color: #ff0658;
+          text-decoration: none;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

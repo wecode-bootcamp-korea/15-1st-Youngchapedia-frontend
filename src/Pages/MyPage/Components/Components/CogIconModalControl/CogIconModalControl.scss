@@ -1,0 +1,74 @@
+@import "../../../../../styles/common.scss";
+
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin inputAndBtn {
+  width: 90%;
+  height: 3em;
+  border: 0px;
+  border-radius: 0.3em;
+  background-color: $color-GhostWhite;
+  caret-color: $color-youngcha;
+}
+
+@mixin btnDetail {
+  display:flex;
+  width: 90%;
+  height: 10%;
+  padding-bottom: 1px;
+  border: 0px;
+  border-bottom: 1px solid lightgrey;
+  color: $color-black;
+  font-weight: 200;
+  font-size: 1em;
+}
+
+.underMyPageModal {
+  @include flexCenter;
+  height: 100%;
+  width: 100%;
+}
+.CogIconModalControl {
+  display:flex;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6);
+
+  .cogIconModalBox {
+    display:relative;
+    @include flexCenter;
+    flex-direction: column;
+    width: 18em;
+    height: 14em;
+    border-radius: 2%;
+    background-color: $color-white;
+    font-weight: bold;
+    font-size: 1em;
+ 
+  }
+  .logoutBtn {
+    @include btnDetail;
+    margin: 1em 0em;
+    background-color: $color-white;
+    cursor: pointer;
+  }
+  .logoutBtn:focus {
+    outline: 0;
+  }
+  .deleteAccountBtn{
+    @include btnDetail;
+    margin: 1em 0em;
+    background-color: $color-white;
+    cursor: pointer;
+  }
+  .deleteAccountBtn:focus {
+    outline: 0;
+  }
+  
+}

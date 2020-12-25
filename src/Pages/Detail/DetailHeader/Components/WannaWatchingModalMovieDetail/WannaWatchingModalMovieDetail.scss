@@ -1,0 +1,30 @@
+@import '../../../../../styles/common.scss';
+
+.WannaWatchingModalMovieDetail {
+  display: flex;
+
+  .WannaWatchingModalMovieDetailImg {
+    width: 4em;
+    height: 5em;
+
+    .MovieDetailImg {
+      width: 5em;
+      height: 6em;
+    }
+  }
+  .ModalMovieDetailNameAndDetail {
+    padding: 1em 1em;
+    margin-left: 1em;
+
+    .WannaWatchingMovieName {
+      font-size: 1.3em;
+      font-weight: bold;
+      padding: 0.3em 0;
+    }
+
+    .WannaWatchingMovieDetail {
+      padding: 0.3em 0;
+      color: $color-noneclick-menu;
+    }
+  }
+}

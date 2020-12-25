@@ -1,0 +1,196 @@
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin inputAndBtn{
+  background-color: #f5f5f7;
+  caret-color: #ff0658;
+  width: 90%;
+  border: 0px;
+  border-radius: 0.3em;
+  height: 3em;
+}
+
+@mixin btnDetail {
+  width: 90%;
+  height: 7%;
+  border: 0px;
+  border-radius: 0.3em;
+}
+@mixin logoDetail {
+  font-family: Anton;
+  font-size: 2em;
+  font-style: bold;
+  font-weight: 900;
+  color: #ff0658;
+}
+.underLogin {
+  @include flexCenter;
+  height: 100%;
+  width: 100%;
+}
+.Login {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6);
+
+  .loginBox {
+    @include flexCenter;
+    flex-direction: column;
+    background-color: #fafafa;
+    border-radius: 2%;
+    width: 21em;
+    height: 35em;
+
+    .loginLogo {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      padding-right: 1px;
+      padding-right: 3px;
+      border-right: 2px solid #ff0658;
+
+      .loginPageLogoHigh {
+        @include logoDetail;
+      }
+
+      .loginPageLogoLow {
+        @include logoDetail;
+      }
+    }
+
+    .loginText {
+      margin: 0.8em 0em;
+      padding: 0.8em 0em;
+      font-weight: bold;
+    }
+
+    .inputStatus {
+      padding-top: 0;
+      padding-bottom: 0;
+      font-size: 0.4em;
+      width: 88%;
+      display: flex;
+      color: #ff0658;
+    }
+
+    .displayNone {
+      display: none;
+    }
+
+    .emailSection {
+      @include flexCenter;
+      width: 100%;
+
+      .emailInput {
+        margin: 0.3em 0em;
+        border: none;
+        @include inputAndBtn;
+      }
+      .emailInput::placeholder {
+        color: #cacaca;
+        padding-left: 0.5em;
+      }
+
+      .emailInput:focus {
+        outline: none;
+      }
+      .svg-icon1 {
+        position: absolute;
+        margin-right: -14em;
+        width: 1em;
+        height: 1em;
+      }
+      .svg-icon1 path,
+      .svg-icon1 polygon,
+      .svg-icon1 rect {
+        fill: #4691f6;
+      }
+      .svg-icon1 circle {
+        stroke: #4691f6;
+        stroke-width: 1;
+      }
+      .inputIconDelete{
+
+      }
+      .svg-icon2 {
+        position: absolute;
+        margin-right: -17em;
+        width: 1em;
+        height: 1em;
+      }
+      .svg-icon2 path,
+      .svg-icon2 polygon,
+      .svg-icon2 rect {
+        fill: #4691f6;
+      }
+      .svg-icon2 circle {
+        stroke: #4691f6;
+        stroke-width: 1;
+      }
+      .inputIconCheck{
+
+      }
+    }
+
+    .passWordSection {
+      @include flexCenter;
+      width: 100%;
+      .passwordInput {
+        margin: 0.3em 0em;
+        @include inputAndBtn;
+      }
+      .passwordInput::placeholder {
+        color: #cacaca;
+        padding-left: 0.5em;
+      }
+      .passwordInput:focus {
+        outline: none;
+      }
+    }
+    .loginBtn {
+      color: white;
+      font-size: 0.8em;
+      margin: 1em 0em;
+      background-color: #ff0658;
+      @include btnDetail;
+      cursor: pointer;
+    }
+
+    .loginBtn:focus {
+      outline: 0;
+    }
+
+    .forgotPwTxt {
+      margin: 0.4em 0em;
+      color: #ff0658;
+      font-weight: 350;
+      font-size: 0.9em;
+      text-decoration: none;
+    }
+
+    .noAccountTxt {
+      display: flex;
+      color: grey;
+      margin: 0.7em 0em;
+      font-weight: 350;
+      font-size: 0.9em;
+
+      .signUpNow {
+        padding-left: 0.3em;
+        color: #ff0658;
+        text-decoration: none;
+        .signUpNowBtn {
+          padding-left: 0.3em;
+          color: #ff0658;
+          text-decoration: none;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

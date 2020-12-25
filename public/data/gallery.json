@@ -1,0 +1,16 @@
+{
+  "MESSAGE": "SUCCESS",
+  "RESULT": [
+    {
+      "content_id": 1,
+      "content_title_korean": "검객",
+      "galleris_image": [
+        "https://dummyimage.com/190x224",
+        "https://placekitten.com/1017/485",
+        "https://dummyimage.com/98x813",
+        "https://placekitten.com/523/151",
+        "https://www.lorempixel.com/220/541"
+      ]
+    }
+  ]
+}

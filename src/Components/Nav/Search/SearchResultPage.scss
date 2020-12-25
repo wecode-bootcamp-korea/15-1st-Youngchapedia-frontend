@@ -1,0 +1,49 @@
+.SearchResultPage {
+  padding-top: 100px;
+  padding: 100px 20px 0px 20px;
+
+  .resultHeader {
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  .searchResults {
+    min-height: 50vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 101px;
+
+    .movieCard {
+      width: 200px;
+
+      .imgWrap {
+        width: 200px;
+        height: 280px;
+        position: relative;
+        display: inline-block;
+        overflow: hidden;
+        margin: 0;
+      }
+    }
+
+    .resultPageError {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      margin: 0 auto;
+
+      img {
+        width: 350px;
+        height: 350px;
+        margin-bottom: 30px;
+      }
+
+      p {
+        color: #a0a0a0;
+      }
+    }
+  }
+}
